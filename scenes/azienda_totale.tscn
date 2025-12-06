@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://bqvr58ici2n8g"]
+
+[ext_resource type="Script" uid="uid://bgc5gj00r15bv" path="res://scripts/azienda_totale.gd" id="1_7xsbt"]
+[ext_resource type="Texture2D" uid="uid://bdyhqnn6ll6nd" path="res://assets/sfondoAzienda.png" id="1_aehsc"]
+
+[node name="AziendaTotale" type="Node"]
+script = ExtResource("1_7xsbt")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_aehsc")
+expand_mode = 1
+
+[node name="GoSalaMacchinari" type="Button" parent="."]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -358.0
+offset_right = 429.0
+offset_bottom = -1.0
+grow_vertical = 0
+flat = true
+
+[connection signal="pressed" from="GoSalaMacchinari" to="." method="_on_go_sala_macchinari_pressed"]
