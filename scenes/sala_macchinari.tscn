@@ -295,7 +295,7 @@ libraries = {
 }
 
 [node name="MacchinarioLampadine" type="Sprite2D" parent="."]
-position = Vector2(601.0001, 302)
+position = Vector2(583, 310)
 scale = Vector2(0.34, 0.34)
 texture = ExtResource("2_skoty")
 script = ExtResource("5_xf5l4")
