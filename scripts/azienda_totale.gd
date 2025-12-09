@@ -15,3 +15,9 @@ func _on_go_sala_macchinari_pressed() -> void:
 	# Carica la scena del tuo gioco vero e proprio.
 	# Assicurati di mettere il percorso corretto del tuo file .tscn
 	get_tree().change_scene_to_file("res://scenes/sala_macchinari.tscn")
+
+
+func _on_go_sala_server_pressed() -> void:
+	# Carica la scena del tuo gioco vero e proprio.
+	# Assicurati di mettere il percorso corretto del tuo file .tscn
+	get_tree().change_scene_to_file("res://scenes/sala_server.tscn")
