@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bdyhqnn6ll6nd"
-path="res://.godot/imported/sfondoAzienda.png-c8a479532382e2a60cdad51167dd3487.ctex"
+uid="uid://cx23n6mb73cgr"
+path="res://.godot/imported/lock.png-962ebed8d2713bfc3a87b85adb53c15d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sfondoAzienda.png"
-dest_files=["res://.godot/imported/sfondoAzienda.png-c8a479532382e2a60cdad51167dd3487.ctex"]
+source_file="res://assets/lock.png"
+dest_files=["res://.godot/imported/lock.png-962ebed8d2713bfc3a87b85adb53c15d.ctex"]
 
 [params]
 

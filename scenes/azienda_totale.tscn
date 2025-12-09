@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bqvr58ici2n8g"]
 
 [ext_resource type="Script" uid="uid://bgc5gj00r15bv" path="res://scripts/azienda_totale.gd" id="1_7xsbt"]
-[ext_resource type="Texture2D" uid="uid://bdyhqnn6ll6nd" path="res://assets/sfondoAzienda.png" id="1_aehsc"]
+[ext_resource type="Texture2D" uid="uid://bdyhqnn6ll6nd" path="res://assets/sfondo_azienda.png" id="1_aehsc"]
 
 [node name="AziendaTotale" type="Node"]
 script = ExtResource("1_7xsbt")
