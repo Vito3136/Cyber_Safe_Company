@@ -1,9 +1,9 @@
 extends Sprite2D
 
-@onready var anim_macchinario = $AnimationMacchinarioLampadine
-@onready var anim_lampadina = $Lampadina/AnimationLampadina
+@onready var anim_macchinario = $AnimationMacchinarioTelecamere
+@onready var anim_telecamera = $Telecamera/AnimationTelecamera
 @onready var anim_lucchetto = $Lock/AnimationLucchetto
-@onready var lampadina = $Lampadina
+@onready var telecamera = $Telecamera
 @onready var lucchetto = $Lock
 
 # Variabile per sapere se è bloccato (utile per impedire il click)
@@ -18,7 +18,7 @@ func _ready() -> void:
 func start_produzione():
 	anim_lucchetto.play("scomparsa")
 	anim_macchinario.play("produzione")
-	anim_lampadina.play("spostamento_lampadina")
+	anim_telecamera.play("spostamento_telecamera")
 	await anim_lucchetto.animation_finished # Aspetta che finisca
 	lucchetto.visible = false
 
@@ -26,7 +26,7 @@ func sblocca_macchinario():
 	is_locked = false
 	# Mettendo il materiale a "null", rimuoviamo lo shader e torna l'immagine originale
 	material = null 
-	lampadina.visible = true
+	telecamera.visible = true
 	start_produzione()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

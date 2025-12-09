@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://cn3tq36rlka2o"]
+[gd_scene load_steps=36 format=3 uid="uid://cn3tq36rlka2o"]
 
 [ext_resource type="Texture2D" uid="uid://rtyy0y4onbys" path="res://assets/sala_macchinari_vuota.png" id="1_a40bb"]
 [ext_resource type="Texture2D" uid="uid://cbj61q243olhn" path="res://assets/macchinario_singolo.png" id="2_skoty"]
@@ -8,6 +8,8 @@
 [ext_resource type="Script" uid="uid://daqd73tqqk4mu" path="res://scripts/macchinario_lampadine.gd" id="5_xf5l4"]
 [ext_resource type="Texture2D" uid="uid://do2o6glaeiljs" path="res://assets/lampadina.png" id="7_yt6by"]
 [ext_resource type="Texture2D" uid="uid://cx23n6mb73cgr" path="res://assets/lock.png" id="8_gvjn5"]
+[ext_resource type="Script" uid="uid://cwuyrf71w4yuh" path="res://scripts/macchinario_telecamere.gd" id="9_g5jtv"]
+[ext_resource type="Texture2D" uid="uid://yayoh2nh287r" path="res://assets/telecamera.png" id="9_yq1a3"]
 
 [sub_resource type="Animation" id="Animation_facy8"]
 length = 0.001
@@ -45,7 +47,7 @@ tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "handle_modes": PackedInt32Array(0, 2, 2),
-"points": PackedFloat32Array(0.34, -0.25, 0, 0.25, 0, 0.38, -0.041666668, -0.0066666654, 0, 0, 0.34, -0.041666668, 0.0066666654, 0, 0),
+"points": PackedFloat32Array(0.34, -0.25, 0, 0.25, 0, 0.35, -0.041666668, 0, 0.041666668, 0, 0.34, -0.041666668, 0.0066666654, 0, 0),
 "times": PackedFloat32Array(0, 0.25, 0.5)
 }
 tracks/1/type = "bezier"
@@ -56,7 +58,7 @@ tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "handle_modes": PackedInt32Array(0, 2, 2),
-"points": PackedFloat32Array(0.34, -0.25, 0, 0.25, 0, 0.38, -0.041666668, -0.0066666654, 0, 0, 0.34, -0.041666668, 0.0066666654, 0, 0),
+"points": PackedFloat32Array(0.34, -0.25, 0, 0.25, 0, 0.35, -0.041666668, 0, 0.041666668, 0, 0.34, -0.041666668, 0.0066666654, 0, 0),
 "times": PackedFloat32Array(0, 0.25, 0.5)
 }
 
@@ -251,7 +253,7 @@ tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "handle_modes": PackedInt32Array(0, 2, 2),
-"points": PackedFloat32Array(0.34, -0.25, 0, 0.25, 0, 0.36, -0.041666668, 0, 0.041666668, 0, 0.34, -0.041666668, -0.0033333353, 0, 0),
+"points": PackedFloat32Array(0.34, -0.25, 0, 0.25, 0, 0.35, -0.041666668, 0, 0.041666668, 0, 0.34, -0.041666668, -0.0033333353, 0, 0),
 "times": PackedFloat32Array(0, 0.25, 0.5)
 }
 tracks/1/type = "bezier"
@@ -262,7 +264,7 @@ tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "handle_modes": PackedInt32Array(0, 2, 2),
-"points": PackedFloat32Array(0.34, -0.25, 0, 0.25, 0, 0.36, -0.041666668, 0, 0.041666668, 0, 0.34, -0.041666668, -0.0033333353, 0, 0),
+"points": PackedFloat32Array(0.34, -0.25, 0, 0.25, 0, 0.35, -0.041666668, 0, 0.041666668, 0, 0.34, -0.041666668, -0.0033333353, 0, 0),
 "times": PackedFloat32Array(0, 0.25, 0.5)
 }
 
@@ -518,6 +520,309 @@ _data = {
 &"scomparsa": SubResource("Animation_pp45o")
 }
 
+[sub_resource type="Animation" id="Animation_yftob"]
+resource_name = "produzione"
+loop_mode = 1
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 2, 2),
+"points": PackedFloat32Array(0.34, -0.25, 0, 0.25, 0, 0.35, -0.041666668, -0.0016666651, 0, 0, 0.34, -0.041666668, 0.0016666651, 0, 0),
+"times": PackedFloat32Array(0, 0.25, 0.5)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 2, 2),
+"points": PackedFloat32Array(0.34, -0.25, 0, 0.25, 0, 0.35, -0.041666668, -0.0016666651, 0, 0, 0.34, -0.041666668, 0.0016666651, 0, 0),
+"times": PackedFloat32Array(0, 0.25, 0.5)
+}
+
+[sub_resource type="Animation" id="Animation_wybjb"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.34, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.34, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dwnkl"]
+_data = {
+&"RESET": SubResource("Animation_wybjb"),
+&"produzione": SubResource("Animation_yftob")
+}
+
+[sub_resource type="Animation" id="Animation_dwnkl"]
+resource_name = "spostamento_telecamera"
+length = 3.0
+loop_mode = 1
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 2, 2),
+"points": PackedFloat32Array(64.705696, -0.25, 0, 0.25, 0, -317.64722, -0.33333334, 63.725487, 0, 0, -347.059, -0.16666667, 4.9019623, 0, 0),
+"times": PackedFloat32Array(0, 2, 3)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 2, 2),
+"points": PackedFloat32Array(-29.411762, -0.25, 0, 0.25, 0, 173.5294, -0.33333334, -33.82353, 0, 0, 344.1176, -0.16666667, -28.43137, 0, 0),
+"times": PackedFloat32Array(0, 2, 3)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:modulate:r")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 2, 2),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.33333334, 0, 0, 0, 1, -0.16666667, 0, 0, 0),
+"times": PackedFloat32Array(0, 2, 3)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:modulate:g")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 2, 2),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.33333334, 0, 0, 0, 1, -0.16666667, 0, 0, 0),
+"times": PackedFloat32Array(0, 2, 3)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:modulate:b")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0, 2, 2),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.33333334, 0, 0, 0, 1, -0.16666667, 0, 0, 0),
+"times": PackedFloat32Array(0, 2, 3)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath(".:modulate:a")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0, 2, 2),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.33333334, 0, 0, 0, 0.47843137, -0.16666667, 0.086928114, 0, 0),
+"times": PackedFloat32Array(0, 2, 3)
+}
+
+[sub_resource type="Animation" id="Animation_7aw4a"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(64.705696, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-29.411762, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:modulate:r")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:modulate:g")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:modulate:b")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath(".:modulate:a")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4d3rf"]
+_data = {
+&"RESET": SubResource("Animation_7aw4a"),
+&"spostamento_telecamera": SubResource("Animation_dwnkl")
+}
+
+[sub_resource type="Animation" id="Animation_4d3rf"]
+resource_name = "scomparsa"
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate:r")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.083333336, 0, 0, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate:g")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.083333336, 0, 0, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:modulate:b")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.083333336, 0, 0, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:modulate:a")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(0.7490196, -0.25, 0, 0.25, 0, 0, -0.083333336, 0.12483661, 0, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+
+[sub_resource type="Animation" id="Animation_t0fyw"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate:r")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate:g")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:modulate:b")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:modulate:a")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.7490196, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_sk2ha"]
+_data = {
+&"RESET": SubResource("Animation_t0fyw"),
+&"scomparsa": SubResource("Animation_4d3rf")
+}
+
 [node name="SalaMacchinari" type="Node2D"]
 
 [node name="TextureRect" type="TextureRect" parent="."]
@@ -532,7 +837,7 @@ scale = Vector2(0.34, 0.34)
 texture = ExtResource("2_skoty")
 script = ExtResource("3_weua7")
 
-[node name="AnimationMacchinario" type="AnimationPlayer" parent="MacchinarioPrese"]
+[node name="AnimationMacchinarioPrese" type="AnimationPlayer" parent="MacchinarioPrese"]
 libraries = {
 &"": SubResource("AnimationLibrary_yt6by")
 }
@@ -553,7 +858,7 @@ scale = Vector2(0.34, 0.34)
 texture = ExtResource("2_skoty")
 script = ExtResource("5_xf5l4")
 
-[node name="AnimationMacchinario" type="AnimationPlayer" parent="MacchinarioLampadine"]
+[node name="AnimationMacchinarioLampadine" type="AnimationPlayer" parent="MacchinarioLampadine"]
 libraries = {
 &"": SubResource("AnimationLibrary_g5jtv")
 }
@@ -580,14 +885,39 @@ libraries = {
 
 [node name="MacchinarioTelecamere" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_yt6by")
-position = Vector2(815.00006, 317)
+position = Vector2(821.00006, 299)
 scale = Vector2(0.34, 0.34)
 texture = ExtResource("2_skoty")
 flip_h = true
+script = ExtResource("9_g5jtv")
+
+[node name="AnimationMacchinarioTelecamere" type="AnimationPlayer" parent="MacchinarioTelecamere"]
+libraries = {
+&"": SubResource("AnimationLibrary_dwnkl")
+}
+
+[node name="Telecamera" type="Sprite2D" parent="MacchinarioTelecamere"]
+visible = false
+position = Vector2(64.705696, -29.411762)
+texture = ExtResource("9_yq1a3")
+
+[node name="AnimationTelecamera" type="AnimationPlayer" parent="MacchinarioTelecamere/Telecamera"]
+libraries = {
+&"": SubResource("AnimationLibrary_4d3rf")
+}
+
+[node name="Lock" type="Sprite2D" parent="MacchinarioTelecamere"]
+modulate = Color(1, 1, 1, 0.7490196)
+texture = ExtResource("8_gvjn5")
+
+[node name="AnimationLucchetto" type="AnimationPlayer" parent="MacchinarioTelecamere/Lock"]
+libraries = {
+&"": SubResource("AnimationLibrary_sk2ha")
+}
 
 [node name="MacchinarioSerrature" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_yt6by")
-position = Vector2(958.00006, 430)
+position = Vector2(962.00006, 442.00003)
 scale = Vector2(0.34, 0.34)
 texture = ExtResource("2_skoty")
 flip_h = true

@@ -1,6 +1,6 @@
 extends Sprite2D
 
-@onready var anim_macchinario = $AnimationMacchinario
+@onready var anim_macchinario = $AnimationMacchinarioPrese
 @onready var anim_presa = $Presa/AnimationPresa
 
 
