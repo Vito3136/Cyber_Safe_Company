@@ -1,5 +1,8 @@
 extends Node
 
+# Questa variabile ora vivrà per sempre finché il gioco è aperto
+var monete : int = 0
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

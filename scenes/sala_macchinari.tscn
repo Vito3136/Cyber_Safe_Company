@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://cn3tq36rlka2o"]
+[gd_scene load_steps=64 format=3 uid="uid://cn3tq36rlka2o"]
 
 [ext_resource type="Texture2D" uid="uid://rtyy0y4onbys" path="res://assets/sala_macchinari_vuota.png" id="1_a40bb"]
 [ext_resource type="Texture2D" uid="uid://cbj61q243olhn" path="res://assets/macchinario_singolo.png" id="2_skoty"]
@@ -6,10 +6,17 @@
 [ext_resource type="Texture2D" uid="uid://7r1tlhrhml45" path="res://assets/presa.png" id="4_weua7"]
 [ext_resource type="Shader" uid="uid://cm71byq7p8uf7" path="res://assets/macchinario_bloccato.gdshader" id="5_facy8"]
 [ext_resource type="Script" uid="uid://daqd73tqqk4mu" path="res://scripts/macchinario_lampadine.gd" id="5_xf5l4"]
+[ext_resource type="Texture2D" uid="uid://cj1g0gppyqij7" path="res://assets/scatolo_pieno_prese.png" id="5_yftob"]
+[ext_resource type="Texture2D" uid="uid://cxyuftvnax7dp" path="res://assets/scatolo_vuoto.png" id="6_wybjb"]
 [ext_resource type="Texture2D" uid="uid://do2o6glaeiljs" path="res://assets/lampadina.png" id="7_yt6by"]
 [ext_resource type="Texture2D" uid="uid://cx23n6mb73cgr" path="res://assets/lock.png" id="8_gvjn5"]
 [ext_resource type="Script" uid="uid://cwuyrf71w4yuh" path="res://scripts/macchinario_telecamere.gd" id="9_g5jtv"]
+[ext_resource type="Texture2D" uid="uid://be6x7tkwv5k3q" path="res://assets/scatolo_pieno_lampadine.png" id="9_wybjb"]
 [ext_resource type="Texture2D" uid="uid://yayoh2nh287r" path="res://assets/telecamera.png" id="9_yq1a3"]
+[ext_resource type="Script" uid="uid://bvkec6jotbwfa" path="res://scripts/macchinario_serrature.gd" id="11_pp45o"]
+[ext_resource type="Texture2D" uid="uid://dcjrcrqvhu702" path="res://assets/serratura.png" id="12_7d4gf"]
+[ext_resource type="Texture2D" uid="uid://c3nxvv2a00dcr" path="res://assets/scatolo_pieno_telecamere.png" id="13_dwnkl"]
+[ext_resource type="Texture2D" uid="uid://ctjmef7omm4vn" path="res://assets/scatolo_pieno_serrature.png" id="16_7aw4a"]
 
 [sub_resource type="Animation" id="Animation_facy8"]
 length = 0.001
@@ -212,6 +219,63 @@ tracks/5/keys = {
 _data = {
 &"RESET": SubResource("Animation_gvjn5"),
 &"spostamento_presa": SubResource("Animation_yt6by")
+}
+
+[sub_resource type="Animation" id="Animation_dtpjo"]
+resource_name = "scatolo_pieno"
+loop_mode = 1
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 2, 2),
+"points": PackedFloat32Array(0.2, -0.25, 0, 0.25, 0, 0.22, -0.041666668, -0.0033333327, 0, 0, 0.2, -0.041666668, 0.0033333327, 0, 0),
+"times": PackedFloat32Array(0, 0.25, 0.5)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 2, 2),
+"points": PackedFloat32Array(0.2, -0.25, 0, 0.25, 0, 0.22, -0.041666668, -0.0033333327, 0, 0, 0.2, -0.041666668, 0.0033333327, 0, 0),
+"times": PackedFloat32Array(0, 0.25, 0.5)
+}
+
+[sub_resource type="Animation" id="Animation_wcp56"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.2, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.2, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ltnkg"]
+_data = {
+&"RESET": SubResource("Animation_wcp56"),
+&"scatolo_pieno": SubResource("Animation_dtpjo")
 }
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_yt6by"]
@@ -520,6 +584,63 @@ _data = {
 &"scomparsa": SubResource("Animation_pp45o")
 }
 
+[sub_resource type="Animation" id="Animation_d0vy7"]
+resource_name = "scatolo_pieno"
+loop_mode = 1
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 2, 2),
+"points": PackedFloat32Array(0.2, -0.25, 0, 0.25, 0, 0.22, -0.041666668, -0.0033333327, 0, 0, 0.2, -0.041666668, 0.0033333327, 0, 0),
+"times": PackedFloat32Array(0, 0.25, 0.5)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 2, 2),
+"points": PackedFloat32Array(0.2, -0.25, 0, 0.25, 0, 0.22, -0.041666668, -0.0033333327, 0, 0, 0.2, -0.041666668, 0.0033333327, 0, 0),
+"times": PackedFloat32Array(0, 0.25, 0.5)
+}
+
+[sub_resource type="Animation" id="Animation_1ptox"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.2, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.2, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_es45h"]
+_data = {
+&"RESET": SubResource("Animation_1ptox"),
+&"scatolo_pieno": SubResource("Animation_d0vy7")
+}
+
 [sub_resource type="Animation" id="Animation_yftob"]
 resource_name = "produzione"
 loop_mode = 1
@@ -823,6 +944,423 @@ _data = {
 &"scomparsa": SubResource("Animation_4d3rf")
 }
 
+[sub_resource type="Animation" id="Animation_es45h"]
+resource_name = "scatolo_pieno"
+loop_mode = 1
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 2, 2),
+"points": PackedFloat32Array(0.2, -0.25, 0, 0.25, 0, 0.22, -0.041666668, -0.0033333327, 0, 0, 0.2, -0.041666668, 0.0033333327, 0, 0),
+"times": PackedFloat32Array(0, 0.25, 0.5)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 2, 2),
+"points": PackedFloat32Array(0.2, -0.25, 0, 0.25, 0, 0.22, -0.041666668, -0.0033333327, 0, 0, 0.2, -0.041666668, 0.0033333327, 0, 0),
+"times": PackedFloat32Array(0, 0.25, 0.5)
+}
+
+[sub_resource type="Animation" id="Animation_6us0v"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.2, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.2, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_a4u1i"]
+_data = {
+&"RESET": SubResource("Animation_6us0v"),
+&"scatolo_pieno": SubResource("Animation_es45h")
+}
+
+[sub_resource type="Animation" id="Animation_sk2ha"]
+resource_name = "produzione"
+loop_mode = 1
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 2, 2),
+"points": PackedFloat32Array(0.34, -0.25, 0, 0.25, 0, 0.35, -0.041666668, -0.0016666651, 0, 0, 0.34, -0.041666668, 0.0016666651, 0, 0),
+"times": PackedFloat32Array(0, 0.25, 0.5)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 2, 2),
+"points": PackedFloat32Array(0.34, -0.25, 0, 0.25, 0, 0.35, -0.041666668, -0.0016666651, 0, 0, 0.34, -0.041666668, 0.0016666651, 0, 0),
+"times": PackedFloat32Array(0, 0.25, 0.5)
+}
+
+[sub_resource type="Animation" id="Animation_q81bv"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.34, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.34, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dtpjo"]
+_data = {
+&"RESET": SubResource("Animation_q81bv"),
+&"produzione": SubResource("Animation_sk2ha")
+}
+
+[sub_resource type="Animation" id="Animation_wa7om"]
+resource_name = "spostamento_serratura"
+length = 3.0
+loop_mode = 1
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 2, 2),
+"points": PackedFloat32Array(70.58804, -0.25, 0, 0.25, 0, -314.70602, -0.33333334, 64.21568, 0, 0, -341.1766, -0.16666667, 4.4117637, 0, 0),
+"times": PackedFloat32Array(0, 2, 3)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 2, 2),
+"points": PackedFloat32Array(-32.353027, -0.25, 0, 0.25, 0, 170.58813, -0.33333334, -33.82353, 0, 0, 352.94104, -0.16666667, -30.39215, 0, 0),
+"times": PackedFloat32Array(0, 2, 3)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:modulate:r")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 2, 2),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.33333334, 0, 0, 0, 1, -0.16666667, 0, 0, 0),
+"times": PackedFloat32Array(0, 2, 3)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:modulate:g")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 2, 2),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.33333334, 0, 0, 0, 1, -0.16666667, 0, 0, 0),
+"times": PackedFloat32Array(0, 2, 3)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:modulate:b")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0, 2, 2),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.33333334, 0, 0, 0, 1, -0.16666667, 0, 0, 0),
+"times": PackedFloat32Array(0, 2, 3)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath(".:modulate:a")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0, 2, 2),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.33333334, 0, 0, 0, 0, -0.16666667, 0.16666667, 0, 0),
+"times": PackedFloat32Array(0, 2, 3)
+}
+
+[sub_resource type="Animation" id="Animation_rjl8k"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(70.58804, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-32.353027, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:modulate:r")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:modulate:g")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:modulate:b")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath(".:modulate:a")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wcp56"]
+_data = {
+&"RESET": SubResource("Animation_rjl8k"),
+&"spostamento_serratura": SubResource("Animation_wa7om")
+}
+
+[sub_resource type="Animation" id="Animation_ltnkg"]
+resource_name = "scomparsa"
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate:r")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.083333336, 0, 0, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate:g")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.083333336, 0, 0, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:modulate:b")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.083333336, 0, 0, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:modulate:a")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(0.7490196, -0.25, 0, 0.25, 0, 0, -0.083333336, 0.12483661, 0, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+
+[sub_resource type="Animation" id="Animation_fxfi2"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate:r")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate:g")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:modulate:b")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:modulate:a")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.7490196, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_d0vy7"]
+_data = {
+&"RESET": SubResource("Animation_fxfi2"),
+&"scomparsa": SubResource("Animation_ltnkg")
+}
+
+[sub_resource type="Animation" id="Animation_a4u1i"]
+resource_name = "scatolo_pieno"
+loop_mode = 1
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 2, 2),
+"points": PackedFloat32Array(0.2, -0.25, 0, 0.25, 0, 0.22, -0.041666668, -0.0033333327, 0, 0, 0.2, -0.041666668, 0.0033333327, 0, 0),
+"times": PackedFloat32Array(0, 0.25, 0.5)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 2, 2),
+"points": PackedFloat32Array(0.2, -0.25, 0, 0.25, 0, 0.22, -0.041666668, -0.0033333327, 0, 0, 0.2, -0.041666668, 0.0033333327, 0, 0),
+"times": PackedFloat32Array(0, 0.25, 0.5)
+}
+
+[sub_resource type="Animation" id="Animation_5t1sr"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.2, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.2, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kfu22"]
+_data = {
+&"RESET": SubResource("Animation_5t1sr"),
+&"scatolo_pieno": SubResource("Animation_a4u1i")
+}
+
 [node name="SalaMacchinari" type="Node2D"]
 
 [node name="TextureRect" type="TextureRect" parent="."]
@@ -830,12 +1368,17 @@ offset_right = 1280.0
 offset_bottom = 720.0
 texture = ExtResource("1_a40bb")
 expand_mode = 1
+metadata/_edit_use_anchors_ = true
 
-[node name="MacchinarioPrese" type="Sprite2D" parent="."]
+[node name="MacchinarioPrese" type="Sprite2D" parent="." node_paths=PackedStringArray("scatolo_prese", "anim_scatolo")]
 position = Vector2(345.00003, 410.00003)
 scale = Vector2(0.34, 0.34)
 texture = ExtResource("2_skoty")
 script = ExtResource("3_weua7")
+texture_vuota = ExtResource("6_wybjb")
+texture_piena = ExtResource("5_yftob")
+scatolo_prese = NodePath("../ScatoloPrese")
+anim_scatolo = NodePath("../ScatoloPrese/AnimationScatolo")
 
 [node name="AnimationMacchinarioPrese" type="AnimationPlayer" parent="MacchinarioPrese"]
 libraries = {
@@ -851,12 +1394,26 @@ libraries = {
 &"": SubResource("AnimationLibrary_yq1a3")
 }
 
-[node name="MacchinarioLampadine" type="Sprite2D" parent="."]
+[node name="ScatoloPrese" type="Sprite2D" parent="."]
+position = Vector2(490, 543)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("6_wybjb")
+
+[node name="AnimationScatolo" type="AnimationPlayer" parent="ScatoloPrese"]
+libraries = {
+&"": SubResource("AnimationLibrary_ltnkg")
+}
+
+[node name="MacchinarioLampadine" type="Sprite2D" parent="." node_paths=PackedStringArray("scatolo_lampadine", "anim_scatolo")]
 material = SubResource("ShaderMaterial_yt6by")
-position = Vector2(497, 277)
+position = Vector2(501, 248)
 scale = Vector2(0.34, 0.34)
 texture = ExtResource("2_skoty")
 script = ExtResource("5_xf5l4")
+texture_vuota = ExtResource("6_wybjb")
+texture_piena = ExtResource("9_wybjb")
+scatolo_lampadine = NodePath("../ScatoloLampadine")
+anim_scatolo = NodePath("../ScatoloLampadine/AnimationScatolo")
 
 [node name="AnimationMacchinarioLampadine" type="AnimationPlayer" parent="MacchinarioLampadine"]
 libraries = {
@@ -873,23 +1430,38 @@ libraries = {
 &"": SubResource("AnimationLibrary_pp45o")
 }
 
-[node name="Lock" type="Sprite2D" parent="MacchinarioLampadine"]
+[node name="Lucchetto" type="Sprite2D" parent="MacchinarioLampadine"]
 modulate = Color(1, 1, 1, 0.7490196)
 position = Vector2(-17.647057, -2.9411762)
 texture = ExtResource("8_gvjn5")
 
-[node name="AnimationLucchetto" type="AnimationPlayer" parent="MacchinarioLampadine/Lock"]
+[node name="AnimationLucchetto" type="AnimationPlayer" parent="MacchinarioLampadine/Lucchetto"]
 libraries = {
 &"": SubResource("AnimationLibrary_yftob")
 }
 
-[node name="MacchinarioTelecamere" type="Sprite2D" parent="."]
+[node name="ScatoloLampadine" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_yt6by")
-position = Vector2(821.00006, 299)
+position = Vector2(647, 374)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("6_wybjb")
+
+[node name="AnimationScatolo" type="AnimationPlayer" parent="ScatoloLampadine"]
+libraries = {
+&"": SubResource("AnimationLibrary_es45h")
+}
+
+[node name="MacchinarioTelecamere" type="Sprite2D" parent="." node_paths=PackedStringArray("scatolo_telecamere", "anim_scatolo")]
+material = SubResource("ShaderMaterial_yt6by")
+position = Vector2(877.00006, 320)
 scale = Vector2(0.34, 0.34)
 texture = ExtResource("2_skoty")
 flip_h = true
 script = ExtResource("9_g5jtv")
+texture_vuota = ExtResource("6_wybjb")
+texture_piena = ExtResource("13_dwnkl")
+scatolo_telecamere = NodePath("../ScatoloTelecamere")
+anim_scatolo = NodePath("../ScatoloTelecamere/AnimationScatolo")
 
 [node name="AnimationMacchinarioTelecamere" type="AnimationPlayer" parent="MacchinarioTelecamere"]
 libraries = {
@@ -906,18 +1478,69 @@ libraries = {
 &"": SubResource("AnimationLibrary_4d3rf")
 }
 
-[node name="Lock" type="Sprite2D" parent="MacchinarioTelecamere"]
+[node name="Lucchetto" type="Sprite2D" parent="MacchinarioTelecamere"]
 modulate = Color(1, 1, 1, 0.7490196)
 texture = ExtResource("8_gvjn5")
 
-[node name="AnimationLucchetto" type="AnimationPlayer" parent="MacchinarioTelecamere/Lock"]
+[node name="AnimationLucchetto" type="AnimationPlayer" parent="MacchinarioTelecamere/Lucchetto"]
 libraries = {
 &"": SubResource("AnimationLibrary_sk2ha")
 }
 
-[node name="MacchinarioSerrature" type="Sprite2D" parent="."]
+[node name="ScatoloTelecamere" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_yt6by")
-position = Vector2(962.00006, 442.00003)
+position = Vector2(733, 447.99997)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("6_wybjb")
+
+[node name="AnimationScatolo" type="AnimationPlayer" parent="ScatoloTelecamere"]
+libraries = {
+&"": SubResource("AnimationLibrary_a4u1i")
+}
+
+[node name="MacchinarioSerrature" type="Sprite2D" parent="." node_paths=PackedStringArray("scatolo_serrature", "anim_scatolo")]
+material = SubResource("ShaderMaterial_yt6by")
+position = Vector2(1007.00006, 514)
 scale = Vector2(0.34, 0.34)
 texture = ExtResource("2_skoty")
 flip_h = true
+script = ExtResource("11_pp45o")
+texture_vuota = ExtResource("6_wybjb")
+texture_piena = ExtResource("16_7aw4a")
+scatolo_serrature = NodePath("../ScatoloSerrature")
+anim_scatolo = NodePath("../ScatoloSerrature/AnimationScatolo")
+
+[node name="AnimationMacchinarioSerrature" type="AnimationPlayer" parent="MacchinarioSerrature"]
+libraries = {
+&"": SubResource("AnimationLibrary_dtpjo")
+}
+
+[node name="Serratura" type="Sprite2D" parent="MacchinarioSerrature"]
+position = Vector2(70.58804, -32.353027)
+scale = Vector2(0.19, 0.19)
+texture = ExtResource("12_7d4gf")
+
+[node name="AnimationSerratura" type="AnimationPlayer" parent="MacchinarioSerrature/Serratura"]
+libraries = {
+&"": SubResource("AnimationLibrary_wcp56")
+}
+
+[node name="Lucchetto" type="Sprite2D" parent="MacchinarioSerrature"]
+modulate = Color(1, 1, 1, 0.7490196)
+texture = ExtResource("8_gvjn5")
+
+[node name="AnimationLucchetto" type="AnimationPlayer" parent="MacchinarioSerrature/Lucchetto"]
+libraries = {
+&"": SubResource("AnimationLibrary_d0vy7")
+}
+
+[node name="ScatoloSerrature" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_yt6by")
+position = Vector2(863, 642)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("6_wybjb")
+
+[node name="AnimationScatolo" type="AnimationPlayer" parent="ScatoloSerrature"]
+libraries = {
+&"": SubResource("AnimationLibrary_kfu22")
+}
