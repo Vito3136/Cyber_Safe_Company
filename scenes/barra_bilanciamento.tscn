@@ -1,0 +1,48 @@
+[gd_scene load_steps=4 format=3 uid="uid://bkqncjsju08gt"]
+
+[ext_resource type="Script" uid="uid://bhxomb15s8csu" path="res://scripts/barra_bilanciamento.gd" id="1_1btxe"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sqgdg"]
+bg_color = Color(0.9616985, 0.405895, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_erxft"]
+bg_color = Color(0, 0.6250582, 0.9979095, 1)
+
+[node name="BarraBilanciamento" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1btxe")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(20, 20)
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="BarraProduzione" type="ProgressBar" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/fill = SubResource("StyleBoxFlat_sqgdg")
+max_value = 10.0
+fill_mode = 1
+show_percentage = false
+
+[node name="BarraSicurezza" type="ProgressBar" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/fill = SubResource("StyleBoxFlat_erxft")
+max_value = 10.0
+show_percentage = false
+
+[node name="LineaCentrale" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 398.0
+offset_top = 18.0
+offset_right = 400.0
+offset_bottom = 58.0
