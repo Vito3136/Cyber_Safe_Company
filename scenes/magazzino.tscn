@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://jmr5svlom0na"]
+[gd_scene load_steps=13 format=3 uid="uid://bgcj42wgirg2m"]
 
 [ext_resource type="Texture2D" uid="uid://c3dqf8vm6icar" path="res://assets/magazzino.png" id="1_3c56b"]
 [ext_resource type="Texture2D" uid="uid://00cmxhtdt01q" path="res://assets/camion.png" id="2_1mpyn"]
@@ -8,6 +8,53 @@
 [ext_resource type="Texture2D" uid="uid://do2o6glaeiljs" path="res://assets/lampadina.png" id="6_twpj7"]
 [ext_resource type="Texture2D" uid="uid://yayoh2nh287r" path="res://assets/telecamera.png" id="7_m1o7u"]
 [ext_resource type="Texture2D" uid="uid://dcjrcrqvhu702" path="res://assets/serratura.png" id="8_afat4"]
+
+[sub_resource type="Animation" id="Animation_6ef2c"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(639, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(278, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:scale:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.5, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:scale:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.5, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
 
 [sub_resource type="Animation" id="Animation_2cbxb"]
 resource_name = "spedizione"
@@ -56,53 +103,6 @@ tracks/3/keys = {
 "handle_modes": PackedInt32Array(0, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2),
 "points": PackedFloat32Array(0.5, -0.25, 0, 0.25, 0, 0.51, -0.016666668, 0, 0.016666668, 0, 0.5, -0.016666668, 0.0016666652, 0, 0, 0.51, -0.01666667, 0, 0.016666666, 0, 0.5, -0.016666666, 0.0016666651, 0, 0, 0.51, -0.016666666, 0, 0.016666671, 0, 0.5, -0.016666671, 0.0016666652, 0, 0, 0.51, -0.016666662, 0, 0.016666671, 0, 0.5, -0.016666671, 0.0016666652, 0, 0, 0.51, -0.016666662, -0.0016666652, 0, 0, 0.5, -0.016666671, 0.0016666652, 0, 0, 0.52, -0.016666671, -0.0033333304, 0, 0, 0.5, -0.016666671, 0.0033333304, 0, 0, 0.51, -0.01666665, 0, 0.016666671, 0, 0.5, -0.016666671, 0.0033333304, 0, 0, 0.51, -0.016666671, 0, 0.016666671, 0, 0.5, -0.016666671, 0.0033333304, 0, 0, 0.51, -0.016666671, 0, 0.01666665, 0, 0.5, -0.01666665, 0.0033333302, 0, 0, 0.51, -0.016666671, -0.0016666652, 0, 0, 0.5, -0.18333334, 0.0016666651, 0, 0, 0.51, -0.01666665, -0.0016666651, 0, 0, 0.5, -0.016666692, 0.0016666652, 0, 0, 0.51, -0.01666665, -0.0016666651, 0, 0, 0.5, -0.016666692, 0.0016666652, 0, 0, 0.51, -0.01666665, -0.0016666651, 0, 0, 0.5, -0.01666665, 0.0016666651, 0, 0, 0.51, -0.016666692, -0.0016666652, 0, 0, 0.5, -0.01666665, 0.0016666651, 0, 0, 0.51, -0.016666692, -0.0016666652, 0, 0, 0.5, -0.01666665, 0.0016666651, 0, 0, 0.51, -0.01666665, -0.0016666651, 0, 0, 0.5, -0.01666665, 0.0016666651, 0, 0, 0.51, -0.01666673, -0.0016666652, 0, 0, 0.5, -0.01666665, 0.0016666651, 0, 0, 0.51, -0.01666665, -0.0016666651, 0, 0, 0.5, -0.01666665, 0.0016666651, 0, 0, 0.51, -0.01666665, -0.0016666651, 0, 0, 0.5, -0.01666673, 0.0016666652, 0, 0, 0.51, -0.01666665, -0.0016666651, 0, 0, 0.5, -0.01666665, 0.0016666651, 0, 0),
 "times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 3, 3.1, 3.2, 3.3, 3.4, 3.5, 3.6, 3.7, 3.8, 3.9, 4, 4.1, 4.2, 4.3, 4.4, 4.5, 4.6, 4.7, 4.8, 4.9, 5)
-}
-
-[sub_resource type="Animation" id="Animation_6ef2c"]
-length = 0.001
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position:x")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(639, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/1/type = "bezier"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:position:y")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(278, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/2/type = "bezier"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath(".:scale:x")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(0.5, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/3/type = "bezier"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath(".:scale:y")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(0.5, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_b3jdw"]
@@ -209,7 +209,7 @@ scale = Vector2(2.2, 2.2)
 texture = ExtResource("7_m1o7u")
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
-position = Vector2(93.000015, 294)
+position = Vector2(84.99999, 293)
 scale = Vector2(0.17, 0.17)
 texture = ExtResource("4_4jjrj")
 
