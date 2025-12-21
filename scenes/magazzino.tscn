@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://jmr5svlom0na"]
+[gd_scene load_steps=13 format=3 uid="uid://bgcj42wgirg2m"]
 
 [ext_resource type="Texture2D" uid="uid://c3dqf8vm6icar" path="res://assets/magazzino.png" id="1_3c56b"]
 [ext_resource type="Texture2D" uid="uid://00cmxhtdt01q" path="res://assets/camion.png" id="2_1mpyn"]
@@ -209,7 +209,7 @@ scale = Vector2(2.2, 2.2)
 texture = ExtResource("7_m1o7u")
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
-position = Vector2(135.99998, 289)
+position = Vector2(84.99999, 293)
 scale = Vector2(0.17, 0.17)
 texture = ExtResource("4_4jjrj")
 
