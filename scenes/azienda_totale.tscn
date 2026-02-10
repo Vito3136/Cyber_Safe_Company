@@ -1,12 +1,36 @@
-[gd_scene load_steps=3 format=3 uid="uid://bqvr58ici2n8g"]
+[gd_scene format=3 uid="uid://bqvr58ici2n8g"]
 
 [ext_resource type="Script" uid="uid://bgc5gj00r15bv" path="res://scripts/azienda_totale.gd" id="1_7xsbt"]
 [ext_resource type="Texture2D" uid="uid://bdyhqnn6ll6nd" path="res://assets/sfondo_azienda.png" id="1_aehsc"]
 
-[node name="AziendaTotale" type="Node"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cmwo7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_w82mw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kfxbu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_g8wek"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7xsbt"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wnmqs"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_p68yv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jstmx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fvkph"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wqbxy"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8gqxk"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_n8h8t"]
+
+[node name="AziendaTotale" type="Node" unique_id=1517618168]
 script = ExtResource("1_7xsbt")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="Background" type="TextureRect" parent="." unique_id=2145789316]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -15,27 +39,98 @@ grow_vertical = 2
 texture = ExtResource("1_aehsc")
 expand_mode = 1
 
-[node name="GoSalaMacchinari" type="Button" parent="."]
+[node name="GoSalaMacchinari" type="Button" parent="." unique_id=308818624]
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_top = -358.0
+offset_top = -301.0
 offset_right = 429.0
-offset_bottom = -1.0
+offset_bottom = -59.0
 grow_vertical = 0
-flat = true
+mouse_default_cursor_shape = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_cmwo7")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_w82mw")
 
-[node name="GoSalaServer" type="Button" parent="."]
+[node name="GoSalaServer" type="Button" parent="." unique_id=44474802]
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -428.0
-offset_top = -358.0
+offset_top = -299.0
+offset_bottom = -59.0
 grow_horizontal = 0
 grow_vertical = 0
+mouse_default_cursor_shape = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_kfxbu")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_g8wek")
 flat = true
 
+[node name="GoMagazzino" type="Button" parent="." unique_id=1985968686]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -212.0
+offset_top = -299.0
+offset_right = 215.0
+offset_bottom = -59.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_default_cursor_shape = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_7xsbt")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_wnmqs")
+
+[node name="GoUffici" type="Button" parent="." unique_id=486574997]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -427.0
+offset_top = 57.0
+offset_bottom = 303.0
+grow_horizontal = 0
+mouse_default_cursor_shape = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_p68yv")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_jstmx")
+
+[node name="GoSalaRES" type="Button" parent="." unique_id=1186069451]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -213.0
+offset_top = 59.0
+offset_right = 215.0
+offset_bottom = 301.0
+grow_horizontal = 2
+mouse_default_cursor_shape = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_fvkph")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_wqbxy")
+
+[node name="GoSalaSiemSoc" type="Button" parent="." unique_id=815342759]
+offset_top = 59.0
+offset_right = 425.0
+offset_bottom = 300.0
+mouse_default_cursor_shape = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_8gqxk")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_n8h8t")
+
+[connection signal="button_down" from="GoSalaMacchinari" to="." method="_on_go_sala_macchinari_button_down"]
+[connection signal="button_up" from="GoSalaMacchinari" to="." method="_on_go_sala_macchinari_button_up"]
 [connection signal="pressed" from="GoSalaMacchinari" to="." method="_on_go_sala_macchinari_pressed"]
+[connection signal="button_down" from="GoSalaServer" to="." method="_on_go_sala_server_button_down"]
+[connection signal="button_up" from="GoSalaServer" to="." method="_on_go_sala_server_button_up"]
 [connection signal="pressed" from="GoSalaServer" to="." method="_on_go_sala_server_pressed"]
+[connection signal="button_down" from="GoMagazzino" to="." method="_on_go_magazzino_button_down"]
+[connection signal="button_up" from="GoMagazzino" to="." method="_on_go_magazzino_button_up"]
+[connection signal="pressed" from="GoMagazzino" to="." method="_on_go_magazzino_pressed"]
+[connection signal="button_down" from="GoUffici" to="." method="_on_go_uffici_button_down"]
+[connection signal="button_up" from="GoUffici" to="." method="_on_go_uffici_button_up"]
+[connection signal="pressed" from="GoUffici" to="." method="_on_go_uffici_pressed"]
+[connection signal="button_down" from="GoSalaRES" to="." method="_on_go_sala_res_button_down"]
+[connection signal="button_up" from="GoSalaRES" to="." method="_on_go_sala_res_button_up"]
+[connection signal="pressed" from="GoSalaRES" to="." method="_on_go_sala_res_pressed"]
+[connection signal="button_down" from="GoSalaSiemSoc" to="." method="_on_go_sala_siem_soc_button_down"]
+[connection signal="button_up" from="GoSalaSiemSoc" to="." method="_on_go_sala_siem_soc_button_up"]
+[connection signal="pressed" from="GoSalaSiemSoc" to="." method="_on_go_sala_siem_soc_pressed"]

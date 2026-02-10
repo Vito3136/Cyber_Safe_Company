@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://bq12dri5t046d"]
+
+[ext_resource type="Script" uid="uid://cnrb3kd7vldt6" path="res://scripts/uffici.gd" id="1_ar3c3"]
+[ext_resource type="Texture2D" uid="uid://c4vddtqfphhrj" path="res://assets/uffici.png" id="1_d3q56"]
+[ext_resource type="Texture2D" uid="uid://domp5y02302ig" path="res://assets/arrow_back.png" id="3_mokwy"]
+
+[node name="Uffici" type="Node2D" unique_id=1636616081]
+script = ExtResource("1_ar3c3")
+
+[node name="Background" type="TextureRect" parent="." unique_id=413872477]
+offset_right = 1280.0
+offset_bottom = 720.0
+texture = ExtResource("1_d3q56")
+expand_mode = 1
+
+[node name="BackLeftButton" type="TextureButton" parent="." unique_id=674050977]
+offset_left = 20.0
+offset_top = -5.0
+offset_right = 110.0
+offset_bottom = 85.0
+pivot_offset = Vector2(45, 45)
+size_flags_horizontal = 4
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("3_mokwy")
+ignore_texture_size = true
+stretch_mode = 5
+
+[connection signal="pressed" from="BackLeftButton" to="." method="_on_back_left_button_pressed"]

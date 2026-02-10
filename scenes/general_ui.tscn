@@ -1,0 +1,34 @@
+[gd_scene load_steps=4 format=3 uid="uid://b3farfqb3q2ic"]
+
+[ext_resource type="Texture2D" uid="uid://dlp8x3gj5fumw" path="res://assets/contenitore_contatore.png" id="1_hswpa"]
+[ext_resource type="Texture2D" uid="uid://dxofyri3j43x5" path="res://assets/moneta.png" id="2_2efmg"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_2efmg"]
+font_size = 120
+
+[node name="GeneralUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ContenitoreMonete" type="Sprite2D" parent="."]
+position = Vector2(1205, 43)
+scale = Vector2(0.17, 0.17)
+texture = ExtResource("1_hswpa")
+
+[node name="Moneta" type="Sprite2D" parent="ContenitoreMonete"]
+position = Vector2(-211.75977, 0)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_2efmg")
+
+[node name="LabelContatorePrese" type="Label" parent="ContenitoreMonete"]
+offset_left = -123.52905
+offset_top = -88.23529
+offset_right = 287.47095
+offset_bottom = 76.76471
+text = "200000"
+label_settings = SubResource("LabelSettings_2efmg")
+metadata/_edit_use_anchors_ = true

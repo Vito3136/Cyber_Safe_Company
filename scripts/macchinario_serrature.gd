@@ -11,41 +11,58 @@ extends Sprite2D
 @export var scatolo_serrature : Node2D
 @export var anim_scatolo : AnimationPlayer
 
-# Variabile per sapere se è bloccato (utile per impedire il click)
-var is_locked = true
+@export var label_contatore_serrature : Label
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	# ovviamente rimuovere il wait seguente
-	await get_tree().create_timer(2.0).timeout
-	sblocca_macchinario()
-	await get_tree().create_timer(9.0).timeout
-	stop_produzione()
-	
+	if(Global.serrature_is_locked):
+		await get_tree().create_timer(2.0).timeout
+		anim_lucchetto.play("scomparsa")
+		await anim_lucchetto.animation_finished # Aspetta che finisca
+		Global.serrature_is_locked = false
+	material = null
+	scatolo_serrature.material = null
+	lucchetto.visible = false
+	Global.avvia_produzione_serrature()
+	start_produzione()
+	aggiorna_interfaccia(Global.serrature_in_sala_macchinari, Global.capienza_massima_serrature)
+	Global.produzione_serrature_aggiornata.connect(_aggiorna_produzione)
 
 func start_produzione():
-	anim_lucchetto.play("scomparsa")
-	anim_macchinario.play("produzione")
-	serratura.visible = true
-	anim_serratura.play("spostamento_serratura")
-	scatolo_serrature.texture = texture_vuota
-	await anim_lucchetto.animation_finished # Aspetta che finisca
-	lucchetto.visible = false
+	if(Global.serrature_is_full):
+		anim_macchinario.stop()
+		anim_serratura.stop()
+		serratura.visible = false
+		scatolo_serrature.texture = texture_piena
+		anim_scatolo.play("scatolo_pieno")
+	else:
+		serratura.visible = true
+		anim_macchinario.play("produzione")
+		var timer = Global.timer_produzione_serrature
+		var tempo_corrente = timer.wait_time - timer.time_left
+		anim_serratura.play("spostamento_serratura")
+		anim_serratura.seek(tempo_corrente, true)
+		scatolo_serrature.texture = texture_vuota
 
-func sblocca_macchinario():
-	is_locked = false
-	material = null # Mettendo il materiale a "null", rimuoviamo lo shader e torna l'immagine originale
-	scatolo_serrature.material = null
-	serratura.visible = true
-	start_produzione()
+func _aggiorna_produzione(_quantita, _totale):
+	aggiorna_interfaccia(_quantita, _totale)
+	if(_quantita == _totale):
+		anim_macchinario.stop()
+		anim_serratura.stop()
+		serratura.visible = false
+		scatolo_serrature.texture = texture_piena
+		anim_scatolo.play("scatolo_pieno")
+	else:
+		serratura.visible = true
+		anim_macchinario.play("produzione")
+		anim_serratura.play("spostamento_serratura")
+		scatolo_serrature.texture = texture_vuota
+		anim_scatolo.stop()
+		
 
-func stop_produzione():
-	anim_macchinario.stop()
-	anim_serratura.stop()
-	serratura.visible = false
-	scatolo_serrature.texture = texture_piena
-	anim_scatolo.play("scatolo_pieno")
+func aggiorna_interfaccia(quant, tot):
+	label_contatore_serrature.text = str(quant) + "/" + str(tot)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func _on_area_2d_input_event(viewport, event, shape_idx):
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+		Global.raccogli_tutto_serrature()

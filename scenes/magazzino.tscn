@@ -1,6 +1,7 @@
-[gd_scene load_steps=13 format=3 uid="uid://bgcj42wgirg2m"]
+[gd_scene format=3 uid="uid://jmr5svlom0na"]
 
 [ext_resource type="Texture2D" uid="uid://c3dqf8vm6icar" path="res://assets/magazzino.png" id="1_3c56b"]
+[ext_resource type="Script" uid="uid://cxe4joyi70dml" path="res://scripts/magazzino.gd" id="1_4pr28"]
 [ext_resource type="Texture2D" uid="uid://00cmxhtdt01q" path="res://assets/camion.png" id="2_1mpyn"]
 [ext_resource type="Texture2D" uid="uid://l07gxs4xpfsq" path="res://assets/parete_serranda.png" id="3_4pr28"]
 [ext_resource type="Texture2D" uid="uid://dlp8x3gj5fumw" path="res://assets/contenitore_contatore.png" id="4_4jjrj"]
@@ -8,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://do2o6glaeiljs" path="res://assets/lampadina.png" id="6_twpj7"]
 [ext_resource type="Texture2D" uid="uid://yayoh2nh287r" path="res://assets/telecamera.png" id="7_m1o7u"]
 [ext_resource type="Texture2D" uid="uid://dcjrcrqvhu702" path="res://assets/serratura.png" id="8_afat4"]
+[ext_resource type="Texture2D" uid="uid://domp5y02302ig" path="res://assets/arrow_back.png" id="10_4jjrj"]
 
 [sub_resource type="Animation" id="Animation_6ef2c"]
 length = 0.001
@@ -59,7 +61,6 @@ tracks/3/keys = {
 [sub_resource type="Animation" id="Animation_2cbxb"]
 resource_name = "spedizione"
 length = 5.0
-loop_mode = 1
 tracks/0/type = "bezier"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -114,9 +115,10 @@ _data = {
 [sub_resource type="LabelSettings" id="LabelSettings_6vkfg"]
 font_size = 120
 
-[node name="Magazzino" type="Node2D"]
+[node name="Magazzino" type="Node2D" unique_id=2089561043]
+script = ExtResource("1_4pr28")
 
-[node name="Background" type="TextureRect" parent="."]
+[node name="Background" type="TextureRect" parent="." unique_id=1101343227]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -128,17 +130,15 @@ texture = ExtResource("1_3c56b")
 expand_mode = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Camion" type="Sprite2D" parent="."]
+[node name="Camion" type="Sprite2D" parent="." unique_id=385548815]
 position = Vector2(639, 278)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_1mpyn")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Camion"]
-libraries = {
-&"": SubResource("AnimationLibrary_b3jdw")
-}
+[node name="AnimationSpedizioneCamion" type="AnimationPlayer" parent="Camion" unique_id=149933658]
+libraries/ = SubResource("AnimationLibrary_b3jdw")
 
-[node name="PareteSerranda" type="TextureRect" parent="."]
+[node name="PareteSerranda" type="TextureRect" parent="." unique_id=523157090]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -151,12 +151,12 @@ texture = ExtResource("3_4pr28")
 expand_mode = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="ContenitoreContatorePrese" type="Sprite2D" parent="."]
-position = Vector2(82.000015, 53.000004)
+[node name="ContenitoreContatorePrese" type="Sprite2D" parent="." unique_id=187568593]
+position = Vector2(81, 113)
 scale = Vector2(0.17, 0.17)
 texture = ExtResource("4_4jjrj")
 
-[node name="LabelContatorePrese" type="Label" parent="ContenitoreContatorePrese"]
+[node name="LabelContatorePrese" type="Label" parent="ContenitoreContatorePrese" unique_id=172012028]
 offset_left = -19.60776
 offset_top = -83.33347
 offset_right = 232.39224
@@ -165,67 +165,78 @@ text = "0"
 label_settings = SubResource("LabelSettings_6vkfg")
 metadata/_edit_use_anchors_ = true
 
-[node name="PresaContatore" type="Sprite2D" parent="ContenitoreContatorePrese"]
+[node name="PresaContatore" type="Sprite2D" parent="ContenitoreContatorePrese" unique_id=2023280425]
 position = Vector2(-166.6666, -0.0001469246)
 scale = Vector2(2.2, 2.2)
 texture = ExtResource("5_83x6b")
 
-[node name="ContenitoreContatoreLampadine" type="Sprite2D" parent="."]
-position = Vector2(87, 135)
+[node name="ContenitoreContatoreLampadine" type="Sprite2D" parent="." unique_id=697669916]
+position = Vector2(81, 183)
 scale = Vector2(0.17, 0.17)
 texture = ExtResource("4_4jjrj")
 
-[node name="LabelContatorePrese" type="Label" parent="ContenitoreContatoreLampadine"]
+[node name="LabelContatoreLampadine" type="Label" parent="ContenitoreContatoreLampadine" unique_id=2104892870]
 offset_left = -19.60776
 offset_top = -83.33347
 offset_right = 232.39224
 offset_bottom = 81.66653
-text = "0/10"
+text = "0"
 label_settings = SubResource("LabelSettings_6vkfg")
 metadata/_edit_use_anchors_ = true
 
-[node name="PresaContatore" type="Sprite2D" parent="ContenitoreContatoreLampadine"]
+[node name="LampadinaContatore" type="Sprite2D" parent="ContenitoreContatoreLampadine" unique_id=1614890053]
 position = Vector2(-166.66635, 4.901963)
 scale = Vector2(2.2, 2.2)
 texture = ExtResource("6_twpj7")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(85, 211.00002)
+[node name="ContenitoreContatoreTelecamere" type="Sprite2D" parent="." unique_id=393306929]
+position = Vector2(81, 253)
 scale = Vector2(0.17, 0.17)
 texture = ExtResource("4_4jjrj")
 
-[node name="Label" type="Label" parent="Sprite2D"]
+[node name="LabelContatoreTelecamere" type="Label" parent="ContenitoreContatoreTelecamere" unique_id=911654520]
 offset_left = -19.60776
 offset_top = -83.33347
 offset_right = 232.39224
 offset_bottom = 81.66653
-text = "0/10"
+text = "0"
 label_settings = SubResource("LabelSettings_6vkfg")
 metadata/_edit_use_anchors_ = true
 
-[node name="Sprite2D" type="Sprite2D" parent="Sprite2D"]
+[node name="TelecameraContatore" type="Sprite2D" parent="ContenitoreContatoreTelecamere" unique_id=687493025]
 position = Vector2(-166.66635, 4.901963)
 scale = Vector2(2.2, 2.2)
 texture = ExtResource("7_m1o7u")
 
-[node name="Sprite2D2" type="Sprite2D" parent="."]
-position = Vector2(84.99999, 293)
+[node name="ContenitoreContatoreSerrature" type="Sprite2D" parent="." unique_id=1085726526]
+position = Vector2(81, 323)
 scale = Vector2(0.17, 0.17)
 texture = ExtResource("4_4jjrj")
 
-[node name="Label" type="Label" parent="Sprite2D2"]
+[node name="LabelContatoreSerrature" type="Label" parent="ContenitoreContatoreSerrature" unique_id=793635277]
 offset_left = -19.60776
 offset_top = -83.33347
 offset_right = 232.39224
 offset_bottom = 81.66653
-text = "0/10"
+text = "0"
 label_settings = SubResource("LabelSettings_6vkfg")
 metadata/_edit_use_anchors_ = true
 
-[node name="Sprite2D" type="Sprite2D" parent="Sprite2D2"]
+[node name="SerraturaContatore" type="Sprite2D" parent="ContenitoreContatoreSerrature" unique_id=1661933198]
 position = Vector2(-166.66635, 4.901963)
 scale = Vector2(0.33, 0.33)
 texture = ExtResource("8_afat4")
 
-[node name="Timer" type="Timer" parent="."]
-wait_time = 40.0
+[node name="BackLeftButton" type="TextureButton" parent="." unique_id=533889750]
+offset_left = 20.0
+offset_top = -5.0
+offset_right = 110.0
+offset_bottom = 85.0
+pivot_offset = Vector2(45, 45)
+size_flags_horizontal = 4
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("10_4jjrj")
+ignore_texture_size = true
+stretch_mode = 5
+
+[connection signal="pressed" from="BackLeftButton" to="." method="_on_back_left_button_pressed"]

@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://bhkg8ke0eb4h4"]
+
+[ext_resource type="Script" uid="uid://bfxrxleqdcu2x" path="res://scripts/sala_res.gd" id="1_3ts2u"]
+[ext_resource type="Texture2D" uid="uid://qla1m4grk0md" path="res://assets/sala_r_e_s.png" id="1_eu1bd"]
+[ext_resource type="Texture2D" uid="uid://domp5y02302ig" path="res://assets/arrow_back.png" id="3_35m43"]
+
+[node name="SalaRES" type="Node2D" unique_id=1479786499]
+script = ExtResource("1_3ts2u")
+
+[node name="Background" type="TextureRect" parent="." unique_id=1742820907]
+offset_right = 1280.0
+offset_bottom = 720.0
+texture = ExtResource("1_eu1bd")
+expand_mode = 1
+
+[node name="BackLeftButton" type="TextureButton" parent="." unique_id=1487954958]
+offset_left = 20.0
+offset_top = -5.0
+offset_right = 110.0
+offset_bottom = 85.0
+pivot_offset = Vector2(45, 45)
+size_flags_horizontal = 4
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("3_35m43")
+ignore_texture_size = true
+stretch_mode = 5
+
+[connection signal="pressed" from="BackLeftButton" to="." method="_on_back_left_button_pressed"]
