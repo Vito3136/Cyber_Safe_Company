@@ -1,34 +1,46 @@
-[gd_scene load_steps=7 format=3 uid="uid://bxsadxh5dpeqa"]
+[gd_scene format=3 uid="uid://bxsadxh5dpeqa"]
 
 [ext_resource type="Script" uid="uid://deg5g38w2ae8k" path="res://scripts/upgrade_popup.gd" id="1_alvb6"]
 [ext_resource type="Texture2D" uid="uid://c45rwffb1j2j0" path="res://assets/close.png" id="2_xuied"]
-[ext_resource type="PackedScene" uid="uid://g4eqcvvlfv50" path="res://scenes/card_upgrade_1.tscn" id="3_psw0a"]
-[ext_resource type="Script" uid="uid://87286yosfo7a" path="res://scripts/card_upgrade_1.gd" id="4_kya2e"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xuied"]
-bg_color = Color(0.1882353, 0.2509804, 0.2509804, 1)
+[ext_resource type="Script" uid="uid://p1gngg5c4evg" path="res://scripts/card_resource.gd" id="3_fai2g"]
+[ext_resource type="PackedScene" uid="uid://cuyogpm1p6qfe" path="res://scenes/card_upgrade_effettuabili.tscn" id="3_psw0a"]
+[ext_resource type="PackedScene" uid="uid://bueidihhwquvt" path="res://scenes/card_upgrade_effettuati.tscn" id="3_puvig"]
+[ext_resource type="Resource" uid="uid://vrjgscu1vjbu" path="res://upgrades/biometric_access.tres" id="4_puvig"]
+[ext_resource type="Resource" uid="uid://d3ntpksr7rchu" path="res://upgrades/firewall.tres" id="5_wn5q8"]
+[ext_resource type="Resource" uid="uid://ckcw68ci8uc2c" path="res://upgrades/team_SIEM_level_1.tres" id="6_8sgn4"]
+[ext_resource type="Resource" uid="uid://7n18nhoocmt7" path="res://upgrades/MFA-2FA.tres" id="7_wsshg"]
+[ext_resource type="Resource" uid="uid://ll4gumemiifd" path="res://upgrades/CCTV.tres" id="8_u7ih0"]
+[ext_resource type="Resource" uid="uid://conptf0hjbl1b" path="res://upgrades/encryption.tres" id="9_phxem"]
+[ext_resource type="Resource" uid="uid://b7n78tbn4ual7" path="res://upgrades/team_SIEM_level_2.tres" id="10_u7ih0"]
+[ext_resource type="Resource" uid="uid://8oafxkq40fl6" path="res://upgrades/team_SIEM_level_3.tres" id="11_phxem"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_psw0a"]
 content_margin_left = 2.0
 content_margin_right = 2.0
 bg_color = Color(0, 0, 0, 1)
 
-[node name="UpgradePopup" type="PopupPanel"]
+[node name="UpgradePopup" type="PopupPanel" unique_id=989768510]
 oversampling_override = 1.0
-initial_position = 1
-size = Vector2i(1000, 1109)
+size = Vector2i(319, 100)
 visible = true
-theme_override_styles/panel = SubResource("StyleBoxFlat_xuied")
 script = ExtResource("1_alvb6")
+card_template_effettuabili = ExtResource("3_psw0a")
+card_template_effettuati = ExtResource("3_puvig")
+dati_effettuati = Array[ExtResource("3_fai2g")]([ExtResource("4_puvig"), ExtResource("5_wn5q8"), ExtResource("6_8sgn4"), ExtResource("8_u7ih0"), ExtResource("9_phxem"), null, null, null, null])
+dati_effettuabili = Array[ExtResource("3_fai2g")]([ExtResource("7_wsshg"), ExtResource("8_u7ih0"), ExtResource("10_u7ih0"), ExtResource("11_phxem"), null, null, null, null, null])
 
-[node name="ContentsContainer" type="VBoxContainer" parent="."]
+[node name="ContentsContainer" type="VBoxContainer" parent="." unique_id=1599893688]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = -4.0
+offset_bottom = -4.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="CloseButton" type="Button" parent="ContentsContainer"]
+[node name="CloseButton" type="Button" parent="ContentsContainer" unique_id=57802507]
 clip_contents = true
 custom_minimum_size = Vector2(45, 45)
 layout_mode = 2
@@ -39,127 +51,49 @@ icon = ExtResource("2_xuied")
 icon_alignment = 1
 expand_icon = true
 
-[node name="TwoPartsContainer" type="HBoxContainer" parent="ContentsContainer"]
+[node name="TwoPartsContainer" type="HBoxContainer" parent="ContentsContainer" unique_id=792161241]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="UpgradeEffettuatiContainer" type="VBoxContainer" parent="ContentsContainer/TwoPartsContainer"]
+[node name="UpgradeEffettuatiContainer" type="VBoxContainer" parent="ContentsContainer/TwoPartsContainer" unique_id=1800710122]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="ContentsContainer/TwoPartsContainer/UpgradeEffettuatiContainer"]
+[node name="Label" type="Label" parent="ContentsContainer/TwoPartsContainer/UpgradeEffettuatiContainer" unique_id=583989684]
 layout_mode = 2
 text = "Upgrade Effettuati"
 horizontal_alignment = 1
 
-[node name="ScrollContainer" type="ScrollContainer" parent="ContentsContainer/TwoPartsContainer/UpgradeEffettuatiContainer"]
+[node name="ScrollContainer" type="ScrollContainer" parent="ContentsContainer/TwoPartsContainer/UpgradeEffettuatiContainer" unique_id=1209680536]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="ContentsContainer/TwoPartsContainer/UpgradeEffettuatiContainer/ScrollContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="ContentsContainer/TwoPartsContainer/UpgradeEffettuatiContainer/ScrollContainer" unique_id=173998221]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="MarginContainer" type="MarginContainer" parent="ContentsContainer/TwoPartsContainer/UpgradeEffettuatiContainer/ScrollContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_constants/margin_left = 25
-theme_override_constants/margin_top = 10
-theme_override_constants/margin_right = 25
-theme_override_constants/margin_bottom = 5
-
-[node name="CardUpgradeEffettuati1" parent="ContentsContainer/TwoPartsContainer/UpgradeEffettuatiContainer/ScrollContainer/VBoxContainer/MarginContainer" instance=ExtResource("3_psw0a")]
-layout_mode = 2
-script = ExtResource("4_kya2e")
-
-[node name="VSeparator" type="VSeparator" parent="ContentsContainer/TwoPartsContainer"]
+[node name="VSeparator" type="VSeparator" parent="ContentsContainer/TwoPartsContainer" unique_id=1041908262]
 layout_mode = 2
 theme_override_styles/separator = SubResource("StyleBoxFlat_psw0a")
 
-[node name="UpgradeEffettuabiliContainer" type="VBoxContainer" parent="ContentsContainer/TwoPartsContainer"]
+[node name="UpgradeEffettuabiliContainer" type="VBoxContainer" parent="ContentsContainer/TwoPartsContainer" unique_id=1907422266]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="ContentsContainer/TwoPartsContainer/UpgradeEffettuabiliContainer"]
+[node name="Label" type="Label" parent="ContentsContainer/TwoPartsContainer/UpgradeEffettuabiliContainer" unique_id=1008730967]
 layout_mode = 2
 text = "Upgrade Effettuabili"
 horizontal_alignment = 1
 
-[node name="ScrollContainer" type="ScrollContainer" parent="ContentsContainer/TwoPartsContainer/UpgradeEffettuabiliContainer"]
+[node name="ScrollContainer" type="ScrollContainer" parent="ContentsContainer/TwoPartsContainer/UpgradeEffettuabiliContainer" unique_id=388344189]
 layout_mode = 2
 size_flags_vertical = 3
 horizontal_scroll_mode = 0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="ContentsContainer/TwoPartsContainer/UpgradeEffettuabiliContainer/ScrollContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="ContentsContainer/TwoPartsContainer/UpgradeEffettuabiliContainer/ScrollContainer" unique_id=1172915538]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Upgrade1MarginContainer" type="MarginContainer" parent="ContentsContainer/TwoPartsContainer/UpgradeEffettuabiliContainer/ScrollContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_constants/margin_left = 25
-theme_override_constants/margin_top = 10
-theme_override_constants/margin_right = 25
-theme_override_constants/margin_bottom = 5
-
-[node name="CardUpgradeEffettuabili1" parent="ContentsContainer/TwoPartsContainer/UpgradeEffettuabiliContainer/ScrollContainer/VBoxContainer/Upgrade1MarginContainer" instance=ExtResource("3_psw0a")]
-layout_mode = 2
-script = ExtResource("4_kya2e")
-
-[node name="Upgrade2MarginContainer" type="MarginContainer" parent="ContentsContainer/TwoPartsContainer/UpgradeEffettuabiliContainer/ScrollContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_constants/margin_left = 25
-theme_override_constants/margin_top = 5
-theme_override_constants/margin_right = 25
-theme_override_constants/margin_bottom = 5
-
-[node name="CardUpgradeEffettuabili2" parent="ContentsContainer/TwoPartsContainer/UpgradeEffettuabiliContainer/ScrollContainer/VBoxContainer/Upgrade2MarginContainer" instance=ExtResource("3_psw0a")]
-layout_mode = 2
-script = ExtResource("4_kya2e")
-
-[node name="Upgrade2MarginContainer2" type="MarginContainer" parent="ContentsContainer/TwoPartsContainer/UpgradeEffettuabiliContainer/ScrollContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_constants/margin_left = 25
-theme_override_constants/margin_top = 5
-theme_override_constants/margin_right = 25
-theme_override_constants/margin_bottom = 5
-
-[node name="CardUpgradeEffettuabili2" parent="ContentsContainer/TwoPartsContainer/UpgradeEffettuabiliContainer/ScrollContainer/VBoxContainer/Upgrade2MarginContainer2" instance=ExtResource("3_psw0a")]
-layout_mode = 2
-script = ExtResource("4_kya2e")
-
-[node name="Upgrade2MarginContainer3" type="MarginContainer" parent="ContentsContainer/TwoPartsContainer/UpgradeEffettuabiliContainer/ScrollContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_constants/margin_left = 25
-theme_override_constants/margin_top = 5
-theme_override_constants/margin_right = 25
-theme_override_constants/margin_bottom = 5
-
-[node name="CardUpgradeEffettuabili2" parent="ContentsContainer/TwoPartsContainer/UpgradeEffettuabiliContainer/ScrollContainer/VBoxContainer/Upgrade2MarginContainer3" instance=ExtResource("3_psw0a")]
-layout_mode = 2
-script = ExtResource("4_kya2e")
-
-[node name="Upgrade2MarginContainer4" type="MarginContainer" parent="ContentsContainer/TwoPartsContainer/UpgradeEffettuabiliContainer/ScrollContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_constants/margin_left = 25
-theme_override_constants/margin_top = 5
-theme_override_constants/margin_right = 25
-theme_override_constants/margin_bottom = 5
-
-[node name="CardUpgradeEffettuabili2" parent="ContentsContainer/TwoPartsContainer/UpgradeEffettuabiliContainer/ScrollContainer/VBoxContainer/Upgrade2MarginContainer4" instance=ExtResource("3_psw0a")]
-layout_mode = 2
-script = ExtResource("4_kya2e")
-
-[node name="Upgrade2MarginContainer5" type="MarginContainer" parent="ContentsContainer/TwoPartsContainer/UpgradeEffettuabiliContainer/ScrollContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_constants/margin_left = 25
-theme_override_constants/margin_top = 5
-theme_override_constants/margin_right = 25
-theme_override_constants/margin_bottom = 5
-
-[node name="CardUpgradeEffettuabili2" parent="ContentsContainer/TwoPartsContainer/UpgradeEffettuabiliContainer/ScrollContainer/VBoxContainer/Upgrade2MarginContainer5" instance=ExtResource("3_psw0a")]
-layout_mode = 2
-script = ExtResource("4_kya2e")
-
 [connection signal="pressed" from="ContentsContainer/CloseButton" to="." method="_on_close_button_pressed"]
-[connection signal="gui_input" from="ContentsContainer/TwoPartsContainer/UpgradeEffettuabiliContainer/ScrollContainer/VBoxContainer/Upgrade1MarginContainer/CardUpgradeEffettuabili1" to="." method="_on_card_upgrade_gui_input"]

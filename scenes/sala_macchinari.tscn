@@ -1,21 +1,21 @@
-[gd_scene load_steps=68 format=3 uid="uid://cn3tq36rlka2o"]
+[gd_scene format=3 uid="uid://cn3tq36rlka2o"]
 
 [ext_resource type="Texture2D" uid="uid://rtyy0y4onbys" path="res://assets/sala_macchinari_vuota.png" id="1_a40bb"]
 [ext_resource type="Texture2D" uid="uid://cbj61q243olhn" path="res://assets/macchinario_singolo.png" id="2_skoty"]
 [ext_resource type="PackedScene" uid="uid://bkqncjsju08gt" path="res://scenes/barra_bilanciamento.tscn" id="2_t0fyw"]
 [ext_resource type="Script" uid="uid://baisapkrrbhyg" path="res://scripts/macchinario_prese.gd" id="3_weua7"]
 [ext_resource type="Texture2D" uid="uid://7r1tlhrhml45" path="res://assets/presa.png" id="4_weua7"]
-[ext_resource type="Shader" uid="uid://cm71byq7p8uf7" path="res://assets/macchinario_bloccato.gdshader" id="5_facy8"]
+[ext_resource type="Shader" path="res://assets/macchinario_bloccato.gdshader" id="5_facy8"]
 [ext_resource type="Script" uid="uid://daqd73tqqk4mu" path="res://scripts/macchinario_lampadine.gd" id="5_xf5l4"]
 [ext_resource type="Texture2D" uid="uid://cj1g0gppyqij7" path="res://assets/scatolo_pieno_prese.png" id="5_yftob"]
 [ext_resource type="Texture2D" uid="uid://cxyuftvnax7dp" path="res://assets/scatolo_vuoto.png" id="6_wybjb"]
 [ext_resource type="Texture2D" uid="uid://dlp8x3gj5fumw" path="res://assets/contenitore_contatore.png" id="7_4d3rf"]
 [ext_resource type="Texture2D" uid="uid://do2o6glaeiljs" path="res://assets/lampadina.png" id="7_yt6by"]
 [ext_resource type="Texture2D" uid="uid://cx23n6mb73cgr" path="res://assets/lock.png" id="8_gvjn5"]
-[ext_resource type="Script" uid="uid://cwuyrf71w4yuh" path="res://scripts/macchinario_telecamere.gd" id="9_g5jtv"]
+[ext_resource type="Script" path="res://scripts/macchinario_telecamere.gd" id="9_g5jtv"]
 [ext_resource type="Texture2D" uid="uid://be6x7tkwv5k3q" path="res://assets/scatolo_pieno_lampadine.png" id="9_wybjb"]
 [ext_resource type="Texture2D" uid="uid://yayoh2nh287r" path="res://assets/telecamera.png" id="9_yq1a3"]
-[ext_resource type="Script" uid="uid://bvkec6jotbwfa" path="res://scripts/macchinario_serrature.gd" id="11_pp45o"]
+[ext_resource type="Script" path="res://scripts/macchinario_serrature.gd" id="11_pp45o"]
 [ext_resource type="Texture2D" uid="uid://dcjrcrqvhu702" path="res://assets/serratura.png" id="12_7d4gf"]
 [ext_resource type="Texture2D" uid="uid://c3nxvv2a00dcr" path="res://assets/scatolo_pieno_telecamere.png" id="13_dwnkl"]
 [ext_resource type="Texture2D" uid="uid://ctjmef7omm4vn" path="res://assets/scatolo_pieno_serrature.png" id="16_7aw4a"]
@@ -1369,23 +1369,23 @@ _data = {
 &"scatolo_pieno": SubResource("Animation_a4u1i")
 }
 
-[node name="SalaMacchinari" type="Node2D"]
+[node name="SalaMacchinari" type="Node2D" unique_id=127100609]
 
-[node name="Background" type="TextureRect" parent="."]
+[node name="Background" type="TextureRect" parent="." unique_id=1894826480]
 offset_right = 1280.0
 offset_bottom = 720.0
 texture = ExtResource("1_a40bb")
 expand_mode = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="BarraBilanciamento" parent="." instance=ExtResource("2_t0fyw")]
+[node name="BarraBilanciamento" parent="." unique_id=1906487712 instance=ExtResource("2_t0fyw")]
 
-[node name="ContenitoreContatorePrese" type="Sprite2D" parent="."]
+[node name="ContenitoreContatorePrese" type="Sprite2D" parent="." unique_id=2124142858]
 position = Vector2(81, 49)
 scale = Vector2(0.17, 0.17)
 texture = ExtResource("7_4d3rf")
 
-[node name="LabelContatorePrese" type="Label" parent="ContenitoreContatorePrese"]
+[node name="LabelContatorePrese" type="Label" parent="ContenitoreContatorePrese" unique_id=737898016]
 offset_left = -19.60776
 offset_top = -83.33347
 offset_right = 232.39224
@@ -1394,12 +1394,12 @@ text = "0/10"
 label_settings = SubResource("LabelSettings_4d3rf")
 metadata/_edit_use_anchors_ = true
 
-[node name="PresaContatore" type="Sprite2D" parent="ContenitoreContatorePrese"]
+[node name="PresaContatore" type="Sprite2D" parent="ContenitoreContatorePrese" unique_id=66091076]
 position = Vector2(-166.6666, -0.0001469246)
 scale = Vector2(2.2, 2.2)
 texture = ExtResource("4_weua7")
 
-[node name="MacchinarioPrese" type="Sprite2D" parent="." node_paths=PackedStringArray("scatolo_prese", "anim_scatolo", "label_contatore_prese")]
+[node name="MacchinarioPrese" type="Sprite2D" parent="." unique_id=242651249 node_paths=PackedStringArray("scatolo_prese", "anim_scatolo", "label_contatore_prese")]
 position = Vector2(345.00003, 410.00003)
 scale = Vector2(0.34, 0.34)
 texture = ExtResource("2_skoty")
@@ -1410,47 +1410,41 @@ scatolo_prese = NodePath("../ScatoloPrese")
 anim_scatolo = NodePath("../ScatoloPrese/AnimationScatolo")
 label_contatore_prese = NodePath("../ContenitoreContatorePrese/LabelContatorePrese")
 
-[node name="AnimationMacchinarioPrese" type="AnimationPlayer" parent="MacchinarioPrese"]
-libraries = {
-&"": SubResource("AnimationLibrary_yt6by")
-}
+[node name="AnimationMacchinarioPrese" type="AnimationPlayer" parent="MacchinarioPrese" unique_id=905904853]
+libraries/ = SubResource("AnimationLibrary_yt6by")
 
-[node name="Presa" type="Sprite2D" parent="MacchinarioPrese"]
+[node name="Presa" type="Sprite2D" parent="MacchinarioPrese" unique_id=1210379286]
 position = Vector2(-79.41185, -29.411762)
 texture = ExtResource("4_weua7")
 
-[node name="AnimationPresa" type="AnimationPlayer" parent="MacchinarioPrese/Presa"]
-libraries = {
-&"": SubResource("AnimationLibrary_yq1a3")
-}
+[node name="AnimationPresa" type="AnimationPlayer" parent="MacchinarioPrese/Presa" unique_id=1798342393]
+libraries/ = SubResource("AnimationLibrary_yq1a3")
 
-[node name="Timer" type="Timer" parent="MacchinarioPrese"]
+[node name="Timer" type="Timer" parent="MacchinarioPrese" unique_id=1848260116]
 wait_time = 5.0
 
-[node name="Area2D" type="Area2D" parent="MacchinarioPrese"]
+[node name="Area2D" type="Area2D" parent="MacchinarioPrese" unique_id=220452753]
 position = Vector2(438.23517, 385.29398)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="MacchinarioPrese/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MacchinarioPrese/Area2D" unique_id=1519189927]
 position = Vector2(-11.7647705, 7.3530273)
 scale = Vector2(0.9999996, 0.9999996)
 shape = SubResource("RectangleShape2D_7aw4a")
 
-[node name="ScatoloPrese" type="Sprite2D" parent="."]
+[node name="ScatoloPrese" type="Sprite2D" parent="." unique_id=2100472987]
 position = Vector2(490, 543)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("6_wybjb")
 
-[node name="AnimationScatolo" type="AnimationPlayer" parent="ScatoloPrese"]
-libraries = {
-&"": SubResource("AnimationLibrary_ltnkg")
-}
+[node name="AnimationScatolo" type="AnimationPlayer" parent="ScatoloPrese" unique_id=245484906]
+libraries/ = SubResource("AnimationLibrary_ltnkg")
 
-[node name="ContenitoreContatoreLampadine" type="Sprite2D" parent="."]
+[node name="ContenitoreContatoreLampadine" type="Sprite2D" parent="." unique_id=44331828]
 position = Vector2(81, 119)
 scale = Vector2(0.17, 0.17)
 texture = ExtResource("7_4d3rf")
 
-[node name="LabelContatorePrese" type="Label" parent="ContenitoreContatoreLampadine"]
+[node name="LabelContatorePrese" type="Label" parent="ContenitoreContatoreLampadine" unique_id=1356344087]
 offset_left = -19.60776
 offset_top = -83.33347
 offset_right = 232.39224
@@ -1459,12 +1453,12 @@ text = "0/10"
 label_settings = SubResource("LabelSettings_4d3rf")
 metadata/_edit_use_anchors_ = true
 
-[node name="PresaContatore" type="Sprite2D" parent="ContenitoreContatoreLampadine"]
+[node name="PresaContatore" type="Sprite2D" parent="ContenitoreContatoreLampadine" unique_id=542583348]
 position = Vector2(-166.66635, 4.901963)
 scale = Vector2(2.2, 2.2)
 texture = ExtResource("7_yt6by")
 
-[node name="MacchinarioLampadine" type="Sprite2D" parent="." node_paths=PackedStringArray("scatolo_lampadine", "anim_scatolo")]
+[node name="MacchinarioLampadine" type="Sprite2D" parent="." unique_id=1300149622 node_paths=PackedStringArray("scatolo_lampadine", "anim_scatolo")]
 material = SubResource("ShaderMaterial_yt6by")
 position = Vector2(501, 248)
 scale = Vector2(0.34, 0.34)
@@ -1475,43 +1469,35 @@ texture_piena = ExtResource("9_wybjb")
 scatolo_lampadine = NodePath("../ScatoloLampadine")
 anim_scatolo = NodePath("../ScatoloLampadine/AnimationScatolo")
 
-[node name="AnimationMacchinarioLampadine" type="AnimationPlayer" parent="MacchinarioLampadine"]
-libraries = {
-&"": SubResource("AnimationLibrary_g5jtv")
-}
+[node name="AnimationMacchinarioLampadine" type="AnimationPlayer" parent="MacchinarioLampadine" unique_id=711151000]
+libraries/ = SubResource("AnimationLibrary_g5jtv")
 
-[node name="Lampadina" type="Sprite2D" parent="MacchinarioLampadine"]
+[node name="Lampadina" type="Sprite2D" parent="MacchinarioLampadine" unique_id=1871059284]
 visible = false
 position = Vector2(-73.5294, -38.23529)
 texture = ExtResource("7_yt6by")
 
-[node name="AnimationLampadina" type="AnimationPlayer" parent="MacchinarioLampadine/Lampadina"]
-libraries = {
-&"": SubResource("AnimationLibrary_pp45o")
-}
+[node name="AnimationLampadina" type="AnimationPlayer" parent="MacchinarioLampadine/Lampadina" unique_id=617478670]
+libraries/ = SubResource("AnimationLibrary_pp45o")
 
-[node name="Lucchetto" type="Sprite2D" parent="MacchinarioLampadine"]
+[node name="Lucchetto" type="Sprite2D" parent="MacchinarioLampadine" unique_id=1604535878]
 modulate = Color(1, 1, 1, 0.7490196)
 position = Vector2(-17.647057, -2.9411762)
 texture = ExtResource("8_gvjn5")
 
-[node name="AnimationLucchetto" type="AnimationPlayer" parent="MacchinarioLampadine/Lucchetto"]
-libraries = {
-&"": SubResource("AnimationLibrary_yftob")
-}
+[node name="AnimationLucchetto" type="AnimationPlayer" parent="MacchinarioLampadine/Lucchetto" unique_id=654276030]
+libraries/ = SubResource("AnimationLibrary_yftob")
 
-[node name="ScatoloLampadine" type="Sprite2D" parent="."]
+[node name="ScatoloLampadine" type="Sprite2D" parent="." unique_id=490012544]
 material = SubResource("ShaderMaterial_yt6by")
 position = Vector2(647, 374)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("6_wybjb")
 
-[node name="AnimationScatolo" type="AnimationPlayer" parent="ScatoloLampadine"]
-libraries = {
-&"": SubResource("AnimationLibrary_es45h")
-}
+[node name="AnimationScatolo" type="AnimationPlayer" parent="ScatoloLampadine" unique_id=1297841812]
+libraries/ = SubResource("AnimationLibrary_es45h")
 
-[node name="MacchinarioTelecamere" type="Sprite2D" parent="." node_paths=PackedStringArray("scatolo_telecamere", "anim_scatolo")]
+[node name="MacchinarioTelecamere" type="Sprite2D" parent="." unique_id=1858783658 node_paths=PackedStringArray("scatolo_telecamere", "anim_scatolo")]
 material = SubResource("ShaderMaterial_yt6by")
 position = Vector2(877.00006, 320)
 scale = Vector2(0.34, 0.34)
@@ -1523,36 +1509,30 @@ texture_piena = ExtResource("13_dwnkl")
 scatolo_telecamere = NodePath("../ScatoloTelecamere")
 anim_scatolo = NodePath("../ScatoloTelecamere/AnimationScatolo")
 
-[node name="AnimationMacchinarioTelecamere" type="AnimationPlayer" parent="MacchinarioTelecamere"]
-libraries = {
-&"": SubResource("AnimationLibrary_dwnkl")
-}
+[node name="AnimationMacchinarioTelecamere" type="AnimationPlayer" parent="MacchinarioTelecamere" unique_id=921457558]
+libraries/ = SubResource("AnimationLibrary_dwnkl")
 
-[node name="Telecamera" type="Sprite2D" parent="MacchinarioTelecamere"]
+[node name="Telecamera" type="Sprite2D" parent="MacchinarioTelecamere" unique_id=531952544]
 visible = false
 position = Vector2(64.705696, -29.411762)
 texture = ExtResource("9_yq1a3")
 
-[node name="AnimationTelecamera" type="AnimationPlayer" parent="MacchinarioTelecamere/Telecamera"]
-libraries = {
-&"": SubResource("AnimationLibrary_4d3rf")
-}
+[node name="AnimationTelecamera" type="AnimationPlayer" parent="MacchinarioTelecamere/Telecamera" unique_id=148080081]
+libraries/ = SubResource("AnimationLibrary_4d3rf")
 
-[node name="Lucchetto" type="Sprite2D" parent="MacchinarioTelecamere"]
+[node name="Lucchetto" type="Sprite2D" parent="MacchinarioTelecamere" unique_id=778502796]
 modulate = Color(1, 1, 1, 0.7490196)
 texture = ExtResource("8_gvjn5")
 
-[node name="AnimationLucchetto" type="AnimationPlayer" parent="MacchinarioTelecamere/Lucchetto"]
-libraries = {
-&"": SubResource("AnimationLibrary_sk2ha")
-}
+[node name="AnimationLucchetto" type="AnimationPlayer" parent="MacchinarioTelecamere/Lucchetto" unique_id=873287163]
+libraries/ = SubResource("AnimationLibrary_sk2ha")
 
-[node name="Sprite2D" type="Sprite2D" parent="MacchinarioTelecamere"]
+[node name="Sprite2D" type="Sprite2D" parent="MacchinarioTelecamere" unique_id=2069573324]
 position = Vector2(-2341.1765, -385.2941)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("7_4d3rf")
 
-[node name="Label" type="Label" parent="MacchinarioTelecamere/Sprite2D"]
+[node name="Label" type="Label" parent="MacchinarioTelecamere/Sprite2D" unique_id=118651558]
 offset_left = -19.60776
 offset_top = -83.33347
 offset_right = 232.39224
@@ -1561,23 +1541,21 @@ text = "0/10"
 label_settings = SubResource("LabelSettings_4d3rf")
 metadata/_edit_use_anchors_ = true
 
-[node name="Sprite2D" type="Sprite2D" parent="MacchinarioTelecamere/Sprite2D"]
+[node name="Sprite2D" type="Sprite2D" parent="MacchinarioTelecamere/Sprite2D" unique_id=1858364470]
 position = Vector2(-166.66635, 4.901963)
 scale = Vector2(2.2, 2.2)
 texture = ExtResource("9_yq1a3")
 
-[node name="ScatoloTelecamere" type="Sprite2D" parent="."]
+[node name="ScatoloTelecamere" type="Sprite2D" parent="." unique_id=1790546226]
 material = SubResource("ShaderMaterial_yt6by")
 position = Vector2(733, 447.99997)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("6_wybjb")
 
-[node name="AnimationScatolo" type="AnimationPlayer" parent="ScatoloTelecamere"]
-libraries = {
-&"": SubResource("AnimationLibrary_a4u1i")
-}
+[node name="AnimationScatolo" type="AnimationPlayer" parent="ScatoloTelecamere" unique_id=219146101]
+libraries/ = SubResource("AnimationLibrary_a4u1i")
 
-[node name="MacchinarioSerrature" type="Sprite2D" parent="." node_paths=PackedStringArray("scatolo_serrature", "anim_scatolo")]
+[node name="MacchinarioSerrature" type="Sprite2D" parent="." unique_id=1686758515 node_paths=PackedStringArray("scatolo_serrature", "anim_scatolo")]
 material = SubResource("ShaderMaterial_yt6by")
 position = Vector2(1007.00006, 514)
 scale = Vector2(0.34, 0.34)
@@ -1589,36 +1567,30 @@ texture_piena = ExtResource("16_7aw4a")
 scatolo_serrature = NodePath("../ScatoloSerrature")
 anim_scatolo = NodePath("../ScatoloSerrature/AnimationScatolo")
 
-[node name="AnimationMacchinarioSerrature" type="AnimationPlayer" parent="MacchinarioSerrature"]
-libraries = {
-&"": SubResource("AnimationLibrary_dtpjo")
-}
+[node name="AnimationMacchinarioSerrature" type="AnimationPlayer" parent="MacchinarioSerrature" unique_id=585723526]
+libraries/ = SubResource("AnimationLibrary_dtpjo")
 
-[node name="Serratura" type="Sprite2D" parent="MacchinarioSerrature"]
+[node name="Serratura" type="Sprite2D" parent="MacchinarioSerrature" unique_id=2005912422]
 position = Vector2(70.58804, -32.353027)
 scale = Vector2(0.19, 0.19)
 texture = ExtResource("12_7d4gf")
 
-[node name="AnimationSerratura" type="AnimationPlayer" parent="MacchinarioSerrature/Serratura"]
-libraries = {
-&"": SubResource("AnimationLibrary_wcp56")
-}
+[node name="AnimationSerratura" type="AnimationPlayer" parent="MacchinarioSerrature/Serratura" unique_id=1403358533]
+libraries/ = SubResource("AnimationLibrary_wcp56")
 
-[node name="Lucchetto" type="Sprite2D" parent="MacchinarioSerrature"]
+[node name="Lucchetto" type="Sprite2D" parent="MacchinarioSerrature" unique_id=926538367]
 modulate = Color(1, 1, 1, 0.7490196)
 texture = ExtResource("8_gvjn5")
 
-[node name="AnimationLucchetto" type="AnimationPlayer" parent="MacchinarioSerrature/Lucchetto"]
-libraries = {
-&"": SubResource("AnimationLibrary_d0vy7")
-}
+[node name="AnimationLucchetto" type="AnimationPlayer" parent="MacchinarioSerrature/Lucchetto" unique_id=1743200394]
+libraries/ = SubResource("AnimationLibrary_d0vy7")
 
-[node name="Sprite2D" type="Sprite2D" parent="MacchinarioSerrature"]
+[node name="Sprite2D" type="Sprite2D" parent="MacchinarioSerrature" unique_id=1116557561]
 position = Vector2(-2723.5295, -750)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("7_4d3rf")
 
-[node name="Label" type="Label" parent="MacchinarioSerrature/Sprite2D"]
+[node name="Label" type="Label" parent="MacchinarioSerrature/Sprite2D" unique_id=505683793]
 offset_left = -19.60776
 offset_top = -83.33347
 offset_right = 232.39224
@@ -1627,21 +1599,19 @@ text = "0/10"
 label_settings = SubResource("LabelSettings_4d3rf")
 metadata/_edit_use_anchors_ = true
 
-[node name="Sprite2D" type="Sprite2D" parent="MacchinarioSerrature/Sprite2D"]
+[node name="Sprite2D" type="Sprite2D" parent="MacchinarioSerrature/Sprite2D" unique_id=106361745]
 position = Vector2(-166.66635, 4.901963)
 scale = Vector2(0.33, 0.33)
 texture = ExtResource("12_7d4gf")
 
-[node name="ScatoloSerrature" type="Sprite2D" parent="."]
+[node name="ScatoloSerrature" type="Sprite2D" parent="." unique_id=1232296025]
 material = SubResource("ShaderMaterial_yt6by")
 position = Vector2(863, 642)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("6_wybjb")
 
-[node name="AnimationScatolo" type="AnimationPlayer" parent="ScatoloSerrature"]
-libraries = {
-&"": SubResource("AnimationLibrary_kfu22")
-}
+[node name="AnimationScatolo" type="AnimationPlayer" parent="ScatoloSerrature" unique_id=1606142539]
+libraries/ = SubResource("AnimationLibrary_kfu22")
 
 [connection signal="timeout" from="MacchinarioPrese/Timer" to="MacchinarioPrese" method="_on_timer_timeout"]
 [connection signal="input_event" from="MacchinarioPrese/Area2D" to="MacchinarioPrese" method="_on_area_2d_input_event"]

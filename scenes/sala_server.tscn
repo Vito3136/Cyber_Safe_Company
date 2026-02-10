@@ -1,13 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://clvmmhg6dfaqa"]
+[gd_scene format=3 uid="uid://clvmmhg6dfaqa"]
 
 [ext_resource type="Script" uid="uid://cxj26t2a0iru4" path="res://scripts/sala_server.gd" id="1_p0703"]
 [ext_resource type="Texture2D" uid="uid://o0d8n18ej385" path="res://assets/sala_server.png" id="1_pfu2m"]
 [ext_resource type="PackedScene" uid="uid://bxsadxh5dpeqa" path="res://scenes/upgrade_popup.tscn" id="3_5c5pg"]
 
-[node name="SalaServer" type="Node2D"]
+[node name="SalaServer" type="Node2D" unique_id=1869017270]
 script = ExtResource("1_p0703")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1734157124]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -18,14 +18,15 @@ grow_vertical = 2
 texture = ExtResource("1_pfu2m")
 expand_mode = 1
 
-[node name="UpgradeButton" type="Button" parent="."]
+[node name="UpgradeButton" type="Button" parent="." unique_id=868245038]
 offset_left = 1176.0
 offset_top = 21.0
 offset_right = 1251.0
 offset_bottom = 52.0
+mouse_default_cursor_shape = 2
 text = "UPGRADE"
 
-[node name="UpgradePopup" parent="." instance=ExtResource("3_5c5pg")]
+[node name="UpgradePopup" parent="." unique_id=1082398694 instance=ExtResource("3_5c5pg")]
 size = Vector2i(1000, 600)
 visible = false
 

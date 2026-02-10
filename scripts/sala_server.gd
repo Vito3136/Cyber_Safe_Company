@@ -10,11 +10,10 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	pass
 
-
 func _on_upgrade_button_pressed() -> void:
 	# Ottieni il riferimento al nodo PopupPanel
 	# $UpgradePopup usa il percorso breve del nodo figlio.
-	var upgrade_popup = $UpgradePopup 
+	var upgrade_popup = $UpgradePopup.open_popup()
 
 	# Controlla se il popup esiste ed è istanziato
 	if upgrade_popup:

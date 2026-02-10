@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bgcj42wgirg2m"]
+[gd_scene format=3 uid="uid://bgcj42wgirg2m"]
 
 [ext_resource type="Texture2D" uid="uid://c3dqf8vm6icar" path="res://assets/magazzino.png" id="1_3c56b"]
 [ext_resource type="Texture2D" uid="uid://00cmxhtdt01q" path="res://assets/camion.png" id="2_1mpyn"]
@@ -114,9 +114,9 @@ _data = {
 [sub_resource type="LabelSettings" id="LabelSettings_6vkfg"]
 font_size = 120
 
-[node name="Magazzino" type="Node2D"]
+[node name="Magazzino" type="Node2D" unique_id=775138052]
 
-[node name="Background" type="TextureRect" parent="."]
+[node name="Background" type="TextureRect" parent="." unique_id=688122166]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -128,17 +128,15 @@ texture = ExtResource("1_3c56b")
 expand_mode = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Camion" type="Sprite2D" parent="."]
+[node name="Camion" type="Sprite2D" parent="." unique_id=1039831240]
 position = Vector2(639, 278)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_1mpyn")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Camion"]
-libraries = {
-&"": SubResource("AnimationLibrary_b3jdw")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Camion" unique_id=1765213145]
+libraries/ = SubResource("AnimationLibrary_b3jdw")
 
-[node name="PareteSerranda" type="TextureRect" parent="."]
+[node name="PareteSerranda" type="TextureRect" parent="." unique_id=1494725938]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -151,12 +149,12 @@ texture = ExtResource("3_4pr28")
 expand_mode = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="ContenitoreContatorePrese" type="Sprite2D" parent="."]
+[node name="ContenitoreContatorePrese" type="Sprite2D" parent="." unique_id=1178287818]
 position = Vector2(82.000015, 53.000004)
 scale = Vector2(0.17, 0.17)
 texture = ExtResource("4_4jjrj")
 
-[node name="LabelContatorePrese" type="Label" parent="ContenitoreContatorePrese"]
+[node name="LabelContatorePrese" type="Label" parent="ContenitoreContatorePrese" unique_id=470530818]
 offset_left = -19.60776
 offset_top = -83.33347
 offset_right = 232.39224
@@ -165,17 +163,17 @@ text = "0"
 label_settings = SubResource("LabelSettings_6vkfg")
 metadata/_edit_use_anchors_ = true
 
-[node name="PresaContatore" type="Sprite2D" parent="ContenitoreContatorePrese"]
+[node name="PresaContatore" type="Sprite2D" parent="ContenitoreContatorePrese" unique_id=1481087126]
 position = Vector2(-166.6666, -0.0001469246)
 scale = Vector2(2.2, 2.2)
 texture = ExtResource("5_83x6b")
 
-[node name="ContenitoreContatoreLampadine" type="Sprite2D" parent="."]
+[node name="ContenitoreContatoreLampadine" type="Sprite2D" parent="." unique_id=1622291073]
 position = Vector2(87, 135)
 scale = Vector2(0.17, 0.17)
 texture = ExtResource("4_4jjrj")
 
-[node name="LabelContatorePrese" type="Label" parent="ContenitoreContatoreLampadine"]
+[node name="LabelContatorePrese" type="Label" parent="ContenitoreContatoreLampadine" unique_id=326113979]
 offset_left = -19.60776
 offset_top = -83.33347
 offset_right = 232.39224
@@ -184,17 +182,17 @@ text = "0/10"
 label_settings = SubResource("LabelSettings_6vkfg")
 metadata/_edit_use_anchors_ = true
 
-[node name="PresaContatore" type="Sprite2D" parent="ContenitoreContatoreLampadine"]
+[node name="PresaContatore" type="Sprite2D" parent="ContenitoreContatoreLampadine" unique_id=367009594]
 position = Vector2(-166.66635, 4.901963)
 scale = Vector2(2.2, 2.2)
 texture = ExtResource("6_twpj7")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1854465878]
 position = Vector2(85, 211.00002)
 scale = Vector2(0.17, 0.17)
 texture = ExtResource("4_4jjrj")
 
-[node name="Label" type="Label" parent="Sprite2D"]
+[node name="Label" type="Label" parent="Sprite2D" unique_id=1181751092]
 offset_left = -19.60776
 offset_top = -83.33347
 offset_right = 232.39224
@@ -203,17 +201,17 @@ text = "0/10"
 label_settings = SubResource("LabelSettings_6vkfg")
 metadata/_edit_use_anchors_ = true
 
-[node name="Sprite2D" type="Sprite2D" parent="Sprite2D"]
+[node name="Sprite2D" type="Sprite2D" parent="Sprite2D" unique_id=829005280]
 position = Vector2(-166.66635, 4.901963)
 scale = Vector2(2.2, 2.2)
 texture = ExtResource("7_m1o7u")
 
-[node name="Sprite2D2" type="Sprite2D" parent="."]
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1387672014]
 position = Vector2(84.99999, 293)
 scale = Vector2(0.17, 0.17)
 texture = ExtResource("4_4jjrj")
 
-[node name="Label" type="Label" parent="Sprite2D2"]
+[node name="Label" type="Label" parent="Sprite2D2" unique_id=356392077]
 offset_left = -19.60776
 offset_top = -83.33347
 offset_right = 232.39224
@@ -222,10 +220,10 @@ text = "0/10"
 label_settings = SubResource("LabelSettings_6vkfg")
 metadata/_edit_use_anchors_ = true
 
-[node name="Sprite2D" type="Sprite2D" parent="Sprite2D2"]
+[node name="Sprite2D" type="Sprite2D" parent="Sprite2D2" unique_id=1447660246]
 position = Vector2(-166.66635, 4.901963)
 scale = Vector2(0.33, 0.33)
 texture = ExtResource("8_afat4")
 
-[node name="Timer" type="Timer" parent="."]
+[node name="Timer" type="Timer" parent="." unique_id=1358751659]
 wait_time = 40.0

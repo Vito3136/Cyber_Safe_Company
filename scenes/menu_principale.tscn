@@ -1,10 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://bf0v2i7bf7wnv"]
+[gd_scene format=3 uid="uid://bf0v2i7bf7wnv"]
 
 [ext_resource type="Script" uid="uid://m7j7b6pkjd0d" path="res://scripts/menu_principale.gd" id="1_ccts7"]
 [ext_resource type="Texture2D" uid="uid://bvlgch1lsoiqm" path="res://assets/background_main_menu.png" id="1_q6s64"]
 [ext_resource type="Texture2D" uid="uid://csv2hcifyx6cl" path="res://assets/play_btn.png" id="2_ccts7"]
 
-[node name="MenuPrincipale" type="Control"]
+[node name="MenuPrincipale" type="Control" unique_id=186075476]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -13,7 +13,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ccts7")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1026297447]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -24,7 +24,7 @@ texture = ExtResource("1_q6s64")
 expand_mode = 1
 stretch_mode = 6
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=2113897422]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -40,8 +40,9 @@ grow_vertical = 2
 scale = Vector2(0.22, 0.22)
 localize_numeral_system = false
 
-[node name="PlayButton" type="Button" parent="VBoxContainer"]
+[node name="PlayButton" type="Button" parent="VBoxContainer" unique_id=656489746]
 layout_mode = 2
+mouse_default_cursor_shape = 2
 icon = ExtResource("2_ccts7")
 
 [connection signal="pressed" from="VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
