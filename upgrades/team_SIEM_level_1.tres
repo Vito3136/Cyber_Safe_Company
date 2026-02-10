@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="CardData" format=3 uid="uid://ckcw68ci8uc2c"]
+
+[ext_resource type="Script" uid="uid://p1gngg5c4evg" path="res://scripts/card_resource.gd" id="1_uc6ws"]
+
+[resource]
+script = ExtResource("1_uc6ws")
+titolo = "SIEM Team - Level 1"
+descrizione = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco"
+metadata/_custom_type_script = "uid://p1gngg5c4evg"

@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="CardData" format=3 uid="uid://d3ntpksr7rchu"]
+
+[ext_resource type="Script" uid="uid://p1gngg5c4evg" path="res://scripts/card_resource.gd" id="1_fhy3v"]
+
+[resource]
+script = ExtResource("1_fhy3v")
+titolo = "Hardware Firewall"
+descrizione = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco"
+metadata/_custom_type_script = "uid://p1gngg5c4evg"
