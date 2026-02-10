@@ -1,8 +1,9 @@
-[gd_scene format=3 uid="uid://clvmmhg6dfaqa"]
+[gd_scene format=3 uid="uid://jykfnnbss0nw"]
 
 [ext_resource type="Script" uid="uid://cxj26t2a0iru4" path="res://scripts/sala_server.gd" id="1_p0703"]
 [ext_resource type="Texture2D" uid="uid://o0d8n18ej385" path="res://assets/sala_server.png" id="1_pfu2m"]
-[ext_resource type="PackedScene" uid="uid://bxsadxh5dpeqa" path="res://scenes/upgrade_popup.tscn" id="3_5c5pg"]
+[ext_resource type="PackedScene" path="res://scenes/upgrade_popup.tscn" id="3_5c5pg"]
+[ext_resource type="Texture2D" uid="uid://domp5y02302ig" path="res://assets/arrow_back.png" id="4_5c5pg"]
 
 [node name="SalaServer" type="Node2D" unique_id=1869017270]
 script = ExtResource("1_p0703")
@@ -30,4 +31,17 @@ text = "UPGRADE"
 size = Vector2i(1000, 600)
 visible = false
 
+[node name="BackLeftButton" type="TextureButton" parent="." unique_id=1852376182]
+offset_left = 20.0
+offset_top = -5.0
+offset_right = 110.0
+offset_bottom = 85.0
+pivot_offset = Vector2(45, 45)
+size_flags_horizontal = 4
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("4_5c5pg")
+ignore_texture_size = true
+stretch_mode = 5
+
 [connection signal="pressed" from="UpgradeButton" to="." method="_on_upgrade_button_pressed"]
+[connection signal="pressed" from="BackLeftButton" to="." method="_on_back_left_button_pressed"]
