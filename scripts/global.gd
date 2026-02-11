@@ -283,3 +283,10 @@ func _process(_delta: float) -> void:
 
 
 ##################################### UPGRADE ######################################################
+var performed_upgrades: Array[CardData]
+var available_upgrades: Array[CardData]
+
+func unlock_upgrade(upgrade: CardData):
+	if upgrade in available_upgrades:
+		available_upgrades.erase(upgrade)
+		performed_upgrades.append(upgrade)

@@ -1,18 +1,24 @@
 extends PopupPanel
 
 @onready var close_button: Button = $ContentsContainer/CloseButton
-@export var card_template_effettuabili: PackedScene # Qui trascinerai il tuo card_upgrade_1.tscn
+@export var card_template_effettuabili: PackedScene
 @export var card_template_effettuati: PackedScene
-@export var dati_effettuati: Array[CardData]
-@export var dati_effettuabili: Array[CardData]
 
-@onready var container_effettuati = $ContentsContainer/TwoPartsContainer/UpgradeEffettuatiContainer/ScrollContainer/VBoxContainer
-@onready var container_effettuabili = $ContentsContainer/TwoPartsContainer/UpgradeEffettuabiliContainer/ScrollContainer/VBoxContainer
+@export var available_upgrades_starting_setup: Array[CardData]
+@export var performed_upgrades_starting_setup: Array[CardData]
+
+@onready var performed_upgrades_container = $ContentsContainer/TwoPartsContainer/UpgradeEffettuatiContainer/ScrollContainer/VBoxContainer
+@onready var available_upgrades_container = $ContentsContainer/TwoPartsContainer/UpgradeEffettuabiliContainer/ScrollContainer/VBoxContainer
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	if Global.available_upgrades.is_empty() and Global.performed_upgrades.is_empty():
+		Global.performed_upgrades = performed_upgrades_starting_setup.duplicate()
+		Global.available_upgrades = available_upgrades_starting_setup.duplicate()
+	
+	# Collega il pulsante chiudi come hai già fatto
 	if close_button:
-		close_button.pressed.connect(self._on_close_button_pressed)
+		close_button.pressed.connect(self.hide)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
@@ -23,17 +29,14 @@ func _on_close_button_pressed() -> void:
 	
 func open_popup():
 	# Assicura che sia mostrato e centrato
-	aggiorna_popup()
+	refresh_popup()
 	popup_centered_ratio(0.75)
 	show()
 
-func aggiorna_popup():
+func refresh_popup():
 	# Verifichiamo che i container esistano per evitare errori
-	if container_effettuati and container_effettuabili:
-		popola_lista(container_effettuati, dati_effettuati, true)
-		popola_lista(container_effettuabili, dati_effettuabili, false)
-	else:
-		print("ERRORE: Uno dei container non è stato trovato. Controlla i percorsi @onready")
+	popola_lista(performed_upgrades_container, Global.performed_upgrades, true)
+	popola_lista(available_upgrades_container, Global.available_upgrades, false)
 
 func popola_lista(container: VBoxContainer, lista_dati: Array[CardData], isEffettuato: bool):
 	print("Popolando: ", container.name, " (Elementi: ", lista_dati.size(), ")")
@@ -66,12 +69,7 @@ func popola_lista(container: VBoxContainer, lista_dati: Array[CardData], isEffet
 			print("ERRORE: Lo script della card non ha la funzione setup()")
 
 func _on_bought_upgrade(data: CardData):
-	# 1. Rimuovi dai disponibili
-	dati_effettuabili.erase(data)
+	Global.unlock_upgrade(data)
 	
-	# 2. Aggiungi agli effettuati
-	dati_effettuati.append(data)
-	
-	# 3. Rinfresca il popup per spostare visivamente la card
-	aggiorna_popup()
+	refresh_popup()
 	print("Acquisto completato per: ", data.titolo)

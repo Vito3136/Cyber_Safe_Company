@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cuyogpm1p6qfe"]
 
-[ext_resource type="Script" uid="uid://87286yosfo7a" path="res://scripts/card_upgrade_effettuabili.gd" id="1_ljvjv"]
+[ext_resource type="Script" path="res://scripts/card_upgrade_effettuabili.gd" id="1_ljvjv"]
 [ext_resource type="Texture2D" uid="uid://l7nmd6efls0q" path="res://assets/shopping-cart (5).png" id="2_ljvjv"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lg2ls"]
