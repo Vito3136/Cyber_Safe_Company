@@ -2,8 +2,9 @@
 
 [ext_resource type="Script" uid="uid://cxj26t2a0iru4" path="res://scripts/sala_server.gd" id="1_p0703"]
 [ext_resource type="Texture2D" uid="uid://o0d8n18ej385" path="res://assets/sala_server.png" id="1_pfu2m"]
-[ext_resource type="PackedScene" path="res://scenes/upgrade_popup.tscn" id="3_5c5pg"]
+[ext_resource type="PackedScene" uid="uid://bxsadxh5dpeqa" path="res://scenes/upgrade_popup.tscn" id="3_5c5pg"]
 [ext_resource type="Texture2D" uid="uid://domp5y02302ig" path="res://assets/arrow_back.png" id="4_5c5pg"]
+[ext_resource type="PackedScene" uid="uid://b3farfqb3q2ic" path="res://scenes/general_ui.tscn" id="5_3ffy3"]
 
 [node name="SalaServer" type="Node2D" unique_id=1869017270]
 script = ExtResource("1_p0703")
@@ -19,11 +20,13 @@ grow_vertical = 2
 texture = ExtResource("1_pfu2m")
 expand_mode = 1
 
+[node name="GeneralUI" parent="." unique_id=1577614775 instance=ExtResource("5_3ffy3")]
+
 [node name="UpgradeButton" type="Button" parent="." unique_id=868245038]
-offset_left = 1176.0
-offset_top = 21.0
-offset_right = 1251.0
-offset_bottom = 52.0
+offset_left = 1166.0
+offset_top = 145.0
+offset_right = 1249.0
+offset_bottom = 176.0
 mouse_default_cursor_shape = 2
 text = "UPGRADE"
 

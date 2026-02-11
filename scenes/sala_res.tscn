@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://bfxrxleqdcu2x" path="res://scripts/sala_res.gd" id="1_3ts2u"]
 [ext_resource type="Texture2D" uid="uid://qla1m4grk0md" path="res://assets/sala_r_e_s.png" id="1_eu1bd"]
 [ext_resource type="Texture2D" uid="uid://domp5y02302ig" path="res://assets/arrow_back.png" id="3_35m43"]
+[ext_resource type="PackedScene" uid="uid://b3farfqb3q2ic" path="res://scenes/general_ui.tscn" id="4_35m43"]
 
 [node name="SalaRES" type="Node2D" unique_id=1479786499]
 script = ExtResource("1_3ts2u")
@@ -12,6 +13,8 @@ offset_right = 1280.0
 offset_bottom = 720.0
 texture = ExtResource("1_eu1bd")
 expand_mode = 1
+
+[node name="GeneralUI" parent="." unique_id=1577614775 instance=ExtResource("4_35m43")]
 
 [node name="BackLeftButton" type="TextureButton" parent="." unique_id=1487954958]
 offset_left = 20.0

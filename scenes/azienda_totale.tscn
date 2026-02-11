@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bgc5gj00r15bv" path="res://scripts/azienda_totale.gd" id="1_7xsbt"]
 [ext_resource type="Texture2D" uid="uid://bdyhqnn6ll6nd" path="res://assets/sfondo_azienda.png" id="1_aehsc"]
+[ext_resource type="PackedScene" uid="uid://b3farfqb3q2ic" path="res://scenes/general_ui.tscn" id="3_p68yv"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cmwo7"]
 
@@ -39,13 +40,15 @@ grow_vertical = 2
 texture = ExtResource("1_aehsc")
 expand_mode = 1
 
+[node name="GeneralUI" parent="." unique_id=1577614775 instance=ExtResource("3_p68yv")]
+
 [node name="GoSalaMacchinari" type="Button" parent="." unique_id=308818624]
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_top = -301.0
+offset_top = -239.0
 offset_right = 429.0
-offset_bottom = -59.0
+offset_bottom = 3.0
 grow_vertical = 0
 mouse_default_cursor_shape = 2
 theme_override_styles/normal = SubResource("StyleBoxEmpty_cmwo7")
@@ -58,14 +61,13 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -428.0
-offset_top = -299.0
-offset_bottom = -59.0
+offset_top = -239.0
+offset_bottom = 1.0
 grow_horizontal = 0
 grow_vertical = 0
 mouse_default_cursor_shape = 2
 theme_override_styles/normal = SubResource("StyleBoxEmpty_kfxbu")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_g8wek")
-flat = true
 
 [node name="GoMagazzino" type="Button" parent="." unique_id=1985968686]
 anchors_preset = 7
@@ -74,9 +76,9 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -212.0
-offset_top = -299.0
+offset_top = -239.0
 offset_right = 215.0
-offset_bottom = -59.0
+offset_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 0
 mouse_default_cursor_shape = 2
@@ -88,8 +90,8 @@ anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
 offset_left = -427.0
-offset_top = 57.0
-offset_bottom = 303.0
+offset_top = 151.0
+offset_bottom = 397.0
 grow_horizontal = 0
 mouse_default_cursor_shape = 2
 theme_override_styles/normal = SubResource("StyleBoxEmpty_p68yv")
@@ -100,18 +102,18 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -213.0
-offset_top = 59.0
+offset_top = 153.0
 offset_right = 215.0
-offset_bottom = 301.0
+offset_bottom = 395.0
 grow_horizontal = 2
 mouse_default_cursor_shape = 2
 theme_override_styles/normal = SubResource("StyleBoxEmpty_fvkph")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_wqbxy")
 
 [node name="GoSalaSiemSoc" type="Button" parent="." unique_id=815342759]
-offset_top = 59.0
+offset_top = 153.0
 offset_right = 425.0
-offset_bottom = 300.0
+offset_bottom = 394.0
 mouse_default_cursor_shape = 2
 theme_override_styles/normal = SubResource("StyleBoxEmpty_8gqxk")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_n8h8t")

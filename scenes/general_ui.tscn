@@ -1,30 +1,58 @@
-[gd_scene load_steps=4 format=3 uid="uid://b3farfqb3q2ic"]
+[gd_scene format=3 uid="uid://b3farfqb3q2ic"]
 
+[ext_resource type="Script" uid="uid://btvthivktgpse" path="res://scripts/general_ui.gd" id="1_65jkc"]
 [ext_resource type="Texture2D" uid="uid://dlp8x3gj5fumw" path="res://assets/contenitore_contatore.png" id="1_hswpa"]
 [ext_resource type="Texture2D" uid="uid://dxofyri3j43x5" path="res://assets/moneta.png" id="2_2efmg"]
+[ext_resource type="Shader" uid="uid://chr66bg3nxigq" path="res://assets/barra_bilanciamento.gdshader" id="4_q1d48"]
+[ext_resource type="Texture2D" uid="uid://djwavjgvxub8a" path="res://assets/security_label.png" id="5_83ryh"]
+[ext_resource type="Texture2D" uid="uid://bhalbx3pixt6o" path="res://assets/production_label.png" id="6_6kngf"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_2efmg"]
 font_size = 120
 
-[node name="GeneralUI" type="Control"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5ccio"]
+bg_color = Color(0.19607843, 0.19607843, 0.19607843, 0.99607843)
+corner_detail = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_memh0"]
+bg_color = Color(0.9616985, 0.405895, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3jhuy"]
+bg_color = Color(0.19434926, 0.19434929, 0.19434917, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f70hn"]
+bg_color = Color(0, 0.6250582, 0.9979095, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fk42p"]
+shader = ExtResource("4_q1d48")
+shader_parameter/line_color = Color(1, 1, 1, 1)
+shader_parameter/line_thickness = 3.0000001425
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_16k37"]
+shader = ExtResource("4_q1d48")
+shader_parameter/line_color = Color(1, 1, 1, 1)
+shader_parameter/line_thickness = 3.0000001425
+
+[node name="GeneralUI" type="Control" unique_id=1577614775]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_65jkc")
 
-[node name="ContenitoreMonete" type="Sprite2D" parent="."]
+[node name="ContenitoreMonete" type="Sprite2D" parent="." unique_id=367970063]
 position = Vector2(1205, 43)
 scale = Vector2(0.17, 0.17)
 texture = ExtResource("1_hswpa")
 
-[node name="Moneta" type="Sprite2D" parent="ContenitoreMonete"]
+[node name="Moneta" type="Sprite2D" parent="ContenitoreMonete" unique_id=1581212025]
 position = Vector2(-211.75977, 0)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("2_2efmg")
 
-[node name="LabelContatorePrese" type="Label" parent="ContenitoreMonete"]
+[node name="LabelContatorePrese" type="Label" parent="ContenitoreMonete" unique_id=1675566195]
 offset_left = -123.52905
 offset_top = -88.23529
 offset_right = 287.47095
@@ -32,3 +60,51 @@ offset_bottom = 76.76471
 text = "200000"
 label_settings = SubResource("LabelSettings_2efmg")
 metadata/_edit_use_anchors_ = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1076408121]
+layout_mode = 0
+offset_left = 240.0
+offset_top = 19.0
+offset_right = 280.0
+offset_bottom = 21.000004
+scale = Vector2(20, 20)
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="BarraProduzione" type="ProgressBar" parent="HBoxContainer" unique_id=342995952]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_styles/background = SubResource("StyleBoxFlat_5ccio")
+theme_override_styles/fill = SubResource("StyleBoxFlat_memh0")
+max_value = 10.0
+fill_mode = 1
+show_percentage = false
+
+[node name="BarraSicurezza" type="ProgressBar" parent="HBoxContainer" unique_id=921730205]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_styles/background = SubResource("StyleBoxFlat_3jhuy")
+theme_override_styles/fill = SubResource("StyleBoxFlat_f70hn")
+max_value = 10.0
+show_percentage = false
+
+[node name="LineaCentrale" type="ColorRect" parent="." unique_id=64975208]
+layout_mode = 0
+offset_left = 639.0
+offset_top = 19.000002
+offset_right = 641.0
+offset_bottom = 59.0
+
+[node name="SecurityLabel" type="Sprite2D" parent="." unique_id=739145988]
+material = SubResource("ShaderMaterial_fk42p")
+position = Vector2(981, 74)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("5_83ryh")
+
+[node name="ProductionLabel" type="Sprite2D" parent="." unique_id=185553198]
+material = SubResource("ShaderMaterial_16k37")
+position = Vector2(311, 74)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("6_6kngf")

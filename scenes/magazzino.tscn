@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://yayoh2nh287r" path="res://assets/telecamera.png" id="7_m1o7u"]
 [ext_resource type="Texture2D" uid="uid://dcjrcrqvhu702" path="res://assets/serratura.png" id="8_afat4"]
 [ext_resource type="Texture2D" uid="uid://domp5y02302ig" path="res://assets/arrow_back.png" id="10_4jjrj"]
+[ext_resource type="PackedScene" uid="uid://b3farfqb3q2ic" path="res://scenes/general_ui.tscn" id="11_4jjrj"]
 
 [sub_resource type="Animation" id="Animation_6ef2c"]
 length = 0.001
@@ -150,6 +151,8 @@ grow_vertical = 2
 texture = ExtResource("3_4pr28")
 expand_mode = 1
 metadata/_edit_use_anchors_ = true
+
+[node name="GeneralUI" parent="." unique_id=1577614775 instance=ExtResource("11_4jjrj")]
 
 [node name="ContenitoreContatorePrese" type="Sprite2D" parent="." unique_id=187568593]
 position = Vector2(81, 113)

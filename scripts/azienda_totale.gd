@@ -19,8 +19,7 @@ func _process(delta: float) -> void:
 
 # SALA MACCHINARI
 func _on_go_sala_macchinari_pressed() -> void:
-	# Carica la scena del tuo gioco vero e proprio.
-	# Assicurati di mettere il percorso corretto del tuo file .tscn
+	await get_tree().create_timer(0.1).timeout
 	get_tree().change_scene_to_file("res://scenes/sala_macchinari.tscn")
 
 func _on_go_sala_macchinari_button_down() -> void:
@@ -32,8 +31,7 @@ func _on_go_sala_macchinari_button_up() -> void:
 
 # SALA SERVER
 func _on_go_sala_server_pressed() -> void:
-	# Carica la scena del tuo gioco vero e proprio.
-	# Assicurati di mettere il percorso corretto del tuo file .tscn
+	await get_tree().create_timer(0.1).timeout
 	get_tree().change_scene_to_file("res://scenes/sala_server.tscn")
 
 func _on_go_sala_server_button_down() -> void:

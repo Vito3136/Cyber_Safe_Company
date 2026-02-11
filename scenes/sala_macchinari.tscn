@@ -3,21 +3,20 @@
 [ext_resource type="Texture2D" uid="uid://rtyy0y4onbys" path="res://assets/sala_macchinari_vuota.png" id="1_a40bb"]
 [ext_resource type="Script" uid="uid://doi0vwl1qa1g5" path="res://scripts/sala_macchinari.gd" id="1_q81bv"]
 [ext_resource type="Texture2D" uid="uid://cbj61q243olhn" path="res://assets/macchinario_singolo.png" id="2_skoty"]
-[ext_resource type="PackedScene" uid="uid://bkqncjsju08gt" path="res://scenes/barra_bilanciamento.tscn" id="2_t0fyw"]
 [ext_resource type="PackedScene" uid="uid://b3farfqb3q2ic" path="res://scenes/general_ui.tscn" id="3_dtpjo"]
 [ext_resource type="Script" uid="uid://baisapkrrbhyg" path="res://scripts/macchinario_prese.gd" id="3_weua7"]
 [ext_resource type="Texture2D" uid="uid://7r1tlhrhml45" path="res://assets/presa.png" id="4_weua7"]
-[ext_resource type="Shader" path="res://assets/macchinario_bloccato.gdshader" id="5_facy8"]
+[ext_resource type="Shader" uid="uid://cm71byq7p8uf7" path="res://assets/macchinario_bloccato.gdshader" id="5_facy8"]
 [ext_resource type="Script" uid="uid://daqd73tqqk4mu" path="res://scripts/macchinario_lampadine.gd" id="5_xf5l4"]
 [ext_resource type="Texture2D" uid="uid://cj1g0gppyqij7" path="res://assets/scatolo_pieno_prese.png" id="5_yftob"]
 [ext_resource type="Texture2D" uid="uid://cxyuftvnax7dp" path="res://assets/scatolo_vuoto.png" id="6_wybjb"]
 [ext_resource type="Texture2D" uid="uid://dlp8x3gj5fumw" path="res://assets/contenitore_contatore.png" id="7_4d3rf"]
 [ext_resource type="Texture2D" uid="uid://do2o6glaeiljs" path="res://assets/lampadina.png" id="7_yt6by"]
 [ext_resource type="Texture2D" uid="uid://cx23n6mb73cgr" path="res://assets/lock.png" id="8_gvjn5"]
-[ext_resource type="Script" path="res://scripts/macchinario_telecamere.gd" id="9_g5jtv"]
+[ext_resource type="Script" uid="uid://cwuyrf71w4yuh" path="res://scripts/macchinario_telecamere.gd" id="9_g5jtv"]
 [ext_resource type="Texture2D" uid="uid://be6x7tkwv5k3q" path="res://assets/scatolo_pieno_lampadine.png" id="9_wybjb"]
 [ext_resource type="Texture2D" uid="uid://yayoh2nh287r" path="res://assets/telecamera.png" id="9_yq1a3"]
-[ext_resource type="Script" path="res://scripts/macchinario_serrature.gd" id="11_pp45o"]
+[ext_resource type="Script" uid="uid://bvkec6jotbwfa" path="res://scripts/macchinario_serrature.gd" id="11_pp45o"]
 [ext_resource type="Texture2D" uid="uid://dcjrcrqvhu702" path="res://assets/serratura.png" id="12_7d4gf"]
 [ext_resource type="Texture2D" uid="uid://c3nxvv2a00dcr" path="res://assets/scatolo_pieno_telecamere.png" id="13_dwnkl"]
 [ext_resource type="Texture2D" uid="uid://ctjmef7omm4vn" path="res://assets/scatolo_pieno_serrature.png" id="16_7aw4a"]
@@ -1392,8 +1391,6 @@ expand_mode = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="GeneralUI" parent="." unique_id=1547323792 instance=ExtResource("3_dtpjo")]
-
-[node name="BarraBilanciamento" parent="." unique_id=103654351 instance=ExtResource("2_t0fyw")]
 
 [node name="ContenitoreContatorePrese" type="Sprite2D" parent="." unique_id=424080555]
 position = Vector2(81, 113.00001)
