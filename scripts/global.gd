@@ -42,6 +42,7 @@ var telecamere_in_magazzino : int = 0 # Quelle raccolte e stoccate
 var timer_produzione_telecamere : Timer
 var telecamere_is_full : bool = false
 var telecamere_is_locked = true
+var lucchetto_telecamere_scomparso = false
 
 # Variabili serrature
 var costo_serratura_singola : int = 20
@@ -52,6 +53,7 @@ var serrature_in_magazzino : int = 0 # Quelle raccolte e stoccate
 var timer_produzione_serrature : Timer
 var serrature_is_full : bool = false
 var serrature_is_locked = true
+var lucchetto_serrature_scomparso = false
 
 signal produzione_prese_aggiornata(quantita_in_sala_macchinari, quantita_massima_prese)
 signal produzione_lampadine_aggiornata(quantita_in_sala_macchinari, quantita_massima_lampadine)
@@ -147,6 +149,12 @@ func aumenta_livello_serrature():
 
 func sblocca_macchinario_lampadine():
 	lampadine_is_locked = false
+
+func sblocca_macchinario_telecamere():
+	telecamere_is_locked = false
+
+func sblocca_macchinario_serrature():
+	serrature_is_locked = false
 
 func avvia_produzione_prese():
 	if(!produzione_prese_avviata):

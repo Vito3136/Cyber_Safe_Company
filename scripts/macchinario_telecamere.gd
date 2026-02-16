@@ -18,10 +18,12 @@ var animazioni_spostamento_telecamera: Array[String] = ["spostamento_telecamera_
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	if(Global.telecamere_is_locked):
-		await get_tree().create_timer(2.0).timeout
+		return
+	
+	if(!Global.lucchetto_telecamere_scomparso):
 		anim_lucchetto.play("scomparsa")
 		await anim_lucchetto.animation_finished # Aspetta che finisca
-		Global.telecamere_is_locked = false
+		Global.lucchetto_telecamere_scomparso = true
 	material = null
 	scatolo_telecamere.material = null
 	lucchetto.visible = false

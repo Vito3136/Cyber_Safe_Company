@@ -18,10 +18,12 @@ var animazioni_spostamento_serratura: Array[String] = ["spostamento_serratura_5"
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	if(Global.serrature_is_locked):
-		await get_tree().create_timer(2.0).timeout
+		return
+	
+	if(!Global.lucchetto_serrature_scomparso):
 		anim_lucchetto.play("scomparsa")
 		await anim_lucchetto.animation_finished # Aspetta che finisca
-		Global.serrature_is_locked = false
+		Global.lucchetto_serrature_scomparso = true
 	material = null
 	scatolo_serrature.material = null
 	lucchetto.visible = false
