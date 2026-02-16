@@ -4,8 +4,10 @@ extends Node
 # 0 = Centro
 # -5 = 5 tacche verso Produzione
 # +3 = 3 tacche verso Sicurezza
-var bilanciamento : int = 0
-var max_tacchette : int = 18
+var bilanciamento: int = 0
+var max_tacchette: int = 18
+var totale_upgrade_produzione: int = 0
+var totale_upgrade_sicurezza: int = 0
 signal update_barra_bilanciamento()
 
 var monete : int = 0
@@ -19,16 +21,16 @@ var timer_animazione_spedizione_per_livello: Array[float] = [35.0, 30.0, 25.0]
 var livello_magazzino: int = 0
 
 # Variabili prese
-var costo_presa_singola : int = 8
+var costo_presa_singola: int = 8
 var livello_prese: int = 0
-var timer_produzione_prese : Timer
-var produzione_prese_avviata : bool = false
-var prese_in_sala_macchinari : int = 0  # Quelle prodotte ma non raccolte
+var timer_produzione_prese: Timer
+var produzione_prese_avviata: bool = false
+var prese_in_sala_macchinari: int = 0  # Quelle prodotte ma non raccolte
 var prese_in_magazzino : int = 0 # Quelle raccolte e stoccate
 var prese_is_full : bool = false
 
 # Variabili lampadine
-var costo_lampadina_singola : int = 11
+var costo_lampadina_singola: int = 11
 var livello_lampadine: int = 0
 var produzione_lampadine_avviata : bool = false
 var lampadine_in_sala_macchinari : int = 0  # Quelle prodotte ma non raccolte
@@ -39,7 +41,7 @@ var lampadine_is_locked = true
 var lucchetto_lampadine_scomparso = false
 
 # Variabili telecamere
-var costo_telecamera_singola : int = 15
+var costo_telecamera_singola: int = 15
 var livello_telecamere: int = 0
 var produzione_telecamere_avviata : bool = false
 var telecamere_in_sala_macchinari : int = 0  # Quelle prodotte ma non raccolte
@@ -119,6 +121,7 @@ func upgrade_produzione():
 	# Controllo di non superare il limite massimo a sinistra (-10)
 	if bilanciamento > -max_tacchette:
 		bilanciamento -= 1
+		totale_upgrade_produzione += 1
 		update_barra_bilanciamento.emit()
 
 # Funzione da chiamare quando fai un upgrade SICUREZZA
@@ -127,6 +130,7 @@ func upgrade_sicurezza():
 	# Controllo di non superare il limite massimo a destra (+10)
 	if Global.bilanciamento < max_tacchette:
 		Global.bilanciamento += 1
+		totale_upgrade_sicurezza += 1
 		update_barra_bilanciamento.emit()
 
 func aumenta_livello_magazzino():

@@ -4,6 +4,8 @@ extends Control
 @onready var bar_prod = $HBoxContainer/BarraProduzione
 @onready var bar_sic = $HBoxContainer/BarraSicurezza
 @onready var label_contatore_monete = $ContenitoreMonete/LabelContatoreMonete
+@onready var security_label = $SecurityLabel
+@onready var production_label = $ProductionLabel
 
 
 func _ready():
@@ -37,3 +39,6 @@ func _aggiorna_grafica_barra():
 		# Siamo sbilanciati verso SICUREZZA (numeri positivi)
 		bar_prod.value = 0
 		bar_sic.value = Global.bilanciamento
+	
+	production_label.text = "PRODUCTION   (" + str(Global.totale_upgrade_produzione) + ")" 
+	security_label.text = "(" + str(Global.totale_upgrade_sicurezza) + ")   SECURITY"

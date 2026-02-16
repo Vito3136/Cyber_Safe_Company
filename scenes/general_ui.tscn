@@ -87,7 +87,7 @@ offset_bottom = 59.0
 
 [node name="SecurityLabel" type="Label" parent="." unique_id=1382883138]
 layout_mode = 0
-offset_left = 904.0
+offset_left = 651.0
 offset_top = 60.0
 offset_right = 1039.0
 offset_bottom = 101.0
@@ -97,12 +97,13 @@ theme_override_constants/outline_size = 7
 theme_override_fonts/font = ExtResource("7_q1d48")
 theme_override_font_sizes/font_size = 39
 text = "SECURITY"
+horizontal_alignment = 2
 
 [node name="ProductionLabel" type="Label" parent="." unique_id=358159812]
 layout_mode = 0
 offset_left = 242.0
 offset_top = 60.0
-offset_right = 424.0
+offset_right = 632.0
 offset_bottom = 101.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
