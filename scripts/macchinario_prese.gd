@@ -11,11 +11,13 @@ extends Sprite2D
 
 @export var label_contatore_prese : Label
 
+var animazioni_spostamento_presa: Array[String] = ["spostamento_presa_5", "spostamento_presa_4", "spostamento_presa_4", "spostamento_presa_3"]
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Global.avvia_produzione_prese()
 	start_produzione()
-	aggiorna_interfaccia(Global.prese_in_sala_macchinari, Global.capienza_massima_prese)
+	aggiorna_interfaccia(Global.prese_in_sala_macchinari, Global.capienza_massima_per_livello[Global.livello_prese])
 	Global.produzione_prese_aggiornata.connect(_aggiorna_produzione)
 
 func start_produzione():
@@ -30,7 +32,7 @@ func start_produzione():
 		anim_macchinario.play("produzione")
 		var timer = Global.timer_produzione_prese
 		var tempo_corrente = timer.wait_time - timer.time_left
-		anim_presa.play("spostamento_presa")
+		anim_presa.play(animazioni_spostamento_presa[Global.livello_prese])
 		anim_presa.seek(tempo_corrente, true)
 		scatolo_prese.texture = texture_vuota
 
@@ -45,7 +47,7 @@ func _aggiorna_produzione(_quantita, _totale):
 	else:
 		presa.visible = true
 		anim_macchinario.play("produzione")
-		anim_presa.play("spostamento_presa")
+		anim_presa.play(animazioni_spostamento_presa[Global.livello_prese])
 		scatolo_prese.texture = texture_vuota
 		anim_scatolo.stop()
 		

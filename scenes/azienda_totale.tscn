@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://bgc5gj00r15bv" path="res://scripts/azienda_totale.gd" id="1_7xsbt"]
 [ext_resource type="Texture2D" uid="uid://bdyhqnn6ll6nd" path="res://assets/sfondo_azienda.png" id="1_aehsc"]
 [ext_resource type="PackedScene" uid="uid://b3farfqb3q2ic" path="res://scenes/general_ui.tscn" id="3_p68yv"]
+[ext_resource type="Texture2D" uid="uid://domp5y02302ig" path="res://assets/arrow_back.png" id="4_wnmqs"]
+[ext_resource type="FontFile" uid="uid://du80thymbsnek" path="res://font/Machine Gunk.otf" id="5_jstmx"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cmwo7"]
 
@@ -41,6 +43,18 @@ texture = ExtResource("1_aehsc")
 expand_mode = 1
 
 [node name="GeneralUI" parent="." unique_id=1577614775 instance=ExtResource("3_p68yv")]
+
+[node name="BackLeftButton" type="TextureButton" parent="." unique_id=1372333929]
+offset_left = 20.0
+offset_top = -5.0
+offset_right = 110.0
+offset_bottom = 85.0
+pivot_offset = Vector2(45, 45)
+size_flags_horizontal = 4
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("4_wnmqs")
+ignore_texture_size = true
+stretch_mode = 5
 
 [node name="GoSalaMacchinari" type="Button" parent="." unique_id=308818624]
 anchors_preset = 2
@@ -118,6 +132,71 @@ mouse_default_cursor_shape = 2
 theme_override_styles/normal = SubResource("StyleBoxEmpty_8gqxk")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_n8h8t")
 
+[node name="MachineRoomLabel" type="Label" parent="." unique_id=333078056]
+offset_top = 441.0
+offset_right = 427.0
+offset_bottom = 480.0
+theme_override_fonts/font = ExtResource("5_jstmx")
+theme_override_font_sizes/font_size = 37
+text = "MACHINE ROOM"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="WarehouseLabel" type="Label" parent="." unique_id=669531079]
+offset_left = 427.0
+offset_top = 441.0
+offset_right = 855.0
+offset_bottom = 480.0
+theme_override_fonts/font = ExtResource("5_jstmx")
+theme_override_font_sizes/font_size = 37
+text = "WAREHOUSE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SIEMRoomLabel" type="Label" parent="." unique_id=133945679]
+offset_top = 118.0
+offset_right = 427.0
+offset_bottom = 157.0
+theme_override_fonts/font = ExtResource("5_jstmx")
+theme_override_font_sizes/font_size = 37
+text = "SIEM ROOM"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="R&DRoomLabel" type="Label" parent="." unique_id=308808102]
+offset_left = 427.0
+offset_top = 118.0
+offset_right = 853.0
+offset_bottom = 157.0
+theme_override_fonts/font = ExtResource("5_jstmx")
+theme_override_font_sizes/font_size = 37
+text = "R&D ROOM"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="OfficesRoom" type="Label" parent="." unique_id=1997728772]
+offset_left = 853.0
+offset_top = 118.0
+offset_right = 1280.0
+offset_bottom = 157.0
+theme_override_fonts/font = ExtResource("5_jstmx")
+theme_override_font_sizes/font_size = 37
+text = "OFFICES"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ServerRoomLabel" type="Label" parent="." unique_id=2099730030]
+offset_left = 855.0
+offset_top = 441.0
+offset_right = 1280.0
+offset_bottom = 480.0
+theme_override_fonts/font = ExtResource("5_jstmx")
+theme_override_font_sizes/font_size = 37
+text = "SERVER ROOM"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="BackLeftButton" to="." method="_on_back_left_button_pressed"]
 [connection signal="button_down" from="GoSalaMacchinari" to="." method="_on_go_sala_macchinari_button_down"]
 [connection signal="button_up" from="GoSalaMacchinari" to="." method="_on_go_sala_macchinari_button_up"]
 [connection signal="pressed" from="GoSalaMacchinari" to="." method="_on_go_sala_macchinari_pressed"]

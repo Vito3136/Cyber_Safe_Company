@@ -13,6 +13,8 @@ extends Sprite2D
 
 @export var label_contatore_telecamere : Label
 
+var animazioni_spostamento_telecamera: Array[String] = ["spostamento_telecamera_5", "spostamento_telecamera_4", "spostamento_telecamera_4", "spostamento_telecamera_3"]
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	if(Global.telecamere_is_locked):
@@ -25,7 +27,7 @@ func _ready() -> void:
 	lucchetto.visible = false
 	Global.avvia_produzione_telecamere()
 	start_produzione()
-	aggiorna_interfaccia(Global.telecamere_in_sala_macchinari, Global.capienza_massima_telecamere)
+	aggiorna_interfaccia(Global.telecamere_in_sala_macchinari, Global.capienza_massima_per_livello[Global.livello_telecamere])
 	Global.produzione_telecamere_aggiornata.connect(_aggiorna_produzione)
 
 func start_produzione():
@@ -40,7 +42,7 @@ func start_produzione():
 		anim_macchinario.play("produzione")
 		var timer = Global.timer_produzione_telecamere
 		var tempo_corrente = timer.wait_time - timer.time_left
-		anim_telecamera.play("spostamento_telecamera")
+		anim_telecamera.play(animazioni_spostamento_telecamera[Global.livello_telecamere])
 		anim_telecamera.seek(tempo_corrente, true)
 		scatolo_telecamere.texture = texture_vuota
 
@@ -55,7 +57,7 @@ func _aggiorna_produzione(_quantita, _totale):
 	else:
 		telecamera.visible = true
 		anim_macchinario.play("produzione")
-		anim_telecamera.play("spostamento_telecamera")
+		anim_telecamera.play(animazioni_spostamento_telecamera[Global.livello_telecamere])
 		scatolo_telecamere.texture = texture_vuota
 		anim_scatolo.stop()
 		

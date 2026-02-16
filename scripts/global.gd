@@ -1,49 +1,58 @@
 extends Node
 
+# Barra bilanciamento
+# 0 = Centro
+# -5 = 5 tacche verso Produzione
+# +3 = 3 tacche verso Sicurezza
+var bilanciamento : int = 0
+var max_tacchette : int = 17
+signal update_barra_bilanciamento()
+
 var monete : int = 0
+
+var capienza_massima_per_livello: Array[int] = [10, 10, 12, 14]
+var timer_produzione_per_livello: Array[float] = [5.0, 4.0, 4.0, 3.0]
 
 # Variabili prese
 var costo_presa_singola : int = 8
+var livello_prese: int = 0
+var timer_produzione_prese : Timer
 var produzione_prese_avviata : bool = false
 var prese_in_sala_macchinari : int = 0  # Quelle prodotte ma non raccolte
 var prese_in_magazzino : int = 0 # Quelle raccolte e stoccate
-var timer_produzione_prese : Timer
 var prese_is_full : bool = false
-var capienza_massima_prese : int = 10
 
 # Variabili lampadine
 var costo_lampadina_singola : int = 11
+var livello_lampadine: int = 0
 var produzione_lampadine_avviata : bool = false
 var lampadine_in_sala_macchinari : int = 0  # Quelle prodotte ma non raccolte
 var lampadine_in_magazzino : int = 0 # Quelle raccolte e stoccate
 var timer_produzione_lampadine : Timer
 var lampadine_is_full : bool = false
-var capienza_massima_lampadine : int = 10
 var lampadine_is_locked = true
+var lucchetto_lampadine_scomparso = false
 
 # Variabili telecamere
 var costo_telecamera_singola : int = 15
+var livello_telecamere: int = 0
 var produzione_telecamere_avviata : bool = false
 var telecamere_in_sala_macchinari : int = 0  # Quelle prodotte ma non raccolte
 var telecamere_in_magazzino : int = 0 # Quelle raccolte e stoccate
 var timer_produzione_telecamere : Timer
 var telecamere_is_full : bool = false
-var capienza_massima_telecamere : int = 10
 var telecamere_is_locked = true
 
 # Variabili serrature
 var costo_serratura_singola : int = 20
+var livello_serrature: int = 0
 var produzione_serrature_avviata : bool = false
 var serrature_in_sala_macchinari : int = 0  # Quelle prodotte ma non raccolte
 var serrature_in_magazzino : int = 0 # Quelle raccolte e stoccate
 var timer_produzione_serrature : Timer
 var serrature_is_full : bool = false
-var capienza_massima_serrature : int = 10
 var serrature_is_locked = true
 
-
-# DEFINIAMO I SEGNALI
-# Servono per avvisare le scene di aggiornare le etichette (Label)
 signal produzione_prese_aggiornata(quantita_in_sala_macchinari, quantita_massima_prese)
 signal produzione_lampadine_aggiornata(quantita_in_sala_macchinari, quantita_massima_lampadine)
 signal produzione_telecamere_aggiornata(quantita_in_sala_macchinari, quantita_massima_telecamere)
@@ -96,10 +105,53 @@ func vendi_tutto():
 	monete += totale
 	print("35 finiti - Monete calcolate: " + str(monete))
 
+# Funzione da chiamare quando fai un upgrade PRODUZIONE
+func upgrade_produzione():
+	# Andare verso sinistra significa SOTTRARRE al bilanciamento
+	# Controllo di non superare il limite massimo a sinistra (-10)
+	if bilanciamento > -max_tacchette:
+		bilanciamento -= 1
+		update_barra_bilanciamento.emit()
+
+# Funzione da chiamare quando fai un upgrade SICUREZZA
+func upgrade_sicurezza():
+	# Andare verso destra significa AGGIUNGERE al bilanciamento
+	# Controllo di non superare il limite massimo a destra (+10)
+	if Global.bilanciamento < max_tacchette:
+		Global.bilanciamento += 1
+		update_barra_bilanciamento.emit()
+
+func aumenta_livello_prese():
+	if(livello_prese < 3):
+		livello_prese += 1
+		timer_produzione_prese.wait_time = timer_produzione_per_livello[livello_prese]
+		upgrade_produzione()
+
+func aumenta_livello_lampadine():
+	if(livello_lampadine < 3):
+		livello_lampadine += 1
+		timer_produzione_lampadine.wait_time = timer_produzione_per_livello[livello_lampadine]
+		upgrade_produzione()
+
+func aumenta_livello_telecamere():
+	if(livello_telecamere < 3):
+		livello_telecamere += 1
+		timer_produzione_telecamere.wait_time = timer_produzione_per_livello[livello_telecamere]
+		upgrade_produzione()
+
+func aumenta_livello_serrature():
+	if(livello_serrature < 3):
+		livello_serrature += 1
+		timer_produzione_serrature.wait_time = timer_produzione_per_livello[livello_serrature]
+		upgrade_produzione()
+
+func sblocca_macchinario_lampadine():
+	lampadine_is_locked = false
+
 func avvia_produzione_prese():
 	if(!produzione_prese_avviata):
 		timer_produzione_prese = Timer.new()
-		timer_produzione_prese.wait_time = 5.0 # Ogni 5 secondi
+		timer_produzione_prese.wait_time = timer_produzione_per_livello[livello_prese]
 		timer_produzione_prese.autostart = true
 		timer_produzione_prese.one_shot = false # Si ripete all'infinito
 		produzione_prese_avviata = true
@@ -113,7 +165,7 @@ func avvia_produzione_prese():
 func avvia_produzione_lampadine():
 	if(!produzione_lampadine_avviata):
 		timer_produzione_lampadine = Timer.new()
-		timer_produzione_lampadine.wait_time = 5.0 # Ogni 5 secondi
+		timer_produzione_lampadine.wait_time = timer_produzione_per_livello[livello_lampadine]
 		timer_produzione_lampadine.autostart = true
 		timer_produzione_lampadine.one_shot = false # Si ripete all'infinito
 		produzione_lampadine_avviata = true
@@ -127,7 +179,7 @@ func avvia_produzione_lampadine():
 func avvia_produzione_telecamere():
 	if(!produzione_telecamere_avviata):
 		timer_produzione_telecamere = Timer.new()
-		timer_produzione_telecamere.wait_time = 5.0 # Ogni 5 secondi
+		timer_produzione_telecamere.wait_time = timer_produzione_per_livello[livello_telecamere]
 		timer_produzione_telecamere.autostart = true
 		timer_produzione_telecamere.one_shot = false # Si ripete all'infinito
 		produzione_telecamere_avviata = true
@@ -141,7 +193,7 @@ func avvia_produzione_telecamere():
 func avvia_produzione_serrature():
 	if(!produzione_serrature_avviata):
 		timer_produzione_serrature = Timer.new()
-		timer_produzione_serrature.wait_time = 5.0 # Ogni 5 secondi
+		timer_produzione_serrature.wait_time = timer_produzione_per_livello[livello_serrature]
 		timer_produzione_serrature.autostart = true
 		timer_produzione_serrature.one_shot = false # Si ripete all'infinito
 		produzione_serrature_avviata = true
@@ -160,10 +212,10 @@ func _on_timer_produzione_prese_timeout():
 	prese_in_sala_macchinari += 1
 	print("Prodotta una presa! In macchina: ", prese_in_sala_macchinari)
 	
-	produzione_prese_aggiornata.emit(prese_in_sala_macchinari, capienza_massima_prese)
+	produzione_prese_aggiornata.emit(prese_in_sala_macchinari, capienza_massima_per_livello[livello_prese])
 	
 	# Controlla se abbiamo raggiunto il limite
-	if prese_in_sala_macchinari >= capienza_massima_prese:
+	if prese_in_sala_macchinari >= capienza_massima_per_livello[livello_prese]:
 		prese_is_full = true
 		timer_produzione_prese.stop() # FERMA IL TIMER: Smette di produrre
 
@@ -175,10 +227,10 @@ func _on_timer_produzione_lampadine_timeout():
 	lampadine_in_sala_macchinari += 1
 	print("Prodotta una lampadina! In macchina: ", lampadine_in_sala_macchinari)
 	
-	produzione_lampadine_aggiornata.emit(lampadine_in_sala_macchinari, capienza_massima_lampadine)
+	produzione_lampadine_aggiornata.emit(lampadine_in_sala_macchinari, capienza_massima_per_livello[livello_lampadine])
 	
 	# Controlla se abbiamo raggiunto il limite
-	if lampadine_in_sala_macchinari >= capienza_massima_lampadine:
+	if lampadine_in_sala_macchinari >= capienza_massima_per_livello[livello_lampadine]:
 		lampadine_is_full = true
 		timer_produzione_lampadine.stop() # FERMA IL TIMER: Smette di produrre
 
@@ -189,10 +241,10 @@ func _on_timer_produzione_telecamere_timeout():
 	telecamere_in_sala_macchinari += 1
 	print("Prodotta una lampadina! In macchina: ", telecamere_in_sala_macchinari)
 	
-	produzione_telecamere_aggiornata.emit(telecamere_in_sala_macchinari, capienza_massima_telecamere)
+	produzione_telecamere_aggiornata.emit(telecamere_in_sala_macchinari, capienza_massima_per_livello[livello_telecamere])
 	
 	# Controlla se abbiamo raggiunto il limite
-	if telecamere_in_sala_macchinari >= capienza_massima_telecamere:
+	if telecamere_in_sala_macchinari >= capienza_massima_per_livello[livello_telecamere]:
 		telecamere_is_full = true
 		timer_produzione_telecamere.stop() # FERMA IL TIMER: Smette di produrre
 
@@ -202,12 +254,12 @@ func _on_timer_produzione_serrature_timeout():
 		return
 	
 	serrature_in_sala_macchinari += 1
-	print("Prodotta una lampadina! In macchina: ", serrature_in_sala_macchinari)
+	print("Prodotta una serratura! In macchina: ", serrature_in_sala_macchinari)
 	
-	produzione_serrature_aggiornata.emit(serrature_in_sala_macchinari, capienza_massima_serrature)
+	produzione_serrature_aggiornata.emit(serrature_in_sala_macchinari, capienza_massima_per_livello[livello_serrature])
 	
 	# Controlla se abbiamo raggiunto il limite
-	if serrature_in_sala_macchinari >= capienza_massima_serrature:
+	if serrature_in_sala_macchinari >= capienza_massima_per_livello[livello_serrature]:
 		serrature_is_full = true
 		timer_produzione_serrature.stop() # FERMA IL TIMER: Smette di produrre
 
@@ -225,7 +277,7 @@ func raccogli_tutto_prese():
 		prese_in_sala_macchinari = 0
 		
 		# Emettiamo i segnali per aggiornare entrambe le grafiche
-		produzione_prese_aggiornata.emit(prese_in_sala_macchinari, capienza_massima_prese) # Diventerà 0
+		produzione_prese_aggiornata.emit(prese_in_sala_macchinari, capienza_massima_per_livello[livello_prese])
 
 # Funzione chiamata quando l'utente tappa nella Sala Macchinari
 func raccogli_tutto_lampadine():
@@ -241,7 +293,7 @@ func raccogli_tutto_lampadine():
 		lampadine_in_sala_macchinari = 0
 		
 		# Emettiamo i segnali per aggiornare entrambe le grafiche
-		produzione_lampadine_aggiornata.emit(lampadine_in_sala_macchinari, capienza_massima_lampadine) # Diventerà 0
+		produzione_lampadine_aggiornata.emit(lampadine_in_sala_macchinari, capienza_massima_per_livello[livello_lampadine]) # Diventerà 0
 
 # Funzione chiamata quando l'utente tappa nella Sala Macchinari
 func raccogli_tutto_telecamere():
@@ -257,7 +309,7 @@ func raccogli_tutto_telecamere():
 		telecamere_in_sala_macchinari = 0
 		
 		# Emettiamo i segnali per aggiornare entrambe le grafiche
-		produzione_telecamere_aggiornata.emit(telecamere_in_sala_macchinari, capienza_massima_telecamere) # Diventerà 0
+		produzione_telecamere_aggiornata.emit(telecamere_in_sala_macchinari, capienza_massima_per_livello[livello_telecamere]) # Diventerà 0
 
 # Funzione chiamata quando l'utente tappa nella Sala Macchinari
 func raccogli_tutto_serrature():
@@ -273,7 +325,7 @@ func raccogli_tutto_serrature():
 		serrature_in_sala_macchinari = 0
 		
 		# Emettiamo i segnali per aggiornare entrambe le grafiche
-		produzione_serrature_aggiornata.emit(serrature_in_sala_macchinari, capienza_massima_serrature) # Diventerà 0
+		produzione_serrature_aggiornata.emit(serrature_in_sala_macchinari, capienza_massima_per_livello[livello_serrature]) # Diventerà 0
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

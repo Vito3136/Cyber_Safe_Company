@@ -13,19 +13,23 @@ extends Sprite2D
 
 @export var label_contatore_lampadine : Label
 
+var animazioni_spostamento_lampadina: Array[String] = ["spostamento_lampadina_5", "spostamento_lampadina_4", "spostamento_lampadina_4", "spostamento_lampadina_3"]
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	if(Global.lampadine_is_locked):
-		await get_tree().create_timer(2.0).timeout
+		return
+	
+	if(Global.lucchetto_lampadine_scomparso):
 		anim_lucchetto.play("scomparsa")
 		await anim_lucchetto.animation_finished # Aspetta che finisca
-		Global.lampadine_is_locked = false
+		Global.lucchetto_lampadine_scomparso = true
 	material = null
 	scatolo_lampadine.material = null
 	lucchetto.visible = false
 	Global.avvia_produzione_lampadine()
 	start_produzione()
-	aggiorna_interfaccia(Global.lampadine_in_sala_macchinari, Global.capienza_massima_lampadine)
+	aggiorna_interfaccia(Global.lampadine_in_sala_macchinari, Global.capienza_massima_per_livello[Global.livello_lampadine])
 	Global.produzione_lampadine_aggiornata.connect(_aggiorna_produzione)
 
 func start_produzione():
@@ -40,7 +44,7 @@ func start_produzione():
 		anim_macchinario.play("produzione")
 		var timer = Global.timer_produzione_lampadine
 		var tempo_corrente = timer.wait_time - timer.time_left
-		anim_lampadina.play("spostamento_lampadina")
+		anim_lampadina.play(animazioni_spostamento_lampadina[Global.livello_lampadine])
 		anim_lampadina.seek(tempo_corrente, true)
 		scatolo_lampadine.texture = texture_vuota
 
@@ -55,10 +59,9 @@ func _aggiorna_produzione(_quantita, _totale):
 	else:
 		lampadina.visible = true
 		anim_macchinario.play("produzione")
-		anim_lampadina.play("spostamento_lampadina")
+		anim_lampadina.play(animazioni_spostamento_lampadina[Global.livello_lampadine])
 		scatolo_lampadine.texture = texture_vuota
 		anim_scatolo.stop()
-		
 
 func aggiorna_interfaccia(quant, tot):
 	label_contatore_lampadine.text = str(quant) + "/" + str(tot)

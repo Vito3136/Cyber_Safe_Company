@@ -151,8 +151,150 @@ tracks/5/keys = {
 "times": PackedFloat32Array(0)
 }
 
+[sub_resource type="Animation" id="Animation_j7tms"]
+resource_name = "spostamento_presa_3"
+length = 3.0
+loop_mode = 1
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(-79.41185, -0.25, 0, 0.25, 0, 302.94104, -0.16666667, -63.725487, 0, 0, 355.8823, -0.16666667, -8.823543, 0, 0),
+"times": PackedFloat32Array(0, 2.3, 3)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(-29.411762, -0.25, 0, 0.25, 0, 170.58823, -0.16666667, -33.333332, 0, 0, 352.94113, -0.16666667, -30.39215, 0, 0),
+"times": PackedFloat32Array(0, 2.3, 3)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:modulate:r")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0),
+"times": PackedFloat32Array(0, 2.3, 3)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:modulate:g")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0),
+"times": PackedFloat32Array(0, 2.3, 3)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:modulate:b")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0),
+"times": PackedFloat32Array(0, 2.3, 3)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath(".:modulate:a")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"times": PackedFloat32Array(0, 2.3, 3)
+}
+
+[sub_resource type="Animation" id="Animation_kfu22"]
+resource_name = "spostamento_presa_4"
+length = 4.0
+loop_mode = 1
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(-79.41185, -0.25, 0, 0.25, 0, 302.94104, -0.16666667, -63.725487, 0, 0, 355.8823, -0.16666667, -8.823543, 0, 0),
+"times": PackedFloat32Array(0, 3, 4)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(-29.411762, -0.25, 0, 0.25, 0, 170.58823, -0.16666667, -33.333332, 0, 0, 352.94113, -0.16666667, -30.39215, 0, 0),
+"times": PackedFloat32Array(0, 3, 4)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:modulate:r")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0),
+"times": PackedFloat32Array(0, 3, 4)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:modulate:g")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0),
+"times": PackedFloat32Array(0, 3, 4)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:modulate:b")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0),
+"times": PackedFloat32Array(0, 3, 4)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath(".:modulate:a")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"times": PackedFloat32Array(0, 3, 4)
+}
+
 [sub_resource type="Animation" id="Animation_yt6by"]
-resource_name = "spostamento_presa"
+resource_name = "spostamento_presa_5"
 length = 5.0
 loop_mode = 1
 tracks/0/type = "bezier"
@@ -225,7 +367,9 @@ tracks/5/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_yq1a3"]
 _data = {
 &"RESET": SubResource("Animation_gvjn5"),
-&"spostamento_presa": SubResource("Animation_yt6by")
+&"spostamento_presa_3": SubResource("Animation_j7tms"),
+&"spostamento_presa_4": SubResource("Animation_kfu22"),
+&"spostamento_presa_5": SubResource("Animation_yt6by")
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7aw4a"]
@@ -417,8 +561,150 @@ tracks/5/keys = {
 "times": PackedFloat32Array(0)
 }
 
+[sub_resource type="Animation" id="Animation_a68l2"]
+resource_name = "spostamento_lampadina_3"
+length = 3.0
+loop_mode = 1
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(-73.5294, -0.25, 0, 0.25, 0, 308.8235, -0.33333334, -63.725487, 0, 0, 370.5882, -0.16666667, -10.294119, 0, 0),
+"times": PackedFloat32Array(0, 2.3, 3)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(-38.23529, -0.25, 0, 0.25, 0, 167.64705, -0.33333334, -34.313725, 0, 0, 382.3529, -0.16666667, -35.78431, 0, 0),
+"times": PackedFloat32Array(0, 2.3, 3)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:modulate:r")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.33333334, 0, 0, 0, 1, -0.16666667, 0, 0, 0),
+"times": PackedFloat32Array(0, 2.3, 3)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:modulate:g")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.33333334, 0, 0, 0, 1, -0.16666667, 0, 0, 0),
+"times": PackedFloat32Array(0, 2.3, 3)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:modulate:b")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.33333334, 0, 0, 0, 1, -0.16666667, 0, 0, 0),
+"times": PackedFloat32Array(0, 2.3, 3)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath(".:modulate:a")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.33333334, 0, 0, 0, 0, -0.16666667, 0.16666667, 0, 0),
+"times": PackedFloat32Array(0, 2.3, 3)
+}
+
+[sub_resource type="Animation" id="Animation_11jf5"]
+resource_name = "spostamento_lampadina_4"
+length = 4.0
+loop_mode = 1
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(-73.5294, -0.25, 0, 0.25, 0, 308.8235, -0.33333334, -63.725487, 0, 0, 370.5882, -0.16666667, -10.294119, 0, 0),
+"times": PackedFloat32Array(0, 3, 4)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(-38.23529, -0.25, 0, 0.25, 0, 167.64705, -0.33333334, -34.313725, 0, 0, 382.3529, -0.16666667, -35.78431, 0, 0),
+"times": PackedFloat32Array(0, 3, 4)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:modulate:r")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.33333334, 0, 0, 0, 1, -0.16666667, 0, 0, 0),
+"times": PackedFloat32Array(0, 3, 4)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:modulate:g")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.33333334, 0, 0, 0, 1, -0.16666667, 0, 0, 0),
+"times": PackedFloat32Array(0, 3, 4)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:modulate:b")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.33333334, 0, 0, 0, 1, -0.16666667, 0, 0, 0),
+"times": PackedFloat32Array(0, 3, 4)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath(".:modulate:a")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.33333334, 0, 0, 0, 0, -0.16666667, 0.16666667, 0, 0),
+"times": PackedFloat32Array(0, 3, 4)
+}
+
 [sub_resource type="Animation" id="Animation_g5jtv"]
-resource_name = "spostamento_lampadina"
+resource_name = "spostamento_lampadina_5"
 length = 5.0
 loop_mode = 1
 tracks/0/type = "bezier"
@@ -491,7 +777,9 @@ tracks/5/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_pp45o"]
 _data = {
 &"RESET": SubResource("Animation_k06iw"),
-&"spostamento_lampadina": SubResource("Animation_g5jtv")
+&"spostamento_lampadina_3": SubResource("Animation_a68l2"),
+&"spostamento_lampadina_4": SubResource("Animation_11jf5"),
+&"spostamento_lampadina_5": SubResource("Animation_g5jtv")
 }
 
 [sub_resource type="Animation" id="Animation_7d4gf"]
@@ -780,8 +1068,150 @@ tracks/5/keys = {
 "times": PackedFloat32Array(0)
 }
 
+[sub_resource type="Animation" id="Animation_tm42b"]
+resource_name = "spostamento_telecamera_3"
+length = 3.0
+loop_mode = 1
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(64.705696, -0.25, 0, 0.25, 0, -317.64722, -0.33333334, 63.725487, 0, 0, -347.059, -0.16666667, 4.9019623, 0, 0),
+"times": PackedFloat32Array(0, 2.3, 3)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(-29.411762, -0.25, 0, 0.25, 0, 173.5294, -0.33333334, -33.82353, 0, 0, 344.1176, -0.16666667, -28.43137, 0, 0),
+"times": PackedFloat32Array(0, 2.3, 3)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:modulate:r")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.33333334, 0, 0, 0, 1, -0.16666667, 0, 0, 0),
+"times": PackedFloat32Array(0, 2.3, 3)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:modulate:g")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.33333334, 0, 0, 0, 1, -0.16666667, 0, 0, 0),
+"times": PackedFloat32Array(0, 2.3, 3)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:modulate:b")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.33333334, 0, 0, 0, 1, -0.16666667, 0, 0, 0),
+"times": PackedFloat32Array(0, 2.3, 3)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath(".:modulate:a")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.33333334, 0, 0, 0, 0.47843137, -0.16666667, 0.086928114, 0, 0),
+"times": PackedFloat32Array(0, 2.3, 3)
+}
+
+[sub_resource type="Animation" id="Animation_urhdi"]
+resource_name = "spostamento_telecamera_4"
+length = 4.0
+loop_mode = 1
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(64.705696, -0.25, 0, 0.25, 0, -317.64722, -0.33333334, 63.725487, 0, 0, -347.059, -0.16666667, 4.9019623, 0, 0),
+"times": PackedFloat32Array(0, 3, 4)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(-29.411762, -0.25, 0, 0.25, 0, 173.5294, -0.33333334, -33.82353, 0, 0, 344.1176, -0.16666667, -28.43137, 0, 0),
+"times": PackedFloat32Array(0, 3, 4)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:modulate:r")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.33333334, 0, 0, 0, 1, -0.16666667, 0, 0, 0),
+"times": PackedFloat32Array(0, 3, 4)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:modulate:g")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.33333334, 0, 0, 0, 1, -0.16666667, 0, 0, 0),
+"times": PackedFloat32Array(0, 3, 4)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:modulate:b")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.33333334, 0, 0, 0, 1, -0.16666667, 0, 0, 0),
+"times": PackedFloat32Array(0, 3, 4)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath(".:modulate:a")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.33333334, 0, 0, 0, 0.47843137, -0.16666667, 0.086928114, 0, 0),
+"times": PackedFloat32Array(0, 3, 4)
+}
+
 [sub_resource type="Animation" id="Animation_dwnkl"]
-resource_name = "spostamento_telecamera"
+resource_name = "spostamento_telecamera_5"
 length = 5.0
 loop_mode = 1
 tracks/0/type = "bezier"
@@ -854,7 +1284,9 @@ tracks/5/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_4d3rf"]
 _data = {
 &"RESET": SubResource("Animation_7aw4a"),
-&"spostamento_telecamera": SubResource("Animation_dwnkl")
+&"spostamento_telecamera_3": SubResource("Animation_tm42b"),
+&"spostamento_telecamera_4": SubResource("Animation_urhdi"),
+&"spostamento_telecamera_5": SubResource("Animation_dwnkl")
 }
 
 [sub_resource type="Animation" id="Animation_t0fyw"]
@@ -1143,8 +1575,150 @@ tracks/5/keys = {
 "times": PackedFloat32Array(0)
 }
 
+[sub_resource type="Animation" id="Animation_edmps"]
+resource_name = "spostamento_serratura_3"
+length = 3.0
+loop_mode = 1
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(70.58804, -0.25, 0, 0.25, 0, -314.70602, -0.33333334, 64.21568, 0, 0, -341.1766, -0.16666667, 4.4117637, 0, 0),
+"times": PackedFloat32Array(0, 2.3, 3)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(-32.353027, -0.25, 0, 0.25, 0, 170.58813, -0.33333334, -33.82353, 0, 0, 352.94104, -0.16666667, -30.39215, 0, 0),
+"times": PackedFloat32Array(0, 2.3, 3)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:modulate:r")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.33333334, 0, 0, 0, 1, -0.16666667, 0, 0, 0),
+"times": PackedFloat32Array(0, 2.3, 3)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:modulate:g")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.33333334, 0, 0, 0, 1, -0.16666667, 0, 0, 0),
+"times": PackedFloat32Array(0, 2.3, 3)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:modulate:b")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.33333334, 0, 0, 0, 1, -0.16666667, 0, 0, 0),
+"times": PackedFloat32Array(0, 2.3, 3)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath(".:modulate:a")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.33333334, 0, 0, 0, 0, -0.16666667, 0.16666667, 0, 0),
+"times": PackedFloat32Array(0, 2.3, 3)
+}
+
+[sub_resource type="Animation" id="Animation_l52ud"]
+resource_name = "spostamento_serratura_4"
+length = 4.0
+loop_mode = 1
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(70.58804, -0.25, 0, 0.25, 0, -314.70602, -0.33333334, 64.21568, 0, 0, -341.1766, -0.16666667, 4.4117637, 0, 0),
+"times": PackedFloat32Array(0, 3, 4)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(-32.353027, -0.25, 0, 0.25, 0, 170.58813, -0.33333334, -33.82353, 0, 0, 352.94104, -0.16666667, -30.39215, 0, 0),
+"times": PackedFloat32Array(0, 3, 4)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:modulate:r")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.33333334, 0, 0, 0, 1, -0.16666667, 0, 0, 0),
+"times": PackedFloat32Array(0, 3, 4)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:modulate:g")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.33333334, 0, 0, 0, 1, -0.16666667, 0, 0, 0),
+"times": PackedFloat32Array(0, 3, 4)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:modulate:b")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.33333334, 0, 0, 0, 1, -0.16666667, 0, 0, 0),
+"times": PackedFloat32Array(0, 3, 4)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath(".:modulate:a")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.33333334, 0, 0, 0, 0, -0.16666667, 0.16666667, 0, 0),
+"times": PackedFloat32Array(0, 3, 4)
+}
+
 [sub_resource type="Animation" id="Animation_wa7om"]
-resource_name = "spostamento_serratura"
+resource_name = "spostamento_serratura_5"
 length = 5.0
 loop_mode = 1
 tracks/0/type = "bezier"
@@ -1217,7 +1791,9 @@ tracks/5/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_wcp56"]
 _data = {
 &"RESET": SubResource("Animation_rjl8k"),
-&"spostamento_serratura": SubResource("Animation_wa7om")
+&"spostamento_serratura_3": SubResource("Animation_edmps"),
+&"spostamento_serratura_4": SubResource("Animation_l52ud"),
+&"spostamento_serratura_5": SubResource("Animation_wa7om")
 }
 
 [sub_resource type="Animation" id="Animation_fxfi2"]
@@ -1391,6 +1967,7 @@ expand_mode = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="GeneralUI" parent="." unique_id=1547323792 instance=ExtResource("3_dtpjo")]
+metadata/_edit_use_anchors_ = true
 
 [node name="ContenitoreContatorePrese" type="Sprite2D" parent="." unique_id=424080555]
 position = Vector2(81, 113.00001)
@@ -1398,16 +1975,16 @@ scale = Vector2(0.17, 0.17)
 texture = ExtResource("7_4d3rf")
 
 [node name="LabelContatorePrese" type="Label" parent="ContenitoreContatorePrese" unique_id=54744482]
-offset_left = -43.137146
+offset_left = -66.666565
 offset_top = -83.333496
-offset_right = 209.86285
+offset_right = 186.33344
 offset_bottom = 81.666504
 text = "0/10"
 label_settings = SubResource("LabelSettings_4d3rf")
 metadata/_edit_use_anchors_ = true
 
 [node name="PresaContatore" type="Sprite2D" parent="ContenitoreContatorePrese" unique_id=1782758026]
-position = Vector2(-172.54895, -0.00015258789)
+position = Vector2(-184.31366, -0.00015258789)
 scale = Vector2(2.2, 2.2)
 texture = ExtResource("4_weua7")
 
@@ -1457,16 +2034,16 @@ scale = Vector2(0.17, 0.17)
 texture = ExtResource("7_4d3rf")
 
 [node name="LabelContatoreLampadine" type="Label" parent="ContenitoreContatoreLampadine" unique_id=314487424]
-offset_left = -43.137146
+offset_left = -66.666565
 offset_top = -83.333496
-offset_right = 209.86285
+offset_right = 186.33344
 offset_bottom = 81.666504
 text = "0/10"
 label_settings = SubResource("LabelSettings_4d3rf")
 metadata/_edit_use_anchors_ = true
 
 [node name="LampadinaContatore" type="Sprite2D" parent="ContenitoreContatoreLampadine" unique_id=1277583771]
-position = Vector2(-172.5487, 4.9019775)
+position = Vector2(-184.31342, 4.9019775)
 scale = Vector2(2.2, 2.2)
 texture = ExtResource("7_yt6by")
 
@@ -1527,16 +2104,16 @@ scale = Vector2(0.17, 0.17)
 texture = ExtResource("7_4d3rf")
 
 [node name="LabelContatoreTelecamere" type="Label" parent="ContenitoreContatoreTelecamere" unique_id=58991249]
-offset_left = -43.137177
+offset_left = -66.666626
 offset_top = -83.333496
-offset_right = 209.86282
+offset_right = 186.33337
 offset_bottom = 81.666504
 text = "0/10"
 label_settings = SubResource("LabelSettings_4d3rf")
 metadata/_edit_use_anchors_ = true
 
 [node name="TelecameraContatore" type="Sprite2D" parent="ContenitoreContatoreTelecamere" unique_id=1737472839]
-position = Vector2(-172.5487, 4.9019775)
+position = Vector2(-184.31342, 4.9019775)
 scale = Vector2(2.2, 2.2)
 texture = ExtResource("9_yq1a3")
 
@@ -1598,16 +2175,16 @@ scale = Vector2(0.17, 0.17)
 texture = ExtResource("7_4d3rf")
 
 [node name="LabelContatoreSerrature" type="Label" parent="ContenitoreContatoreSerrature" unique_id=1526319371]
-offset_left = -43.137177
+offset_left = -66.666565
 offset_top = -83.333496
-offset_right = 209.86282
+offset_right = 186.33344
 offset_bottom = 81.666504
 text = "0/10"
 label_settings = SubResource("LabelSettings_4d3rf")
 metadata/_edit_use_anchors_ = true
 
 [node name="SerraturaContatore" type="Sprite2D" parent="ContenitoreContatoreSerrature" unique_id=473138493]
-position = Vector2(-172.54858, 4.9018555)
+position = Vector2(-184.31299, 4.9018555)
 scale = Vector2(0.33, 0.33)
 texture = ExtResource("12_7d4gf")
 
@@ -1673,6 +2250,7 @@ mouse_default_cursor_shape = 2
 texture_normal = ExtResource("20_sk2ha")
 ignore_texture_size = true
 stretch_mode = 5
+metadata/_edit_use_anchors_ = true
 
 [connection signal="timeout" from="MacchinarioPrese/Timer" to="MacchinarioPrese" method="_on_timer_timeout"]
 [connection signal="input_event" from="MacchinarioPrese/Area2D" to="MacchinarioPrese" method="_on_area_2d_input_event"]

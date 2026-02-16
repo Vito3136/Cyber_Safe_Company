@@ -3,9 +3,7 @@
 [ext_resource type="Script" uid="uid://btvthivktgpse" path="res://scripts/general_ui.gd" id="1_65jkc"]
 [ext_resource type="Texture2D" uid="uid://dlp8x3gj5fumw" path="res://assets/contenitore_contatore.png" id="1_hswpa"]
 [ext_resource type="Texture2D" uid="uid://dxofyri3j43x5" path="res://assets/moneta.png" id="2_2efmg"]
-[ext_resource type="Shader" uid="uid://chr66bg3nxigq" path="res://assets/barra_bilanciamento.gdshader" id="4_q1d48"]
-[ext_resource type="Texture2D" uid="uid://djwavjgvxub8a" path="res://assets/security_label.png" id="5_83ryh"]
-[ext_resource type="Texture2D" uid="uid://bhalbx3pixt6o" path="res://assets/production_label.png" id="6_6kngf"]
+[ext_resource type="FontFile" uid="uid://du80thymbsnek" path="res://font/Machine Gunk.otf" id="7_q1d48"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_2efmg"]
 font_size = 120
@@ -22,16 +20,6 @@ bg_color = Color(0.19434926, 0.19434929, 0.19434917, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f70hn"]
 bg_color = Color(0, 0.6250582, 0.9979095, 1)
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_fk42p"]
-shader = ExtResource("4_q1d48")
-shader_parameter/line_color = Color(1, 1, 1, 1)
-shader_parameter/line_thickness = 3.0000001425
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_16k37"]
-shader = ExtResource("4_q1d48")
-shader_parameter/line_color = Color(1, 1, 1, 1)
-shader_parameter/line_thickness = 3.0000001425
 
 [node name="GeneralUI" type="Control" unique_id=1577614775]
 layout_mode = 3
@@ -97,14 +85,28 @@ offset_top = 19.000002
 offset_right = 641.0
 offset_bottom = 59.0
 
-[node name="SecurityLabel" type="Sprite2D" parent="." unique_id=739145988]
-material = SubResource("ShaderMaterial_fk42p")
-position = Vector2(981, 74)
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("5_83ryh")
+[node name="SecurityLabel" type="Label" parent="." unique_id=1382883138]
+layout_mode = 0
+offset_left = 904.0
+offset_top = 60.0
+offset_right = 1039.0
+offset_bottom = 101.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 7
+theme_override_fonts/font = ExtResource("7_q1d48")
+theme_override_font_sizes/font_size = 39
+text = "SECURITY"
 
-[node name="ProductionLabel" type="Sprite2D" parent="." unique_id=185553198]
-material = SubResource("ShaderMaterial_16k37")
-position = Vector2(311, 74)
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("6_6kngf")
+[node name="ProductionLabel" type="Label" parent="." unique_id=358159812]
+layout_mode = 0
+offset_left = 242.0
+offset_top = 60.0
+offset_right = 424.0
+offset_bottom = 101.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 7
+theme_override_fonts/font = ExtResource("7_q1d48")
+theme_override_font_sizes/font_size = 39
+text = "PRODUCTION"

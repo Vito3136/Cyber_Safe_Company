@@ -6,6 +6,7 @@ extends Node
 @onready var go_sala_res = $GoSalaRES
 @onready var go_sala_siem_soc = $GoSalaSiemSoc
 @onready var go_sala_server = $GoSalaServer
+@onready var back_left_button = $BackLeftButton
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -87,3 +88,11 @@ func _on_go_sala_siem_soc_button_down() -> void:
 
 func _on_go_sala_siem_soc_button_up() -> void:
 	go_sala_siem_soc.modulate = Color(1, 1, 1)
+
+
+func _on_back_left_button_pressed() -> void:
+	back_left_button.scale = Vector2(0.8, 0.8)
+	await get_tree().create_timer(0.05).timeout
+	back_left_button.scale = Vector2(1, 1)
+	await get_tree().create_timer(0.05).timeout
+	get_tree().change_scene_to_file("res://scenes/menu_principale.tscn")

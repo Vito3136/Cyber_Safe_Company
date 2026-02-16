@@ -13,6 +13,8 @@ extends Sprite2D
 
 @export var label_contatore_serrature : Label
 
+var animazioni_spostamento_serratura: Array[String] = ["spostamento_serratura_5", "spostamento_serratura_4", "spostamento_serratura_4", "spostamento_serratura_3"]
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	if(Global.serrature_is_locked):
@@ -25,7 +27,7 @@ func _ready() -> void:
 	lucchetto.visible = false
 	Global.avvia_produzione_serrature()
 	start_produzione()
-	aggiorna_interfaccia(Global.serrature_in_sala_macchinari, Global.capienza_massima_serrature)
+	aggiorna_interfaccia(Global.serrature_in_sala_macchinari, Global.capienza_massima_per_livello[Global.livello_serrature])
 	Global.produzione_serrature_aggiornata.connect(_aggiorna_produzione)
 
 func start_produzione():
@@ -40,7 +42,7 @@ func start_produzione():
 		anim_macchinario.play("produzione")
 		var timer = Global.timer_produzione_serrature
 		var tempo_corrente = timer.wait_time - timer.time_left
-		anim_serratura.play("spostamento_serratura")
+		anim_serratura.play(animazioni_spostamento_serratura[Global.livello_serrature])
 		anim_serratura.seek(tempo_corrente, true)
 		scatolo_serrature.texture = texture_vuota
 
@@ -55,7 +57,7 @@ func _aggiorna_produzione(_quantita, _totale):
 	else:
 		serratura.visible = true
 		anim_macchinario.play("produzione")
-		anim_serratura.play("spostamento_serratura")
+		anim_serratura.play(animazioni_spostamento_serratura[Global.livello_serrature])
 		scatolo_serrature.texture = texture_vuota
 		anim_scatolo.stop()
 		
