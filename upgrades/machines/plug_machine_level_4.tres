@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="CardData" format=3 uid="uid://b6guof8shxelv"]
+
+[ext_resource type="Script" uid="uid://p1gngg5c4evg" path="res://scripts/card_resource.gd" id="1_81aah"]
+
+[resource]
+script = ExtResource("1_81aah")
+titolo = "Plug machine - Level 4"
+upgrade_id = "plug_3"
+required_id = "plug_2"
+metadata/_custom_type_script = "uid://p1gngg5c4evg"

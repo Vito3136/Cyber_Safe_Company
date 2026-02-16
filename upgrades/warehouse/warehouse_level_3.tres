@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="CardData" format=3 uid="uid://b2hlxtf7y1gsl"]
+
+[ext_resource type="Script" uid="uid://p1gngg5c4evg" path="res://scripts/card_resource.gd" id="1_dxqd2"]
+
+[resource]
+script = ExtResource("1_dxqd2")
+titolo = "Lock machine - Level 3"
+upgrade_id = "warehouse_2"
+required_id = "warehouse_1"
+metadata/_custom_type_script = "uid://p1gngg5c4evg"

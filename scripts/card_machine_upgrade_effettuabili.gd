@@ -21,6 +21,7 @@ const COLOR_LOCKED = Color("ffb00069")
 @onready var buy_button: Button = $VBoxContainer/CenterContainer/BuyButton
 @onready var option_button: Button = $VBoxContainer/MarginContainer/HBoxContainer/OptionButton
 
+# Called when the node enters the scene tree for the first time.
 func _ready():
 	var style_box = get_theme_stylebox("panel").duplicate()
 	add_theme_stylebox_override("panel", style_box)
@@ -35,7 +36,7 @@ func _ready():
 	
 	update_appearance()
 
-func setup(data: CardData): # Deve essere scritto proprio così
+func setup(data: CardData):
 	if data:
 		card_data_attiva = data
 		title_label.text = data.titolo
@@ -45,14 +46,14 @@ func setup(data: CardData): # Deve essere scritto proprio così
 		required_id = data.required_id
 		
 		update_appearance()
-		
+
 func _on_buy_button_pressed():
 	if not is_unlocked: return
 	
 	await get_tree().create_timer(0.5).timeout
 	# Inviamo il segnale al Popup dicendo: "Sposta questo upgrade!"
 	requested_purchase.emit(card_data_attiva)
-		
+
 func update_appearance():
 	var sb = get_theme_stylebox("panel") as StyleBoxFlat
 	if not sb: return

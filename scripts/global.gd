@@ -283,10 +283,48 @@ func _process(_delta: float) -> void:
 
 
 ##################################### UPGRADE ######################################################
-var performed_upgrades: Array[CardData]
-var available_upgrades: Array[CardData]
+var server_room_performed_upgrades: Array[CardData]
+var server_room_available_upgrades: Array[CardData]
+var office_performed_upgrades: Array[CardData]
+var office_available_upgrades: Array[CardData]
+var siem_room_performed_upgrades: Array[CardData]
+var siem_room_available_upgrades: Array[CardData]
+var all_machine_performed_upgrades: Array[CardData]
+var all_machine_available_upgrades: Array[CardData]
+var all_warehouse_performed_upgrades: Array[CardData]
+var all_warehouse_available_upgrades: Array[CardData]
 
-func unlock_upgrade(upgrade: CardData):
-	if upgrade in available_upgrades:
-		available_upgrades.erase(upgrade)
-		performed_upgrades.append(upgrade)
+var completed_events: Dictionary = {}
+
+var siem_team = false
+
+func server_room_unlock_upgrade(upgrade: CardData):
+	if upgrade in server_room_available_upgrades:
+		server_room_available_upgrades.erase(upgrade)
+		server_room_performed_upgrades.append(upgrade)
+
+func office_unlock_upgrade(upgrade: CardData):
+	if upgrade in office_available_upgrades:
+		office_available_upgrades.erase(upgrade)
+		office_performed_upgrades.append(upgrade)
+		
+func siem_room_unlock_upgrade(upgrade: CardData):
+	if upgrade in siem_room_available_upgrades:
+		siem_room_available_upgrades.erase(upgrade)
+		siem_room_performed_upgrades.append(upgrade)
+		
+		if (upgrade.upgrade_id == "siem_team"): siem_team = true
+		
+func all_machine_unlock_upgrade(upgrade: CardData):
+	if upgrade in all_machine_available_upgrades:
+		all_machine_available_upgrades.erase(upgrade)
+		all_machine_performed_upgrades.append(upgrade)
+		
+func all_warehouse_unlock_upgrade(upgrade: CardData):
+	if upgrade in all_warehouse_available_upgrades:
+		all_warehouse_available_upgrades.erase(upgrade)
+		all_warehouse_performed_upgrades.append(upgrade)
+
+func event_registration(event_id: String):
+	completed_events[event_id] = true
+	print("Registrated event: ", event_id)

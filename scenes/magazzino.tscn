@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://jmr5svlom0na"]
+[gd_scene format=3 uid="uid://bgcj42wgirg2m"]
 
 [ext_resource type="Texture2D" uid="uid://c3dqf8vm6icar" path="res://assets/magazzino.png" id="1_3c56b"]
 [ext_resource type="Script" uid="uid://cxe4joyi70dml" path="res://scripts/magazzino.gd" id="1_4pr28"]
@@ -10,7 +10,9 @@
 [ext_resource type="Texture2D" uid="uid://yayoh2nh287r" path="res://assets/telecamera.png" id="7_m1o7u"]
 [ext_resource type="Texture2D" uid="uid://dcjrcrqvhu702" path="res://assets/serratura.png" id="8_afat4"]
 [ext_resource type="Texture2D" uid="uid://domp5y02302ig" path="res://assets/arrow_back.png" id="10_4jjrj"]
-[ext_resource type="PackedScene" uid="uid://b3farfqb3q2ic" path="res://scenes/general_ui.tscn" id="11_4jjrj"]
+[ext_resource type="PackedScene" path="res://scenes/general_ui.tscn" id="11_4jjrj"]
+[ext_resource type="Texture2D" uid="uid://bgi0ptcd8vnbt" path="res://assets/upgrade_button.png" id="12_83x6b"]
+[ext_resource type="PackedScene" uid="uid://b3hfnurybgsxh" path="res://scenes/warehouse_upgrade_popup.tscn" id="13_twpj7"]
 
 [sub_resource type="Animation" id="Animation_6ef2c"]
 length = 0.001
@@ -242,4 +244,27 @@ texture_normal = ExtResource("10_4jjrj")
 ignore_texture_size = true
 stretch_mode = 5
 
+[node name="UpgradeButton" type="Button" parent="." unique_id=987995631]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 1128.0
+offset_top = 91.0
+offset_right = 1283.0
+offset_bottom = 146.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(77.5, 27.5)
+size_flags_horizontal = 4
+mouse_default_cursor_shape = 2
+icon = ExtResource("12_83x6b")
+flat = true
+expand_icon = true
+
+[node name="UpgradePopup" parent="." unique_id=989768510 instance=ExtResource("13_twpj7")]
+visible = false
+
 [connection signal="pressed" from="BackLeftButton" to="." method="_on_back_left_button_pressed"]
+[connection signal="pressed" from="UpgradeButton" to="." method="_on_upgrade_button_pressed"]

@@ -1,15 +1,22 @@
-[gd_scene format=3 uid="uid://jykfnnbss0nw"]
+[gd_scene format=3 uid="uid://clvmmhg6dfaqa"]
 
 [ext_resource type="Script" uid="uid://cxj26t2a0iru4" path="res://scripts/sala_server.gd" id="1_p0703"]
 [ext_resource type="Texture2D" uid="uid://o0d8n18ej385" path="res://assets/sala_server.png" id="1_pfu2m"]
 [ext_resource type="PackedScene" uid="uid://bxsadxh5dpeqa" path="res://scenes/upgrade_popup.tscn" id="3_5c5pg"]
 [ext_resource type="Texture2D" uid="uid://domp5y02302ig" path="res://assets/arrow_back.png" id="4_5c5pg"]
-[ext_resource type="PackedScene" uid="uid://b3farfqb3q2ic" path="res://scenes/general_ui.tscn" id="5_3ffy3"]
+[ext_resource type="Texture2D" uid="uid://bgi0ptcd8vnbt" path="res://assets/upgrade_button.png" id="4_aetpi"]
+[ext_resource type="PackedScene" path="res://scenes/general_ui.tscn" id="5_3ffy3"]
+[ext_resource type="Script" uid="uid://p1gngg5c4evg" path="res://scripts/card_resource.gd" id="6_ive8d"]
+[ext_resource type="Resource" uid="uid://vrjgscu1vjbu" path="res://upgrades/safety/biometric_access.tres" id="7_sdrn0"]
+[ext_resource type="Resource" uid="uid://cvh8h1f0q8fmk" path="res://upgrades/safety/fire_protection_system.tres" id="8_m77dc"]
+[ext_resource type="Resource" uid="uid://conptf0hjbl1b" path="res://upgrades/safety/encryption.tres" id="9_634sx"]
+[ext_resource type="Resource" uid="uid://d3ntpksr7rchu" path="res://upgrades/safety/firewall.tres" id="10_0pw5s"]
+[ext_resource type="Resource" uid="uid://hy7dmrk4koaq" path="res://upgrades/safety/redundancy_system.tres" id="12_4dobk"]
 
 [node name="SalaServer" type="Node2D" unique_id=1869017270]
 script = ExtResource("1_p0703")
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=1734157124]
+[node name="Background" type="TextureRect" parent="." unique_id=1734157124]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -23,16 +30,28 @@ expand_mode = 1
 [node name="GeneralUI" parent="." unique_id=1577614775 instance=ExtResource("5_3ffy3")]
 
 [node name="UpgradeButton" type="Button" parent="." unique_id=868245038]
-offset_left = 1166.0
-offset_top = 145.0
-offset_right = 1249.0
-offset_bottom = 176.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 1128.0
+offset_top = 91.0
+offset_right = 1283.0
+offset_bottom = 146.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(77.5, 27.5)
+size_flags_horizontal = 4
 mouse_default_cursor_shape = 2
-text = "UPGRADE"
+icon = ExtResource("4_aetpi")
+flat = true
+expand_icon = true
 
 [node name="UpgradePopup" parent="." unique_id=1082398694 instance=ExtResource("3_5c5pg")]
 size = Vector2i(1000, 600)
 visible = false
+server_room_available_upgrades_starting_setup = Array[ExtResource("6_ive8d")]([ExtResource("7_sdrn0"), ExtResource("8_m77dc"), ExtResource("10_0pw5s"), ExtResource("12_4dobk"), ExtResource("9_634sx")])
 
 [node name="BackLeftButton" type="TextureButton" parent="." unique_id=1852376182]
 offset_left = 20.0

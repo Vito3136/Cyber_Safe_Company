@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="CardData" format=3 uid="uid://d3cylxbylr1e0"]
+
+[ext_resource type="Script" uid="uid://p1gngg5c4evg" path="res://scripts/card_resource.gd" id="1_4n6c8"]
+
+[resource]
+script = ExtResource("1_4n6c8")
+titolo = "CIS Controls - Level 3"
+descrizione = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco"
+upgrade_id = "cis_3"
+required_id = "cis_2"
+metadata/_custom_type_script = "uid://p1gngg5c4evg"

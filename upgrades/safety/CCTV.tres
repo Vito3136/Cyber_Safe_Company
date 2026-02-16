@@ -1,9 +1,11 @@
 [gd_resource type="Resource" script_class="CardData" format=3 uid="uid://ll4gumemiifd"]
 
-[ext_resource type="Script" uid="uid://p1gngg5c4evg" path="res://scripts/card_resource.gd" id="1_gsevl"]
+[ext_resource type="Script" uid="uid://p1gngg5c4evg" path="res://scripts/card_resource.gd" id="1_achnj"]
 
 [resource]
-script = ExtResource("1_gsevl")
+script = ExtResource("1_achnj")
 titolo = "Closed-Circuit Television (CCTV)"
 descrizione = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco"
+upgrade_id = "cctv"
+required_id = "siem_team"
 metadata/_custom_type_script = "uid://p1gngg5c4evg"

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="CardData" format=3 uid="uid://ckmmmr71p6pyg"]
+
+[ext_resource type="Script" uid="uid://p1gngg5c4evg" path="res://scripts/card_resource.gd" id="1_4m425"]
+
+[resource]
+script = ExtResource("1_4m425")
+titolo = "EDR (Endpoint Detection and Response) Software"
+descrizione = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco"
+upgrade_id = "edr"
+required_id = "siem_team"
+metadata/_custom_type_script = "uid://p1gngg5c4evg"

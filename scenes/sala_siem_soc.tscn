@@ -1,9 +1,21 @@
-[gd_scene format=3 uid="uid://bdy0ep4sw6ykp"]
+[gd_scene format=3 uid="uid://cu1xvx0344lmp"]
 
 [ext_resource type="Script" uid="uid://cqd8j6nmqikwa" path="res://scripts/sala_siem_soc.gd" id="1_ckml3"]
 [ext_resource type="Texture2D" uid="uid://bcwyjmxxeonmo" path="res://assets/sala_siem_soc.png" id="2_ckml3"]
 [ext_resource type="Texture2D" uid="uid://domp5y02302ig" path="res://assets/arrow_back.png" id="3_4jnsm"]
-[ext_resource type="PackedScene" uid="uid://b3farfqb3q2ic" path="res://scenes/general_ui.tscn" id="3_4slbg"]
+[ext_resource type="PackedScene" path="res://scenes/general_ui.tscn" id="3_4slbg"]
+[ext_resource type="Texture2D" uid="uid://bgi0ptcd8vnbt" path="res://assets/upgrade_button.png" id="4_8ko00"]
+[ext_resource type="PackedScene" uid="uid://bxsadxh5dpeqa" path="res://scenes/upgrade_popup.tscn" id="5_qaytq"]
+[ext_resource type="Script" uid="uid://p1gngg5c4evg" path="res://scripts/card_resource.gd" id="6_8p66w"]
+[ext_resource type="Resource" uid="uid://djkt0wuqa7akp" path="res://upgrades/safety/team_SIEM_creation.tres" id="7_k11ec"]
+[ext_resource type="Resource" uid="uid://dqti0le16ry36" path="res://upgrades/safety/soar.tres" id="8_wap1g"]
+[ext_resource type="Resource" uid="uid://bo7tfhfgjjnmf" path="res://upgrades/safety/ueba.tres" id="9_w1oje"]
+[ext_resource type="Resource" uid="uid://c01qbdxvqqbns" path="res://upgrades/safety/CIS_controls_level_1.tres" id="10_n8736"]
+[ext_resource type="Resource" uid="uid://30hyopcaikb8" path="res://upgrades/safety/CIS_controls_level_2.tres" id="11_7dl6c"]
+[ext_resource type="Resource" uid="uid://d3cylxbylr1e0" path="res://upgrades/safety/CIS_controls_level_3.tres" id="12_12xnc"]
+[ext_resource type="Resource" uid="uid://ckcw68ci8uc2c" path="res://upgrades/safety/team_SIEM_level_1.tres" id="13_r7jnb"]
+[ext_resource type="Resource" uid="uid://b7n78tbn4ual7" path="res://upgrades/safety/team_SIEM_level_2.tres" id="14_b8n3s"]
+[ext_resource type="Resource" uid="uid://8oafxkq40fl6" path="res://upgrades/safety/team_SIEM_level_3.tres" id="15_tpiof"]
 
 [node name="SalaSiemSoc" type="Node2D" unique_id=752390766]
 script = ExtResource("1_ckml3")
@@ -15,6 +27,22 @@ texture = ExtResource("2_ckml3")
 expand_mode = 1
 
 [node name="GeneralUI" parent="." unique_id=1577614775 instance=ExtResource("3_4slbg")]
+
+[node name="UpgradeButton" type="Button" parent="." unique_id=850298522]
+offset_left = 1128.0
+offset_top = 91.0
+offset_right = 1283.0
+offset_bottom = 146.0
+pivot_offset = Vector2(77.5, 27.5)
+mouse_default_cursor_shape = 2
+icon = ExtResource("4_8ko00")
+flat = true
+expand_icon = true
+
+[node name="UpgradePopup" parent="." unique_id=989768510 instance=ExtResource("5_qaytq")]
+size = Vector2i(1000, 600)
+visible = false
+siem_room_available_upgrades_starting_setup = Array[ExtResource("6_8p66w")]([ExtResource("7_k11ec"), ExtResource("8_wap1g"), ExtResource("9_w1oje"), ExtResource("10_n8736"), ExtResource("11_7dl6c"), ExtResource("12_12xnc"), ExtResource("13_r7jnb"), ExtResource("14_b8n3s"), ExtResource("15_tpiof")])
 
 [node name="BackLeftButton" type="TextureButton" parent="." unique_id=184060627]
 offset_left = 20.0
@@ -28,4 +56,5 @@ texture_normal = ExtResource("3_4jnsm")
 ignore_texture_size = true
 stretch_mode = 5
 
+[connection signal="pressed" from="UpgradeButton" to="." method="_on_upgrade_button_pressed"]
 [connection signal="pressed" from="BackLeftButton" to="." method="_on_back_left_button_pressed"]

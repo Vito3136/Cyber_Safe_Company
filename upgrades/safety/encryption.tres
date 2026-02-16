@@ -1,9 +1,11 @@
 [gd_resource type="Resource" script_class="CardData" format=3 uid="uid://conptf0hjbl1b"]
 
-[ext_resource type="Script" uid="uid://p1gngg5c4evg" path="res://scripts/card_resource.gd" id="1_4a50j"]
+[ext_resource type="Script" uid="uid://p1gngg5c4evg" path="res://scripts/card_resource.gd" id="1_67vai"]
 
 [resource]
-script = ExtResource("1_4a50j")
-titolo = "Encryption"
+script = ExtResource("1_67vai")
+titolo = "Data at Rest Encryption"
 descrizione = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco"
+upgrade_id = "encryption"
+required_id = "siem_team"
 metadata/_custom_type_script = "uid://p1gngg5c4evg"

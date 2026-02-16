@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="CardData" format=3 uid="uid://bhdpfwcu5lawp"]
+
+[ext_resource type="Script" uid="uid://p1gngg5c4evg" path="res://scripts/card_resource.gd" id="1_vvw8h"]
+
+[resource]
+script = ExtResource("1_vvw8h")
+titolo = "Bulb machine - Level 2"
+upgrade_id = "bulb_1"
+required_id = "bulb_0"
+metadata/_custom_type_script = "uid://p1gngg5c4evg"

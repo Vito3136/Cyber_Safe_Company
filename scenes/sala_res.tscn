@@ -1,9 +1,28 @@
-[gd_scene format=3 uid="uid://bhkg8ke0eb4h4"]
+[gd_scene format=3 uid="uid://dctfm8dibts06"]
 
 [ext_resource type="Script" uid="uid://bfxrxleqdcu2x" path="res://scripts/sala_res.gd" id="1_3ts2u"]
 [ext_resource type="Texture2D" uid="uid://qla1m4grk0md" path="res://assets/sala_r_e_s.png" id="1_eu1bd"]
 [ext_resource type="Texture2D" uid="uid://domp5y02302ig" path="res://assets/arrow_back.png" id="3_35m43"]
-[ext_resource type="PackedScene" uid="uid://b3farfqb3q2ic" path="res://scenes/general_ui.tscn" id="4_35m43"]
+[ext_resource type="PackedScene" path="res://scenes/general_ui.tscn" id="4_35m43"]
+[ext_resource type="Texture2D" uid="uid://bgi0ptcd8vnbt" path="res://assets/upgrade_button.png" id="4_m1dnj"]
+[ext_resource type="PackedScene" uid="uid://ggvkde6rg7pt" path="res://scenes/machine_upgrade_popup.tscn" id="5_lscv0"]
+[ext_resource type="Script" uid="uid://p1gngg5c4evg" path="res://scripts/card_resource.gd" id="6_6jpln"]
+[ext_resource type="Resource" uid="uid://wf133gq7wvpi" path="res://upgrades/machines/unlock_bulb_machine.tres" id="7_cohsq"]
+[ext_resource type="Resource" uid="uid://bhdpfwcu5lawp" path="res://upgrades/machines/bulb_machine_level_2.tres" id="8_laarw"]
+[ext_resource type="Resource" uid="uid://dr1j0y526x8y" path="res://upgrades/machines/bulb_machine_level_3.tres" id="9_8edeh"]
+[ext_resource type="Resource" uid="uid://d2rmy25kd4fac" path="res://upgrades/machines/bulb_machine_level_4.tres" id="10_iajt1"]
+[ext_resource type="Resource" uid="uid://be8srh37semyi" path="res://upgrades/machines/unlock_plug_machine.tres" id="11_uy810"]
+[ext_resource type="Resource" uid="uid://jikkoery8b85" path="res://upgrades/machines/plug_machine_level_2.tres" id="12_dji5n"]
+[ext_resource type="Resource" uid="uid://dpyby60igw5lb" path="res://upgrades/machines/plug_machine_level_3.tres" id="13_qjr6m"]
+[ext_resource type="Resource" uid="uid://b6guof8shxelv" path="res://upgrades/machines/plug_machine_level_4.tres" id="14_dkjx3"]
+[ext_resource type="Resource" uid="uid://dkena8ntae6n0" path="res://upgrades/machines/unlock_camera_machine.tres" id="15_ljl8e"]
+[ext_resource type="Resource" uid="uid://c73tnct4pxcc" path="res://upgrades/machines/camera_machine_level_2.tres" id="16_k4c7u"]
+[ext_resource type="Resource" uid="uid://drs0my6n32731" path="res://upgrades/machines/camera_machine_level_3.tres" id="17_retqm"]
+[ext_resource type="Resource" uid="uid://bofqch4kei0wo" path="res://upgrades/machines/camera_machine_level_4.tres" id="18_kchxw"]
+[ext_resource type="Resource" uid="uid://cr8u7baapths4" path="res://upgrades/machines/unlock_lock_machine.tres" id="19_or07l"]
+[ext_resource type="Resource" uid="uid://cvesj7gbwpq55" path="res://upgrades/machines/lock_machine_level_2.tres" id="20_65080"]
+[ext_resource type="Resource" uid="uid://bx4itseyqnjh2" path="res://upgrades/machines/lock_machine_level_3.tres" id="21_jq41f"]
+[ext_resource type="Resource" uid="uid://budthxtokxkio" path="res://upgrades/machines/lock_machine_level_4.tres" id="22_uao70"]
 
 [node name="SalaRES" type="Node2D" unique_id=1479786499]
 script = ExtResource("1_3ts2u")
@@ -15,6 +34,29 @@ texture = ExtResource("1_eu1bd")
 expand_mode = 1
 
 [node name="GeneralUI" parent="." unique_id=1577614775 instance=ExtResource("4_35m43")]
+
+[node name="UpgradeButton" type="Button" parent="." unique_id=1879606505]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 1128.0
+offset_top = 91.0
+offset_right = 1283.0
+offset_bottom = 146.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(77.5, 27.5)
+size_flags_horizontal = 4
+mouse_default_cursor_shape = 2
+icon = ExtResource("4_m1dnj")
+flat = true
+expand_icon = true
+
+[node name="UpgradePopup" parent="." unique_id=989768510 instance=ExtResource("5_lscv0")]
+visible = false
+all_machine_available_upgrades_starting_setup = Array[ExtResource("6_6jpln")]([ExtResource("7_cohsq"), ExtResource("8_laarw"), ExtResource("9_8edeh"), ExtResource("10_iajt1"), ExtResource("11_uy810"), ExtResource("12_dji5n"), ExtResource("13_qjr6m"), ExtResource("14_dkjx3"), ExtResource("15_ljl8e"), ExtResource("16_k4c7u"), ExtResource("17_retqm"), ExtResource("18_kchxw"), ExtResource("19_or07l"), ExtResource("20_65080"), ExtResource("21_jq41f"), ExtResource("22_uao70")])
 
 [node name="BackLeftButton" type="TextureButton" parent="." unique_id=1487954958]
 offset_left = 20.0
@@ -28,4 +70,5 @@ texture_normal = ExtResource("3_35m43")
 ignore_texture_size = true
 stretch_mode = 5
 
+[connection signal="pressed" from="UpgradeButton" to="." method="_on_upgrade_button_pressed"]
 [connection signal="pressed" from="BackLeftButton" to="." method="_on_back_left_button_pressed"]

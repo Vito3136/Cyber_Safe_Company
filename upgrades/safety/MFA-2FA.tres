@@ -6,4 +6,6 @@
 script = ExtResource("1_1u1d1")
 titolo = "Two-Factor Authentication (MFA/2FA)"
 descrizione = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco"
+upgrade_id = "mfa"
+required_id = "siem_team"
 metadata/_custom_type_script = "uid://p1gngg5c4evg"

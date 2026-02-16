@@ -1,6 +1,7 @@
 extends Node2D
 
 @onready var back_left_button = $BackLeftButton
+@onready var upgrade_button = $UpgradeButton
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -11,6 +12,10 @@ func _process(_delta: float) -> void:
 	pass
 
 func _on_upgrade_button_pressed() -> void:
+	upgrade_button.scale = Vector2(0.8, 0.8)
+	await get_tree().create_timer(0.05).timeout
+	upgrade_button.scale = Vector2(1, 1)
+	await get_tree().create_timer(0.05).timeout
 	# Ottieni il riferimento al nodo PopupPanel
 	# $UpgradePopup usa il percorso breve del nodo figlio.
 	var upgrade_popup = $UpgradePopup.open_popup()

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="CardData" format=3 uid="uid://dqti0le16ry36"]
+
+[ext_resource type="Script" uid="uid://p1gngg5c4evg" path="res://scripts/card_resource.gd" id="1_88tfa"]
+
+[resource]
+script = ExtResource("1_88tfa")
+titolo = "SOAR Module"
+descrizione = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco"
+upgrade_id = "soar"
+required_id = "siem_team"
+metadata/_custom_type_script = "uid://p1gngg5c4evg"

@@ -1,9 +1,11 @@
 [gd_resource type="Resource" script_class="CardData" format=3 uid="uid://vrjgscu1vjbu"]
 
-[ext_resource type="Script" uid="uid://p1gngg5c4evg" path="res://scripts/card_resource.gd" id="1_bph15"]
+[ext_resource type="Script" uid="uid://p1gngg5c4evg" path="res://scripts/card_resource.gd" id="1_8cjyk"]
 
 [resource]
-script = ExtResource("1_bph15")
+script = ExtResource("1_8cjyk")
 titolo = "Biometric Access Control"
 descrizione = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco"
+upgrade_id = "biometric"
+required_id = "siem_team"
 metadata/_custom_type_script = "uid://p1gngg5c4evg"

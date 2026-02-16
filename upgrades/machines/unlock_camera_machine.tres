@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="CardData" format=3 uid="uid://dkena8ntae6n0"]
+
+[ext_resource type="Script" uid="uid://p1gngg5c4evg" path="res://scripts/card_resource.gd" id="1_gh2op"]
+
+[resource]
+script = ExtResource("1_gh2op")
+titolo = "Unlock Camera Machine"
+costo = 112390129
+upgrade_id = "camera_0"
+metadata/_custom_type_script = "uid://p1gngg5c4evg"

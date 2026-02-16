@@ -1,9 +1,12 @@
-[gd_scene format=3 uid="uid://bxsadxh5dpeqa"]
+[gd_scene format=3 uid="uid://b3hfnurybgsxh"]
 
-[ext_resource type="Script" uid="uid://deg5g38w2ae8k" path="res://scripts/upgrade_popup.gd" id="1_alvb6"]
-[ext_resource type="Texture2D" uid="uid://c45rwffb1j2j0" path="res://assets/close.png" id="2_xuied"]
-[ext_resource type="PackedScene" uid="uid://cuyogpm1p6qfe" path="res://scenes/card_upgrade_effettuabili.tscn" id="3_psw0a"]
-[ext_resource type="PackedScene" uid="uid://bueidihhwquvt" path="res://scenes/card_upgrade_effettuati.tscn" id="3_puvig"]
+[ext_resource type="Script" uid="uid://u0pib1ngxmn5" path="res://scripts/warehouse_upgrade_popup.gd" id="1_wbs41"]
+[ext_resource type="PackedScene" uid="uid://e5dh000o2lc1" path="res://scenes/card_warehouse_upgrade_effettuabili.tscn" id="2_clfsu"]
+[ext_resource type="Script" uid="uid://p1gngg5c4evg" path="res://scripts/card_resource.gd" id="2_dsa4c"]
+[ext_resource type="PackedScene" uid="uid://bueidihhwquvt" path="res://scenes/card_upgrade_effettuati.tscn" id="3_w2iow"]
+[ext_resource type="Resource" uid="uid://b2hlxtf7y1gsl" path="res://upgrades/warehouse/warehouse_level_3.tres" id="4_bvoov"]
+[ext_resource type="Texture2D" uid="uid://c45rwffb1j2j0" path="res://assets/close.png" id="4_clfsu"]
+[ext_resource type="Resource" uid="uid://uv0533b6ojyx" path="res://upgrades/warehouse/warehouse_level_2.tres" id="5_bvoov"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_psw0a"]
 content_margin_left = 2.0
@@ -14,9 +17,10 @@ bg_color = Color(0, 0, 0, 1)
 oversampling_override = 1.0
 size = Vector2i(319, 100)
 visible = true
-script = ExtResource("1_alvb6")
-card_template_effettuabili = ExtResource("3_psw0a")
-card_template_effettuati = ExtResource("3_puvig")
+script = ExtResource("1_wbs41")
+card_template_effettuabili = ExtResource("2_clfsu")
+card_template_effettuati = ExtResource("3_w2iow")
+all_warehouse_available_upgrades_starting_setup = Array[ExtResource("2_dsa4c")]([ExtResource("5_bvoov"), ExtResource("4_bvoov")])
 
 [node name="ContentsContainer" type="VBoxContainer" parent="." unique_id=1599893688]
 anchors_preset = 15
@@ -37,7 +41,7 @@ size_flags_horizontal = 8
 size_flags_vertical = 4
 mouse_default_cursor_shape = 2
 theme_override_constants/h_separation = 4
-icon = ExtResource("2_xuied")
+icon = ExtResource("4_clfsu")
 icon_alignment = 1
 expand_icon = true
 
