@@ -21,6 +21,7 @@ func _ready() -> void:
 		return
 	
 	if(!Global.lucchetto_serrature_scomparso):
+		await get_tree().create_timer(0.5).timeout
 		anim_lucchetto.play("scomparsa")
 		await anim_lucchetto.animation_finished # Aspetta che finisca
 		Global.lucchetto_serrature_scomparso = true

@@ -198,6 +198,7 @@ func _on_bought_upgrade(data: CardData):
 		
 		# 4. Aggiorna tutto
 		refresh_popup()
+		Global.upgrade_sicurezza()
 		print("Acquisto effettuato! Monete rimanenti: ", Global.monete)
 	else:
 		print("Non hai abbastanza monete!")

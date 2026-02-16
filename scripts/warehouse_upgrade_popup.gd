@@ -97,12 +97,15 @@ func _on_bought_upgrade(data: CardData):
 		# 2. Sottrai i soldi
 		Global.monete -= data.costo
 		
-		# 3. Sposta l'upgrade (la tua funzione nel Global)
+		# 3. Sposta l'upgrade
 		Global.all_warehouse_unlock_upgrade(data)
 		
 		# 4. Aggiorna tutto
 		refresh_popup()
+		
 		print("Acquisto effettuato! Monete rimanenti: ", Global.monete)
+		
+		Global.aumenta_livello_magazzino()
 	else:
 		print("Non hai abbastanza monete!")
 

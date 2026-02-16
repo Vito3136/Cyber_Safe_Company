@@ -20,7 +20,8 @@ func _ready() -> void:
 	if(Global.lampadine_is_locked):
 		return
 	
-	if(Global.lucchetto_lampadine_scomparso):
+	if(!Global.lucchetto_lampadine_scomparso):
+		await get_tree().create_timer(0.5).timeout
 		anim_lucchetto.play("scomparsa")
 		await anim_lucchetto.animation_finished # Aspetta che finisca
 		Global.lucchetto_lampadine_scomparso = true

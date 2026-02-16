@@ -5,6 +5,5 @@
 [resource]
 script = ExtResource("1_y6ujr")
 titolo = "Unlock Bulb Machine"
-costo = 2000
 upgrade_id = "bulb_0"
 metadata/_custom_type_script = "uid://p1gngg5c4evg"

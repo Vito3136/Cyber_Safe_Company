@@ -97,12 +97,36 @@ func _on_bought_upgrade(data: CardData):
 		# 2. Sottrai i soldi
 		Global.monete -= data.costo
 		
-		# 3. Sposta l'upgrade (la tua funzione nel Global)
+		# 3. Sposta l'upgrade
 		Global.all_machine_unlock_upgrade(data)
 		
 		# 4. Aggiorna tutto
 		refresh_popup()
+		
 		print("Acquisto effettuato! Monete rimanenti: ", Global.monete)
+		
+		if data.upgrade_id.contains("_0"):
+			match (data.upgrade_id):
+				"plug_0":
+					Global.upgrade_produzione()
+				"bulb_0":
+					Global.sblocca_macchinario_lampadine()
+				"camera_0":
+					Global.sblocca_macchinario_telecamere()
+				"lock_0":
+					Global.sblocca_macchinario_serrature()
+			
+			await get_tree().create_timer(1.0).timeout
+			get_tree().change_scene_to_file("res://scenes/sala_macchinari.tscn")
+		else:
+			if(data.upgrade_id.contains("plug")):
+				Global.aumenta_livello_prese()
+			elif(data.upgrade_id.contains("bulb")):
+				Global.aumenta_livello_lampadine()
+			elif(data.upgrade_id.contains("camera")):
+				Global.aumenta_livello_telecamere()
+			elif(data.upgrade_id.contains("lock")):
+				Global.aumenta_livello_serrature()
 	else:
 		print("Non hai abbastanza monete!")
 

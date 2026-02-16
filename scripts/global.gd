@@ -5,7 +5,7 @@ extends Node
 # -5 = 5 tacche verso Produzione
 # +3 = 3 tacche verso Sicurezza
 var bilanciamento : int = 0
-var max_tacchette : int = 17
+var max_tacchette : int = 18
 signal update_barra_bilanciamento()
 
 var monete : int = 0
@@ -162,12 +162,15 @@ func aumenta_livello_serrature():
 
 func sblocca_macchinario_lampadine():
 	lampadine_is_locked = false
+	upgrade_produzione()
 
 func sblocca_macchinario_telecamere():
 	telecamere_is_locked = false
+	upgrade_produzione()
 
 func sblocca_macchinario_serrature():
 	serrature_is_locked = false
+	upgrade_produzione()
 
 func avvia_produzione_prese():
 	if(!produzione_prese_avviata):

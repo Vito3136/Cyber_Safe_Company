@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://yayoh2nh287r" path="res://assets/telecamera.png" id="7_m1o7u"]
 [ext_resource type="Texture2D" uid="uid://dcjrcrqvhu702" path="res://assets/serratura.png" id="8_afat4"]
 [ext_resource type="Texture2D" uid="uid://domp5y02302ig" path="res://assets/arrow_back.png" id="10_4jjrj"]
-[ext_resource type="PackedScene" path="res://scenes/general_ui.tscn" id="11_4jjrj"]
+[ext_resource type="PackedScene" uid="uid://b3farfqb3q2ic" path="res://scenes/general_ui.tscn" id="11_4jjrj"]
 [ext_resource type="Texture2D" uid="uid://bgi0ptcd8vnbt" path="res://assets/upgrade_button.png" id="12_83x6b"]
 [ext_resource type="PackedScene" uid="uid://b3hfnurybgsxh" path="res://scenes/warehouse_upgrade_popup.tscn" id="13_twpj7"]
 

@@ -3,13 +3,14 @@
 [ext_resource type="Script" uid="uid://cnrb3kd7vldt6" path="res://scripts/uffici.gd" id="1_ar3c3"]
 [ext_resource type="Texture2D" uid="uid://c4vddtqfphhrj" path="res://assets/uffici.png" id="1_d3q56"]
 [ext_resource type="Texture2D" uid="uid://domp5y02302ig" path="res://assets/arrow_back.png" id="3_mokwy"]
-[ext_resource type="PackedScene" path="res://scenes/general_ui.tscn" id="4_mokwy"]
+[ext_resource type="PackedScene" uid="uid://b3farfqb3q2ic" path="res://scenes/general_ui.tscn" id="4_mokwy"]
 [ext_resource type="Texture2D" uid="uid://bgi0ptcd8vnbt" path="res://assets/upgrade_button.png" id="4_wv5sc"]
 [ext_resource type="PackedScene" uid="uid://bxsadxh5dpeqa" path="res://scenes/upgrade_popup.tscn" id="5_0f3ya"]
-[ext_resource type="Script" path="res://scripts/card_resource.gd" id="6_ycfdm"]
-[ext_resource type="Resource" uid="uid://ll4gumemiifd" path="res://upgrades/safety/CCTV.tres" id="7_dx4vc"]
-[ext_resource type="Resource" uid="uid://7n18nhoocmt7" path="res://upgrades/safety/MFA-2FA.tres" id="7_roy4p"]
-[ext_resource type="Resource" uid="uid://ckmmmr71p6pyg" path="res://upgrades/safety/edr.tres" id="9_oujbn"]
+[ext_resource type="Script" uid="uid://p1gngg5c4evg" path="res://scripts/card_resource.gd" id="6_ycfdm"]
+[ext_resource type="Resource" uid="uid://ll4gumemiifd" path="res://upgrades/safety/office/CCTV.tres" id="7_dx4vc"]
+[ext_resource type="Resource" uid="uid://7n18nhoocmt7" path="res://upgrades/safety/office/MFA-2FA.tres" id="7_roy4p"]
+[ext_resource type="Resource" uid="uid://ckmmmr71p6pyg" path="res://upgrades/safety/office/edr.tres" id="9_oujbn"]
+[ext_resource type="Resource" uid="uid://b1jipugad0qsj" path="res://upgrades/safety/office/password_manager.tres" id="10_dx4vc"]
 
 [node name="Uffici" type="Node2D" unique_id=1636616081]
 script = ExtResource("1_ar3c3")
@@ -36,7 +37,7 @@ expand_icon = true
 [node name="UpgradePopup" parent="." unique_id=989768510 instance=ExtResource("5_0f3ya")]
 size = Vector2i(1000, 600)
 visible = false
-office_available_upgrades_starting_setup = Array[ExtResource("6_ycfdm")]([ExtResource("7_dx4vc"), ExtResource("7_roy4p"), ExtResource("9_oujbn")])
+office_available_upgrades_starting_setup = Array[ExtResource("6_ycfdm")]([ExtResource("7_dx4vc"), ExtResource("7_roy4p"), ExtResource("9_oujbn"), ExtResource("10_dx4vc")])
 
 [node name="BackLeftButton" type="TextureButton" parent="." unique_id=674050977]
 offset_left = 20.0
