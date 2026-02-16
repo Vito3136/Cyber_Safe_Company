@@ -40,12 +40,12 @@ position = Vector2(-211.75977, 0)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("2_2efmg")
 
-[node name="LabelContatorePrese" type="Label" parent="ContenitoreMonete" unique_id=1675566195]
-offset_left = -123.52905
+[node name="LabelContatoreMonete" type="Label" parent="ContenitoreMonete" unique_id=1675566195]
+offset_left = -117.64673
 offset_top = -88.23529
-offset_right = 287.47095
+offset_right = 294.35327
 offset_bottom = 76.76471
-text = "200000"
+text = "0"
 label_settings = SubResource("LabelSettings_2efmg")
 metadata/_edit_use_anchors_ = true
 

@@ -9,9 +9,14 @@ var max_tacchette : int = 17
 signal update_barra_bilanciamento()
 
 var monete : int = 0
+signal update_monete(totale_monete)
 
 var capienza_massima_per_livello: Array[int] = [10, 10, 12, 14]
 var timer_produzione_per_livello: Array[float] = [5.0, 4.0, 4.0, 3.0]
+
+var timer_spedizione_per_livello: Array[float] = [40.0, 35.0, 30.0]
+var timer_animazione_spedizione_per_livello: Array[float] = [35.0, 30.0, 25.0]
+var livello_magazzino: int = 0
 
 # Variabili prese
 var costo_presa_singola : int = 8
@@ -74,7 +79,7 @@ func avvia_spedizioni():
 	if(!spedizioni_avviate):
 		spedizioni_avviate = true
 		timer_spedizione = Timer.new()
-		timer_spedizione.wait_time = 40.0
+		timer_spedizione.wait_time = timer_spedizione_per_livello[livello_magazzino]
 		timer_spedizione.autostart = true
 		timer_spedizione.one_shot = false # Si ripete all'infinito
 		# Colleghiamo il segnale di timeout alla nostra funzione
@@ -83,7 +88,7 @@ func avvia_spedizioni():
 		add_child(timer_spedizione)
 		
 		timer_animazione_spedizione = Timer.new()
-		timer_animazione_spedizione.wait_time = 35.0
+		timer_animazione_spedizione.wait_time = timer_animazione_spedizione_per_livello[livello_magazzino]
 		timer_animazione_spedizione.autostart = true
 		# Colleghiamo il segnale di timeout alla nostra funzione
 		timer_animazione_spedizione.timeout.connect(_on_timer_animazione_spedizione_timeeout)
@@ -92,7 +97,8 @@ func avvia_spedizioni():
 
 func _on_timer_spedizione_timeout():
 	timer_animazione_spedizione.start()
-	print("40 finiti - ora aggiornamento Monete: " + str(monete))
+	update_monete.emit(monete)
+	print("40 secondi finiti - ora aggiornamento Monete: " + str(monete))
 
 func _on_timer_animazione_spedizione_timeeout():
 	vendi_tutto()
@@ -105,7 +111,7 @@ func vendi_tutto():
 	telecamere_in_magazzino = 0
 	serrature_in_magazzino = 0
 	monete += totale
-	print("35 finiti - Monete calcolate: " + str(monete))
+	print("35 secondi finiti - Monete calcolate: " + str(monete))
 
 # Funzione da chiamare quando fai un upgrade PRODUZIONE
 func upgrade_produzione():
@@ -122,6 +128,13 @@ func upgrade_sicurezza():
 	if Global.bilanciamento < max_tacchette:
 		Global.bilanciamento += 1
 		update_barra_bilanciamento.emit()
+
+func aumenta_livello_magazzino():
+	if(livello_magazzino < 2):
+		livello_magazzino += 1
+		timer_spedizione.wait_time = timer_spedizione_per_livello[livello_magazzino]
+		timer_animazione_spedizione.wait_time = timer_animazione_spedizione_per_livello[livello_magazzino]
+		upgrade_produzione()
 
 func aumenta_livello_prese():
 	if(livello_prese < 3):

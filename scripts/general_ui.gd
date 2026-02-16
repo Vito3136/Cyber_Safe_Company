@@ -3,27 +3,23 @@ extends Control
 # Riferimenti ai nodi
 @onready var bar_prod = $HBoxContainer/BarraProduzione
 @onready var bar_sic = $HBoxContainer/BarraSicurezza
+@onready var label_contatore_monete = $ContenitoreMonete/LabelContatoreMonete
 
 
 func _ready():
 	# Impostiamo i massimi delle barre grafiche
 	bar_prod.max_value = Global.max_tacchette
 	bar_sic.max_value = Global.max_tacchette
-	Global.update_barra_bilanciamento.connect(_aggiorna_grafica)
-	_aggiorna_grafica()
-	#await get_tree().create_timer(2.0).timeout
-	#upgrade_produzione()
-	#await get_tree().create_timer(2.0).timeout
-	#upgrade_produzione()
-	#await get_tree().create_timer(2.0).timeout
-	#upgrade_sicurezza()
-	#await get_tree().create_timer(2.0).timeout
-	#upgrade_sicurezza()
-	#await get_tree().create_timer(2.0).timeout
-	#upgrade_sicurezza()
+	Global.update_barra_bilanciamento.connect(_aggiorna_grafica_barra)
+	Global.update_monete.connect(_aggiorna_grafica_monete)
+	_aggiorna_grafica_barra()
+	_aggiorna_grafica_monete(Global.monete)
 
 
-func _aggiorna_grafica():
+func _aggiorna_grafica_monete(monete):
+	label_contatore_monete.text = str(monete)
+
+func _aggiorna_grafica_barra():
 	print("Bilanciamento attuale: ", Global.bilanciamento)
 	
 	if Global.bilanciamento == 0:
