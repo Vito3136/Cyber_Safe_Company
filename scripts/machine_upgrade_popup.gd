@@ -28,7 +28,12 @@ func _process(_delta: float) -> void:
 	pass
 
 func _on_close_button_pressed() -> void:
+	close_button.scale = Vector2(0.8, 0.8)
+	await get_tree().create_timer(0.05).timeout
+	close_button.scale = Vector2(1, 1)
+	await get_tree().create_timer(0.05).timeout
 	hide()
+	Global.save_game()
 	
 func open_popup():
 	# Assicura che sia mostrato e centrato

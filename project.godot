@@ -21,6 +21,9 @@ config/features=PackedStringArray("4.6", "Mobile")
 [autoload]
 
 Global="*res://scripts/global.gd"
+PopupAttaccoRiuscito="*uid://cqw5tir8esnrx"
+PopupAttaccoTentato="*uid://6a8xvexmevq4"
+PopupInformativo="*uid://28bfpatmevl2"
 
 [display]
 

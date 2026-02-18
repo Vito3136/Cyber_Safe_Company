@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="CardData" format=3 uid="uid://be8srh37semyi"]
+
+[ext_resource type="Script" uid="uid://p1gngg5c4evg" path="res://scripts/card_resource.gd" id="1_mjb5n"]
+
+[resource]
+script = ExtResource("1_mjb5n")
+titolo = "Unlock Plug Machine"
+descrizione = "• Plug manufacturing line activated
+• Cycle time: 5s
+• Storage buffer: 10 units
+• Sale price: $8/unit"
+upgrade_id = "plug_0"
+metadata/_custom_type_script = "uid://p1gngg5c4evg"

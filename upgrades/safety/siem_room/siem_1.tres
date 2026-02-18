@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="CardData" format=3 uid="uid://ckcw68ci8uc2c"]
+
+[ext_resource type="Script" uid="uid://p1gngg5c4evg" path="res://scripts/card_resource.gd" id="1_b0w3t"]
+
+[resource]
+script = ExtResource("1_b0w3t")
+titolo = "SIEM - Level 1"
+descrizione = "Begins collecting and correlating logs from every system in your infrastructure. From a security standpoint, you cannot defend what you cannot see — SIEM gives you full visibility into network activity, user behavior, and system events, forming the foundation of any serious threat detection strategy."
+upgrade_id = "siem_1"
+required_id = "siem_team"
+metadata/_custom_type_script = "uid://p1gngg5c4evg"

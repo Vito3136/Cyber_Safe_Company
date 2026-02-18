@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="CardData" format=3 uid="uid://drs0my6n32731"]
+
+[ext_resource type="Script" uid="uid://p1gngg5c4evg" path="res://scripts/card_resource.gd" id="1_ewgpb"]
+
+[resource]
+script = ExtResource("1_ewgpb")
+titolo = "Camera machine - Level 3"
+descrizione = "• Cycle time: 4s
+• Storage buffer: 12 units
+• Sale price: $15/unit"
+upgrade_id = "camera_2"
+required_id = "camera_1"
+metadata/_custom_type_script = "uid://p1gngg5c4evg"

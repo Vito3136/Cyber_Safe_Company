@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bock4ihudga0a" path="res://scripts/card_upgrade_effettuati.gd" id="1_w7k0s"]
 [ext_resource type="Texture2D" uid="uid://c6gx08eaae217" path="res://assets/info_button.png" id="2_4bhns"]
+[ext_resource type="FontFile" uid="uid://bqg3bl8cfajea" path="res://font/NeoBulletin.ttf" id="2_gcaf8"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lg2ls"]
 bg_color = Color(0.22352941, 1, 0.078431375, 0.5882353)
@@ -53,6 +54,9 @@ size_flags_vertical = 4
 
 [node name="Label" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer" unique_id=1076964500]
 layout_mode = 2
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("2_gcaf8")
+theme_override_font_sizes/font_size = 21
 text = "Test"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -84,6 +88,10 @@ theme_override_constants/margin_bottom = 10
 [node name="DescriptionLabel" type="Label" parent="VBoxContainer/DescriptionPanel/MarginContainer" unique_id=233582292]
 custom_minimum_size = Vector2(400, 0)
 layout_mode = 2
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("2_gcaf8")
+theme_override_font_sizes/font_size = 18
 text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco"
 horizontal_alignment = 3
 vertical_alignment = 1

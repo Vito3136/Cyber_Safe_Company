@@ -1,0 +1,174 @@
+[gd_scene format=3 uid="uid://28bfpatmevl2"]
+
+[ext_resource type="Script" uid="uid://tg6gb64pxajm" path="res://scripts/popup_informativo.gd" id="1_rm17y"]
+[ext_resource type="FontFile" uid="uid://du80thymbsnek" path="res://font/Machine Gunk.otf" id="2_gp2yj"]
+[ext_resource type="FontFile" uid="uid://bqg3bl8cfajea" path="res://font/NeoBulletin.ttf" id="3_86txl"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_55aea"]
+bg_color = Color(0.72947735, 0.5811208, 0.026842134, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_japi4"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_86txl"]
+bg_color = Color(0.39215687, 0.39607844, 0.37254903, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_of5ni"]
+bg_color = Color(0.39215687, 0.39607844, 0.37254903, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_js21m"]
+bg_color = Color(0.39215687, 0.39607844, 0.37254903, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4trg3"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.1, 0.1, 0.1, 0.3)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rm17y"]
+bg_color = Color(0.07058824, 0.80784315, 0.9607843, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ckg70"]
+bg_color = Color(0.07058824, 0.80784315, 0.9607843, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vxhr6"]
+bg_color = Color(0.07058824, 0.80784315, 0.9607843, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ell7i"]
+bg_color = Color(0.07058824, 0.80784315, 0.9607843, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=2039304086]
+script = ExtResource("1_rm17y")
+
+[node name="PopupPanel" type="PopupPanel" parent="." unique_id=1598419965]
+oversampling_override = 1.0
+size = Vector2i(800, 338)
+visible = true
+min_size = Vector2i(600, 338)
+theme_override_styles/panel = SubResource("StyleBoxFlat_55aea")
+
+[node name="MarginContainer" type="MarginContainer" parent="PopupPanel" unique_id=630724965]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 40
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PopupPanel/MarginContainer" unique_id=1024568544]
+layout_mode = 2
+
+[node name="TitleLabel" type="Label" parent="PopupPanel/MarginContainer/VBoxContainer" unique_id=993072275]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("2_gp2yj")
+theme_override_font_sizes/font_size = 35
+text = "Upgrade Your Defenses!"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="PopupPanel/MarginContainer/VBoxContainer" unique_id=762851448]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxFlat_japi4")
+
+[node name="ContentLabel" type="Label" parent="PopupPanel/MarginContainer/VBoxContainer" unique_id=1809561167]
+custom_minimum_size = Vector2(750, 150)
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("3_86txl")
+theme_override_font_sizes/font_size = 27
+text = "TEST"
+horizontal_alignment = 3
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Control" type="Control" parent="PopupPanel/MarginContainer/VBoxContainer" unique_id=43385006]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PopupPanel/MarginContainer/VBoxContainer" unique_id=373569101]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 130
+alignment = 1
+
+[node name="OkButton" type="Button" parent="PopupPanel/MarginContainer/VBoxContainer/HBoxContainer" unique_id=428449561]
+custom_minimum_size = Vector2(150, 40)
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("2_gp2yj")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxFlat_86txl")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_of5ni")
+theme_override_styles/hover = SubResource("StyleBoxFlat_js21m")
+theme_override_styles/focus = SubResource("StyleBoxFlat_4trg3")
+text = "OK"
+
+[node name="UpgradeButton" type="Button" parent="PopupPanel/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1274673551]
+custom_minimum_size = Vector2(150, 40)
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("2_gp2yj")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxFlat_rm17y")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ckg70")
+theme_override_styles/hover = SubResource("StyleBoxFlat_vxhr6")
+theme_override_styles/focus = SubResource("StyleBoxFlat_ell7i")
+text = "UPGRADE"
+
+[node name="Timer" type="Timer" parent="." unique_id=1279139794]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=2084204433]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.50980395)
+
+[connection signal="pressed" from="PopupPanel/MarginContainer/VBoxContainer/HBoxContainer/OkButton" to="." method="_on_ok_button_pressed"]
+[connection signal="pressed" from="PopupPanel/MarginContainer/VBoxContainer/HBoxContainer/UpgradeButton" to="." method="_on_upgrade_button_pressed"]

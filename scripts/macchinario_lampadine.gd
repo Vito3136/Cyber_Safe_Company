@@ -34,6 +34,7 @@ func _ready() -> void:
 	Global.produzione_lampadine_aggiornata.connect(_aggiorna_produzione)
 
 func start_produzione():
+	await get_tree().process_frame
 	if(Global.lampadine_is_full):
 		anim_macchinario.stop()
 		anim_lampadina.stop()

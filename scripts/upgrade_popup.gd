@@ -27,6 +27,8 @@ func _ready() -> void:
 		
 	path_scena = get_tree().current_scene.scene_file_path
 	
+	await get_tree().process_frame
+	
 	if (path_scena == server_room_path):
 		if Global.server_room_available_upgrades.is_empty() and Global.server_room_performed_upgrades.is_empty():
 			Global.server_room_performed_upgrades = server_room_performed_upgrades_starting_setup.duplicate()
@@ -36,6 +38,7 @@ func _ready() -> void:
 			Global.office_performed_upgrades = office_performed_upgrades_starting_setup.duplicate()
 			Global.office_available_upgrades = office_available_upgrades_starting_setup.duplicate()
 	elif (path_scena == siem_room_path):
+		print(Global.siem_room_performed_upgrades)
 		if Global.siem_room_available_upgrades.is_empty() and Global.siem_room_performed_upgrades.is_empty():
 			Global.siem_room_performed_upgrades = siem_room_performed_upgrades_starting_setup.duplicate()
 			Global.siem_room_available_upgrades = siem_room_available_upgrades_starting_setup.duplicate()
@@ -49,7 +52,12 @@ func _process(_delta: float) -> void:
 	pass
 
 func _on_close_button_pressed() -> void:
+	close_button.scale = Vector2(0.8, 0.8)
+	await get_tree().create_timer(0.05).timeout
+	close_button.scale = Vector2(1, 1)
+	await get_tree().create_timer(0.05).timeout
 	hide()
+	Global.save_game()
 	
 func open_popup():
 	# Assicura che sia mostrato e centrato

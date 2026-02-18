@@ -52,6 +52,7 @@ func _on_buy_button_pressed():
 	await get_tree().create_timer(0.5).timeout
 	# Inviamo il segnale al Popup dicendo: "Sposta questo upgrade!"
 	requested_purchase.emit(card_data_attiva)
+	Global.save_game()
 		
 func update_appearance():
 	var sb = get_theme_stylebox("panel") as StyleBoxFlat
@@ -63,7 +64,7 @@ func update_appearance():
 		
 		if Global.monete >= card_data_attiva.costo:
 			buy_button.disabled = false
-			buy_button.text = "Buy (" + str(card_data_attiva.costo) + ")"
+			buy_button.text = "BUY (" + str(card_data_attiva.costo) + ")"
 		else:
 			buy_button.disabled = true # Lo vedi ma non puoi cliccare
 			buy_button.text = "Insufficient money"

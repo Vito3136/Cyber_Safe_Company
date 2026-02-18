@@ -2,8 +2,9 @@
 
 [ext_resource type="Script" uid="uid://c2ykcsbvvr3y0" path="res://scripts/machine_upgrade_popup.gd" id="1_8uvxq"]
 [ext_resource type="PackedScene" uid="uid://bddw80evmf0me" path="res://scenes/card_machine_upgrade_effettuabili.tscn" id="2_u0sis"]
-[ext_resource type="PackedScene" uid="uid://bueidihhwquvt" path="res://scenes/card_upgrade_effettuati.tscn" id="3_fm3vf"]
-[ext_resource type="Texture2D" uid="uid://c45rwffb1j2j0" path="res://assets/close.png" id="4_7ljy5"]
+[ext_resource type="PackedScene" uid="uid://tptfjtv6yd8i" path="res://scenes/card_machine_upgrade_effettuati.tscn" id="3_u0sis"]
+[ext_resource type="Texture2D" uid="uid://yg3oy4j6xx8d" path="res://assets/close.png" id="4_7ljy5"]
+[ext_resource type="FontFile" uid="uid://du80thymbsnek" path="res://font/Machine Gunk.otf" id="5_mwjeq"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_psw0a"]
 content_margin_left = 2.0
@@ -12,11 +13,11 @@ bg_color = Color(0, 0, 0, 1)
 
 [node name="UpgradePopup" type="PopupPanel" unique_id=989768510]
 oversampling_override = 1.0
-size = Vector2i(319, 100)
+size = Vector2i(508, 103)
 visible = true
 script = ExtResource("1_8uvxq")
 card_template_effettuabili = ExtResource("2_u0sis")
-card_template_effettuati = ExtResource("3_fm3vf")
+card_template_effettuati = ExtResource("3_u0sis")
 
 [node name="ContentsContainer" type="VBoxContainer" parent="." unique_id=1599893688]
 anchors_preset = 15
@@ -38,6 +39,7 @@ size_flags_vertical = 4
 mouse_default_cursor_shape = 2
 theme_override_constants/h_separation = 4
 icon = ExtResource("4_7ljy5")
+flat = true
 icon_alignment = 1
 expand_icon = true
 
@@ -51,7 +53,10 @@ size_flags_horizontal = 3
 
 [node name="Label" type="Label" parent="ContentsContainer/TwoPartsContainer/UpgradeEffettuatiContainer" unique_id=583989684]
 layout_mode = 2
-text = "Upgrade Effettuati"
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("5_mwjeq")
+theme_override_font_sizes/font_size = 30
+text = "Purchased Upgrades"
 horizontal_alignment = 1
 
 [node name="ScrollContainer" type="ScrollContainer" parent="ContentsContainer/TwoPartsContainer/UpgradeEffettuatiContainer" unique_id=1209680536]
@@ -73,7 +78,10 @@ size_flags_horizontal = 3
 
 [node name="Label" type="Label" parent="ContentsContainer/TwoPartsContainer/UpgradeEffettuabiliContainer" unique_id=1008730967]
 layout_mode = 2
-text = "Upgrade Effettuabili"
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("5_mwjeq")
+theme_override_font_sizes/font_size = 30
+text = "Available Upgrades"
 horizontal_alignment = 1
 
 [node name="ScrollContainer" type="ScrollContainer" parent="ContentsContainer/TwoPartsContainer/UpgradeEffettuabiliContainer" unique_id=388344189]

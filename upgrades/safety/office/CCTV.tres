@@ -1,11 +1,11 @@
 [gd_resource type="Resource" script_class="CardData" format=3 uid="uid://ll4gumemiifd"]
 
-[ext_resource type="Script" uid="uid://p1gngg5c4evg" path="res://scripts/card_resource.gd" id="1_achnj"]
+[ext_resource type="Script" uid="uid://p1gngg5c4evg" path="res://scripts/card_resource.gd" id="1_mtsdj"]
 
 [resource]
-script = ExtResource("1_achnj")
+script = ExtResource("1_mtsdj")
 titolo = "Closed-Circuit Television (CCTV)"
-descrizione = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco"
+descrizione = "Full-coverage cameras across the entire company, recording activity 24/7. From a security standpoint, physical surveillance acts both as a deterrent and as forensic evidence. It prevents unauthorized individuals from accessing sensitive areas and helps identify insider threats or social engineering attempts in person."
 upgrade_id = "cctv"
 required_id = "siem_team"
 metadata/_custom_type_script = "uid://p1gngg5c4evg"

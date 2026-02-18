@@ -1,11 +1,11 @@
 [gd_resource type="Resource" script_class="CardData" format=3 uid="uid://hy7dmrk4koaq"]
 
-[ext_resource type="Script" uid="uid://p1gngg5c4evg" path="res://scripts/card_resource.gd" id="1_yknb1"]
+[ext_resource type="Script" uid="uid://p1gngg5c4evg" path="res://scripts/card_resource.gd" id="1_hdmo1"]
 
 [resource]
-script = ExtResource("1_yknb1")
+script = ExtResource("1_hdmo1")
 titolo = "Redundancy Systems (RAID/Cluster)"
-descrizione = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco"
+descrizione = "If one server crashes or gets hit by malware, a mirrored system takes over instantly. From a security standpoint, this addresses the availability pillar of the CIA triad — ensuring your systems remain operational even during an attack. Ransomware that targets a single server won't bring down your entire infrastructure."
 upgrade_id = "redundancy_system"
 required_id = "siem_team"
 metadata/_custom_type_script = "uid://p1gngg5c4evg"

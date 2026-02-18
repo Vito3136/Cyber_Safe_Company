@@ -7,8 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://bgi0ptcd8vnbt" path="res://assets/upgrade_button.png" id="4_wv5sc"]
 [ext_resource type="PackedScene" uid="uid://bxsadxh5dpeqa" path="res://scenes/upgrade_popup.tscn" id="5_0f3ya"]
 [ext_resource type="Script" uid="uid://p1gngg5c4evg" path="res://scripts/card_resource.gd" id="6_ycfdm"]
-[ext_resource type="Resource" uid="uid://ll4gumemiifd" path="res://upgrades/safety/office/CCTV.tres" id="7_dx4vc"]
-[ext_resource type="Resource" uid="uid://7n18nhoocmt7" path="res://upgrades/safety/office/MFA-2FA.tres" id="7_roy4p"]
+[ext_resource type="Resource" uid="uid://ll4gumemiifd" path="res://upgrades/safety/office/cctv.tres" id="7_dx4vc"]
+[ext_resource type="Resource" uid="uid://7n18nhoocmt7" path="res://upgrades/safety/office/mfa.tres" id="7_roy4p"]
 [ext_resource type="Resource" uid="uid://ckmmmr71p6pyg" path="res://upgrades/safety/office/edr.tres" id="9_oujbn"]
 [ext_resource type="Resource" uid="uid://b1jipugad0qsj" path="res://upgrades/safety/office/password_manager.tres" id="10_dx4vc"]
 

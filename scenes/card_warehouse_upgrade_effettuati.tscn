@@ -1,0 +1,99 @@
+[gd_scene format=3 uid="uid://gxspyjjgv757"]
+
+[ext_resource type="Script" uid="uid://ba7n4tpin4qux" path="res://scripts/card_machine_upgrade_effettuati.gd" id="1_d8g2t"]
+[ext_resource type="Texture2D" uid="uid://c6gx08eaae217" path="res://assets/info_button.png" id="2_j73lt"]
+[ext_resource type="FontFile" uid="uid://bqg3bl8cfajea" path="res://font/NeoBulletin.ttf" id="2_jpctg"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lg2ls"]
+bg_color = Color(0.22352941, 1, 0.078431375, 0.5882353)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4bhns"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gcaf8"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ds56r"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_32ucq"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fsre5"]
+bg_color = Color(0.22352941, 1, 0.078431375, 0)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[node name="PanelContainer" type="PanelContainer" unique_id=1054702042]
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_default_cursor_shape = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_lg2ls")
+script = ExtResource("1_d8g2t")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1708139336]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer" unique_id=825820821]
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer" unique_id=1326535301]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer" unique_id=1076964500]
+layout_mode = 2
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("2_jpctg")
+theme_override_font_sizes/font_size = 21
+text = "Test"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="OptionButton" type="Button" parent="VBoxContainer/MarginContainer/HBoxContainer" unique_id=710315642]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_4bhns")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_gcaf8")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ds56r")
+theme_override_styles/focus = SubResource("StyleBoxFlat_32ucq")
+icon = ExtResource("2_j73lt")
+flat = true
+icon_alignment = 1
+
+[node name="DescriptionPanel" type="PanelContainer" parent="VBoxContainer" unique_id=1760388540]
+visible = false
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_fsre5")
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/DescriptionPanel" unique_id=736730111]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 10
+
+[node name="DescriptionLabel" type="Label" parent="VBoxContainer/DescriptionPanel/MarginContainer" unique_id=233582292]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("2_jpctg")
+theme_override_font_sizes/font_size = 18
+text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco"
+vertical_alignment = 1
+autowrap_mode = 2
+
+[connection signal="pressed" from="VBoxContainer/MarginContainer/HBoxContainer/OptionButton" to="." method="_on_option_button_pressed"]

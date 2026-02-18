@@ -1,11 +1,11 @@
 [gd_resource type="Resource" script_class="CardData" format=3 uid="uid://dqti0le16ry36"]
 
-[ext_resource type="Script" uid="uid://p1gngg5c4evg" path="res://scripts/card_resource.gd" id="1_88tfa"]
+[ext_resource type="Script" uid="uid://p1gngg5c4evg" path="res://scripts/card_resource.gd" id="1_3c0r5"]
 
 [resource]
-script = ExtResource("1_88tfa")
+script = ExtResource("1_3c0r5")
 titolo = "SOAR Module"
-descrizione = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco"
+descrizione = "Automates your threat response workflows. From a security standpoint, the time between detection and response is critical — every second an attacker is inside your network, the damage grows. SOAR eliminates that delay by automatically executing predefined responses, such as blocking a hostile IP or isolating a compromised machine, without waiting for human intervention."
 upgrade_id = "soar"
 required_id = "siem_team"
 metadata/_custom_type_script = "uid://p1gngg5c4evg"

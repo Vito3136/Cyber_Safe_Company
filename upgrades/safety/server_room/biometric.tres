@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="CardData" format=3 uid="uid://vrjgscu1vjbu"]
+
+[ext_resource type="Script" uid="uid://p1gngg5c4evg" path="res://scripts/card_resource.gd" id="1_m4401"]
+
+[resource]
+script = ExtResource("1_m4401")
+titolo = "Biometric Access Control"
+descrizione = "Only authorized personnel can enter the server room. Retina and fingerprint scanners replace traditional keycards or PIN codes, which can be stolen or shared. From a security standpoint, biometric data is unique to each individual and nearly impossible to replicate, eliminating the risk of physical unauthorized access by spies or rogue employees."
+upgrade_id = "biometric"
+required_id = "siem_team"
+metadata/_custom_type_script = "uid://p1gngg5c4evg"

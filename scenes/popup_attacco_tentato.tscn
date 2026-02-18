@@ -1,0 +1,131 @@
+[gd_scene format=3 uid="uid://6a8xvexmevq4"]
+
+[ext_resource type="Script" uid="uid://cxgjpypbhudvg" path="res://scripts/popup_attacco_tentato.gd" id="1_64rji"]
+[ext_resource type="FontFile" uid="uid://du80thymbsnek" path="res://font/Machine Gunk.otf" id="2_v2hvw"]
+[ext_resource type="FontFile" uid="uid://bqg3bl8cfajea" path="res://font/NeoBulletin.ttf" id="3_eryem"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v2hvw"]
+bg_color = Color(0, 0.47058824, 0, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="LabelSettings" id="LabelSettings_64rji"]
+font = ExtResource("2_v2hvw")
+font_size = 35
+outline_size = 2
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eryem"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_64rji"]
+bg_color = Color(0.39063326, 0.39694148, 0.37198347, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vmwu3"]
+bg_color = Color(0.39063326, 0.39694148, 0.37198347, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nar3s"]
+bg_color = Color(0.39063326, 0.39694148, 0.37198347, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b2fts"]
+bg_color = Color(0.39063326, 0.39694148, 0.37198347, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=2015738091]
+script = ExtResource("1_64rji")
+
+[node name="PopupPanel" type="PopupPanel" parent="." unique_id=168257999]
+oversampling_override = 1.0
+size = Vector2i(1050, 500)
+visible = true
+min_size = Vector2i(600, 338)
+theme_override_styles/panel = SubResource("StyleBoxFlat_v2hvw")
+
+[node name="MarginContainer" type="MarginContainer" parent="PopupPanel" unique_id=1428055809]
+offset_right = 1050.0
+offset_bottom = 500.0
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 40
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PopupPanel/MarginContainer" unique_id=1034295373]
+layout_mode = 2
+
+[node name="TitleLabel" type="Label" parent="PopupPanel/MarginContainer/VBoxContainer" unique_id=1771890640]
+layout_mode = 2
+text = "ATTACK ATTEMPT BLOCKED!"
+label_settings = SubResource("LabelSettings_64rji")
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="PopupPanel/MarginContainer/VBoxContainer" unique_id=849257153]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxFlat_eryem")
+
+[node name="ContentLabel" type="Label" parent="PopupPanel/MarginContainer/VBoxContainer" unique_id=554357904]
+custom_minimum_size = Vector2(750, 150)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("3_eryem")
+theme_override_font_sizes/font_size = 27
+text = "Test"
+horizontal_alignment = 3
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Control" type="Control" parent="PopupPanel/MarginContainer/VBoxContainer" unique_id=1821863468]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PopupPanel/MarginContainer/VBoxContainer" unique_id=370754352]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 30
+alignment = 1
+
+[node name="OkButton" type="Button" parent="PopupPanel/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1349730798]
+custom_minimum_size = Vector2(150, 40)
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("2_v2hvw")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxFlat_64rji")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_vmwu3")
+theme_override_styles/hover = SubResource("StyleBoxFlat_nar3s")
+theme_override_styles/focus = SubResource("StyleBoxFlat_b2fts")
+text = "OK"
+
+[node name="Timer" type="Timer" parent="." unique_id=462345785]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=2076649600]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.50980395)
+
+[connection signal="pressed" from="PopupPanel/MarginContainer/VBoxContainer/HBoxContainer/OkButton" to="." method="_on_ok_button_pressed"]

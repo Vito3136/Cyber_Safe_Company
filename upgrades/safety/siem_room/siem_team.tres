@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="CardData" format=3 uid="uid://djkt0wuqa7akp"]
+
+[ext_resource type="Script" uid="uid://p1gngg5c4evg" path="res://scripts/card_resource.gd" id="1_iy1k2"]
+
+[resource]
+script = ExtResource("1_iy1k2")
+titolo = "SIEM Team Creation"
+descrizione = "A dedicated security professional who monitors your infrastructure around the clock. From a security standpoint, technology alone is never enough — human expertise is essential to interpret alerts, investigate anomalies, and respond to incidents that automated systems might miss or misclassify."
+upgrade_id = "siem_team"
+metadata/_custom_type_script = "uid://p1gngg5c4evg"

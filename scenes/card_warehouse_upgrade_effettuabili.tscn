@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://e5dh000o2lc1"]
 
 [ext_resource type="Script" uid="uid://cvkw2svyqfe63" path="res://scripts/card_machine_upgrade_effettuabili.gd" id="1_xix20"]
+[ext_resource type="FontFile" uid="uid://bqg3bl8cfajea" path="res://font/NeoBulletin.ttf" id="2_2nl2w"]
 [ext_resource type="Texture2D" uid="uid://c6gx08eaae217" path="res://assets/info_button.png" id="2_4wwy5"]
 [ext_resource type="Texture2D" uid="uid://l7nmd6efls0q" path="res://assets/shopping-cart.png" id="3_2nl2w"]
+[ext_resource type="FontFile" uid="uid://du80thymbsnek" path="res://font/Machine Gunk.otf" id="4_2nl2w"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lg2ls"]
 bg_color = Color(1, 0.6901961, 0, 0.8235294)
@@ -98,6 +100,9 @@ size_flags_vertical = 4
 
 [node name="Label" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer" unique_id=501083797]
 layout_mode = 2
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("2_2nl2w")
+theme_override_font_sizes/font_size = 21
 text = "Test"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -128,6 +133,10 @@ theme_override_constants/margin_bottom = 10
 [node name="DescriptionLabel" type="Label" parent="VBoxContainer/DescriptionPanel/MarginContainer" unique_id=233582292]
 custom_minimum_size = Vector2(400, 0)
 layout_mode = 2
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("2_2nl2w")
+theme_override_font_sizes/font_size = 18
 text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco"
 horizontal_alignment = 3
 vertical_alignment = 1
@@ -139,6 +148,8 @@ layout_mode = 2
 [node name="BuyButton" type="Button" parent="VBoxContainer/CenterContainer" unique_id=130332679]
 layout_mode = 2
 mouse_default_cursor_shape = 2
+theme_override_fonts/font = ExtResource("4_2nl2w")
+theme_override_font_sizes/font_size = 18
 theme_override_styles/normal = SubResource("StyleBoxFlat_ljvjv")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_p1oc6")
 theme_override_styles/hover = SubResource("StyleBoxFlat_licx3")

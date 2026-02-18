@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="CardData" format=3 uid="uid://30hyopcaikb8"]
+
+[ext_resource type="Script" uid="uid://p1gngg5c4evg" path="res://scripts/card_resource.gd" id="1_p41ng"]
+
+[resource]
+script = ExtResource("1_p41ng")
+titolo = "CIS Controls - Level 2"
+descrizione = "Extends your security posture with more advanced configurations and hardening practices. From a security standpoint, Level 2 addresses sophisticated threats by reducing your attack surface further — tightening configurations, improving log management, and enforcing stricter access policies across the organization."
+upgrade_id = "cis_2"
+required_id = "cis_1"
+metadata/_custom_type_script = "uid://p1gngg5c4evg"

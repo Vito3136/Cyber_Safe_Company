@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="CardData" format=3 uid="uid://dr1j0y526x8y"]
+
+[ext_resource type="Script" uid="uid://p1gngg5c4evg" path="res://scripts/card_resource.gd" id="1_pe6hr"]
+
+[resource]
+script = ExtResource("1_pe6hr")
+titolo = "Lightbulb machine - Level 3"
+descrizione = "• Cycle time: 4s
+• Storage buffer: 12 units
+• Sale price: $11/unit"
+upgrade_id = "bulb_2"
+required_id = "bulb_1"
+metadata/_custom_type_script = "uid://p1gngg5c4evg"

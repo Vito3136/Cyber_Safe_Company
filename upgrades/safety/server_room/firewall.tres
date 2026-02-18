@@ -1,11 +1,11 @@
 [gd_resource type="Resource" script_class="CardData" format=3 uid="uid://d3ntpksr7rchu"]
 
-[ext_resource type="Script" uid="uid://p1gngg5c4evg" path="res://scripts/card_resource.gd" id="1_y0fr6"]
+[ext_resource type="Script" uid="uid://p1gngg5c4evg" path="res://scripts/card_resource.gd" id="1_x4xvt"]
 
 [resource]
-script = ExtResource("1_y0fr6")
+script = ExtResource("1_x4xvt")
 titolo = "Next-Gen Hardware Firewall"
-descrizione = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco"
+descrizione = "A cutting-edge firewall that analyzes and blocks external intrusion attempts in real time. Unlike traditional firewalls that only filter by IP or port, a Next-Gen Firewall performs deep packet inspection, detecting malicious payloads hidden inside legitimate-looking traffic. This significantly reduces the success rate of external attacks such as DDoS, port scanning, and exploit attempts."
 upgrade_id = "firewall"
 required_id = "siem_team"
 metadata/_custom_type_script = "uid://p1gngg5c4evg"
