@@ -8,6 +8,7 @@ titolo = "Lightbulb machine - Level 4"
 descrizione = "• Cycle time: 3s
 • Storage buffer: 14 units
 • Sale price: $11/unit"
+costo = 3500
 upgrade_id = "bulb_3"
 required_id = "bulb_2"
 metadata/_custom_type_script = "uid://p1gngg5c4evg"

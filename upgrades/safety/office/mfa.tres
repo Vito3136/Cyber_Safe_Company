@@ -6,6 +6,7 @@
 script = ExtResource("1_k7e5d")
 titolo = "Two-Factor Authentication (MFA/2FA)"
 descrizione = "Every login requires a second verification step beyond a password. From a security standpoint, passwords alone are a weak defense — they can be phished, brute-forced, or leaked. MFA ensures that even with valid credentials in hand, an attacker cannot access your systems without also controlling the employee's second factor, such as a phone or hardware token."
+costo = 2800
 upgrade_id = "mfa"
 required_id = "siem_team"
 metadata/_custom_type_script = "uid://p1gngg5c4evg"

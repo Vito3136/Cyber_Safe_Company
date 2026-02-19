@@ -6,6 +6,7 @@
 script = ExtResource("1_3i58s")
 titolo = "Fire Protection System"
 descrizione = "Automated fire detection and suppression protects your hardware from catastrophic damage. From a security standpoint, physical threats like fires are often overlooked in cybersecurity planning — but destroying your servers is just as damaging as hacking them. This system ensures business continuity even in the event of a physical incident."
+costo = 1500
 upgrade_id = "fire_protection"
 required_id = "siem_team"
 metadata/_custom_type_script = "uid://p1gngg5c4evg"

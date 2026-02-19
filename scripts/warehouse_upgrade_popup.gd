@@ -48,17 +48,17 @@ func refresh_popup():
 		var a_unlocked = a.required_id == "" or a.required_id in purchased_ids
 		var b_unlocked = b.required_id == "" or b.required_id in purchased_ids
 		
-		# Se 'a' è sbloccato e 'b' no, 'a' deve venire prima (true)
 		if a_unlocked and not b_unlocked:
 			return true
-		# Se 'b' è sbloccato e 'a' no, 'b' deve venire prima (false)
 		elif not a_unlocked and b_unlocked:
 			return false
-		# Se sono entrambi sbloccati o entrambi bloccati, mantieni l'ordine originale (o usa il titolo)
-		else:
-			var index_a = Global.all_warehouse_available_upgrades.find(a)
-			var index_b = Global.all_warehouse_available_upgrades.find(b)
-			return index_a < index_b
+	
+		if a.costo != b.costo:
+			return a.costo < b.costo
+		
+		var index_a = Global.all_warehouse_available_upgrades.find(a)
+		var index_b = Global.all_warehouse_available_upgrades.find(b)
+		return index_a < index_b
 	)
 	
 	popola_lista(performed_upgrades_container, Global.all_warehouse_performed_upgrades, true, purchased_ids)
@@ -107,6 +107,7 @@ func _on_bought_upgrade(data: CardData):
 		
 		# 4. Aggiorna tutto
 		refresh_popup()
+		Global.update_monete.emit(Global.monete)
 		
 		print("Acquisto effettuato! Monete rimanenti: ", Global.monete)
 		

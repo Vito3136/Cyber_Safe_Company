@@ -6,6 +6,7 @@
 script = ExtResource("1_4kukp")
 titolo = "EDR Software"
 descrizione = "An advanced endpoint protection system installed on every company device. From a security standpoint, traditional antivirus reacts to known threats — EDR (Endpoint Detection and Response) goes further by monitoring process behavior in real time. The moment a device starts acting suspiciously, such as when an employee clicks a malicious link, the EDR isolates it from the rest of the network before the threat can spread laterally to servers or other machines."
+costo = 5000
 upgrade_id = "edr"
 required_id = "siem_team"
 metadata/_custom_type_script = "uid://p1gngg5c4evg"

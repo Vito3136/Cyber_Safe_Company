@@ -6,6 +6,7 @@
 script = ExtResource("1_3c0r5")
 titolo = "SOAR Module"
 descrizione = "Automates your threat response workflows. From a security standpoint, the time between detection and response is critical — every second an attacker is inside your network, the damage grows. SOAR eliminates that delay by automatically executing predefined responses, such as blocking a hostile IP or isolating a compromised machine, without waiting for human intervention."
+costo = 7500
 upgrade_id = "soar"
 required_id = "siem_team"
 metadata/_custom_type_script = "uid://p1gngg5c4evg"

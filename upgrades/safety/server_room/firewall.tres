@@ -6,6 +6,7 @@
 script = ExtResource("1_x4xvt")
 titolo = "Next-Gen Hardware Firewall"
 descrizione = "A cutting-edge firewall that analyzes and blocks external intrusion attempts in real time. Unlike traditional firewalls that only filter by IP or port, a Next-Gen Firewall performs deep packet inspection, detecting malicious payloads hidden inside legitimate-looking traffic. This significantly reduces the success rate of external attacks such as DDoS, port scanning, and exploit attempts."
+costo = 4000
 upgrade_id = "firewall"
 required_id = "siem_team"
 metadata/_custom_type_script = "uid://p1gngg5c4evg"
