@@ -1,6 +1,6 @@
 extends Control
 
-@onready var center_container = $CenterContainer
+@onready var center_container = $CenterContainerNewGame
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

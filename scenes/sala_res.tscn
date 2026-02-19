@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://dctfm8dibts06"]
+[gd_scene format=3 uid="uid://bhkg8ke0eb4h4"]
 
 [ext_resource type="Script" uid="uid://bfxrxleqdcu2x" path="res://scripts/sala_res.gd" id="1_3ts2u"]
 [ext_resource type="Texture2D" uid="uid://qla1m4grk0md" path="res://assets/sala_r_e_s.png" id="1_eu1bd"]
@@ -23,6 +23,152 @@
 [ext_resource type="Resource" uid="uid://cvesj7gbwpq55" path="res://upgrades/machines/lock_1.tres" id="20_65080"]
 [ext_resource type="Resource" uid="uid://bx4itseyqnjh2" path="res://upgrades/machines/lock_2.tres" id="21_jq41f"]
 [ext_resource type="Resource" uid="uid://budthxtokxkio" path="res://upgrades/machines/lock_3.tres" id="22_uao70"]
+[ext_resource type="PackedScene" uid="uid://b5eso4i6404to" path="res://scenes/maschera_tutorial.tscn" id="24_laarw"]
+[ext_resource type="Texture2D" uid="uid://b8yodbnudd6dq" path="res://assets/index_finger_icon.png" id="25_8edeh"]
+
+[sub_resource type="Animation" id="Animation_kfxbu"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(780, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(372, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-1.5707964, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_g8wek"]
+resource_name = "pointing"
+loop_mode = 1
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(2, 0, 0),
+"points": PackedFloat32Array(780, -0.25, 0, 0.25, 0, 780, -0.16666667, 0, 0, 0, 780, -0.16666667, 0, 0, 0),
+"times": PackedFloat32Array(0, 0.5, 1)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(2, 0, 0),
+"points": PackedFloat32Array(404, -0.25, 0, 0.25, 0, 347.99997, -0.16666667, 9.333339, 0, 0, 404, -0.16666667, -9.333339, 0, 0),
+"times": PackedFloat32Array(0, 0.5, 1)
+}
+
+[sub_resource type="Animation" id="Animation_iajt1"]
+resource_name = "pointing_2"
+loop_mode = 1
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 2, 2),
+"points": PackedFloat32Array(1244, -0.25, 0, 0.25, 0, 1244, -0.083333336, 0, 0, 0, 1244, -0.083333336, 0, 0, 0),
+"times": PackedFloat32Array(0, 0.5, 1)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 2, 2),
+"points": PackedFloat32Array(160, -0.25, 0, 0.25, 0, 149, -0.083333336, 1.8333334, 0, 0, 160, -0.083333336, -1.8333334, 0, 0),
+"times": PackedFloat32Array(0, 0.5, 1)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.16666667, 0, 0, 0),
+"times": PackedFloat32Array(0, 1)
+}
+
+[sub_resource type="Animation" id="Animation_laarw"]
+resource_name = "pointing_3"
+loop_mode = 1
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 2, 2),
+"points": PackedFloat32Array(-1.5707964, -0.25, 0, 0.25, 0, -1.5707964, -0.083333336, 0, 0, 0, -1.5707964, -0.083333336, 0, 0, 0),
+"times": PackedFloat32Array(0, 0.5, 1)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 2, 2),
+"points": PackedFloat32Array(1160, -0.25, 0, 0.25, 0, 1185, -0.083333336, -4.166667, 0, 0, 1160, -0.083333336, 4.166667, 0, 0),
+"times": PackedFloat32Array(0, 0.5, 1)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:position:y")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 2, 2),
+"points": PackedFloat32Array(204, -0.25, 0, 0.25, 0, 204, -0.083333336, 0, 0, 0, 204, -0.083333336, 0, 0, 0),
+"times": PackedFloat32Array(0, 0.5, 1)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_uy810"]
+_data = {
+&"RESET": SubResource("Animation_kfxbu"),
+&"pointing": SubResource("Animation_g8wek"),
+&"pointing_2": SubResource("Animation_iajt1"),
+&"pointing_3": SubResource("Animation_laarw")
+}
 
 [node name="SalaRES" type="Node2D" unique_id=1479786499]
 script = ExtResource("1_3ts2u")
@@ -69,6 +215,20 @@ mouse_default_cursor_shape = 2
 texture_normal = ExtResource("3_35m43")
 ignore_texture_size = true
 stretch_mode = 5
+
+[node name="MascheraTutorial" parent="." unique_id=152794849 instance=ExtResource("24_laarw")]
+visible = false
+z_index = 4096
+
+[node name="IndexFinger" type="Sprite2D" parent="." unique_id=442693329]
+visible = false
+position = Vector2(780, 372)
+rotation = -1.5707964
+scale = Vector2(0.13, 0.13)
+texture = ExtResource("25_8edeh")
+
+[node name="AnimationIndex" type="AnimationPlayer" parent="IndexFinger" unique_id=590247447]
+libraries/ = SubResource("AnimationLibrary_uy810")
 
 [connection signal="pressed" from="UpgradeButton" to="." method="_on_upgrade_button_pressed"]
 [connection signal="pressed" from="BackLeftButton" to="." method="_on_back_left_button_pressed"]

@@ -75,9 +75,9 @@ theme_override_styles/separator = SubResource("StyleBoxFlat_p3kaw")
 [node name="TextureRect2" type="TextureRect" parent="." unique_id=66891399]
 layout_mode = 0
 offset_left = 809.0
-offset_top = 245.0
+offset_top = 231.0
 offset_right = 1210.0
-offset_bottom = 558.0
+offset_bottom = 544.0
 texture = ExtResource("5_k0mk0")
 expand_mode = 1
 stretch_mode = 4
@@ -85,14 +85,15 @@ stretch_mode = 4
 [node name="CenterContainer" type="CenterContainer" parent="." unique_id=1290578359]
 layout_mode = 0
 offset_left = -1188.571
-offset_top = 536.0
+offset_top = 551.0
 offset_right = 2468.5715
-offset_bottom = 673.0
+offset_bottom = 688.0
 scale = Vector2(0.35, 0.35)
 pivot_offset = Vector2(1828.5712, 68.57153)
 
 [node name="NextButton" type="Button" parent="CenterContainer" unique_id=999914649]
 layout_mode = 2
+mouse_default_cursor_shape = 2
 icon = ExtResource("6_h20vw")
 
 [connection signal="pressed" from="CenterContainer/NextButton" to="." method="_on_next_button_pressed"]

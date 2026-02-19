@@ -16,6 +16,9 @@ var mat
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	if(!Global.tutorial_iniziale_effettuato):
+		Global.tutorial_iniziale_effettuato = true
+	
 	if(!Global.tutorial_totale_effettuato):
 		maschera_tutorial.visible = true
 		mat = color_rect_maschera.material as ShaderMaterial
@@ -23,6 +26,9 @@ func _ready() -> void:
 		index_finger.visible = true
 		animation_index.play("pointing")
 		start_tutorial()
+	else:
+		maschera_tutorial.visible = false
+		index_finger.visible = false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

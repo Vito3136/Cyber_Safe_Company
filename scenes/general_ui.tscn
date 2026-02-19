@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://b3farfqb3q2ic"]
 
 [ext_resource type="Script" uid="uid://btvthivktgpse" path="res://scripts/general_ui.gd" id="1_65jkc"]
-[ext_resource type="Texture2D" uid="uid://dlp8x3gj5fumw" path="res://assets/contenitore_contatore.png" id="1_hswpa"]
 [ext_resource type="Texture2D" uid="uid://dxofyri3j43x5" path="res://assets/moneta.png" id="2_2efmg"]
+[ext_resource type="Texture2D" uid="uid://qxkenajsm8p" path="res://assets/contenitore_contatore_monete.png" id="2_w1h78"]
 [ext_resource type="FontFile" uid="uid://du80thymbsnek" path="res://font/Machine Gunk.otf" id="7_q1d48"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_2efmg"]
@@ -31,19 +31,21 @@ grow_vertical = 2
 script = ExtResource("1_65jkc")
 
 [node name="ContenitoreMonete" type="Sprite2D" parent="." unique_id=367970063]
-position = Vector2(1205, 43)
+position = Vector2(1189, 43)
 scale = Vector2(0.17, 0.17)
-texture = ExtResource("1_hswpa")
+texture = ExtResource("2_w1h78")
 
 [node name="Moneta" type="Sprite2D" parent="ContenitoreMonete" unique_id=1581212025]
-position = Vector2(-211.75977, 0)
+position = Vector2(-311.76172, 0)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("2_2efmg")
 
 [node name="LabelContatoreMonete" type="Label" parent="ContenitoreMonete" unique_id=1675566195]
-offset_left = -117.64673
+anchors_preset = -1
+anchor_right = 0.19301848
+offset_left = -223.52954
 offset_top = -88.23529
-offset_right = 294.35327
+offset_right = 188.47046
 offset_bottom = 76.76471
 text = "0"
 label_settings = SubResource("LabelSettings_2efmg")

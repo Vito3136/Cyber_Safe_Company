@@ -82,6 +82,7 @@ pivot_offset = Vector2(1828.5712, 68.57153)
 
 [node name="NextButton" type="Button" parent="CenterContainer" unique_id=327000123]
 layout_mode = 2
+mouse_default_cursor_shape = 2
 icon = ExtResource("2_xibyj")
 
 [connection signal="pressed" from="CenterContainer/NextButton" to="." method="_on_next_button_pressed"]

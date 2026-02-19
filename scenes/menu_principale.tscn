@@ -2,7 +2,8 @@
 
 [ext_resource type="Script" uid="uid://m7j7b6pkjd0d" path="res://scripts/menu_principale.gd" id="1_ccts7"]
 [ext_resource type="Texture2D" uid="uid://bvlgch1lsoiqm" path="res://assets/background_main_menu.png" id="1_q6s64"]
-[ext_resource type="Texture2D" uid="uid://csv2hcifyx6cl" path="res://assets/play_btn.png" id="2_ccts7"]
+[ext_resource type="Texture2D" uid="uid://bh51xmo5nsjoy" path="res://assets/new_game_button.png" id="3_rhrkc"]
+[ext_resource type="Texture2D" uid="uid://tofw2s5c5gm3" path="res://assets/continue_game_button.png" id="4_7w7dl"]
 
 [node name="MenuPrincipale" type="Control" unique_id=186075476]
 layout_mode = 3
@@ -24,7 +25,7 @@ texture = ExtResource("1_q6s64")
 expand_mode = 1
 stretch_mode = 6
 
-[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1557472151]
+[node name="CenterContainerNewGame" type="CenterContainer" parent="." unique_id=1557472151]
 layout_mode = 0
 offset_left = -2273.0
 offset_top = -1.0
@@ -33,10 +34,25 @@ offset_bottom = 624.0
 scale = Vector2(0.22, 0.22)
 pivot_offset = Vector2(2913.6362, 303.599)
 
-[node name="PlayButton" type="Button" parent="CenterContainer" unique_id=656489746]
+[node name="NewGameButton" type="Button" parent="CenterContainerNewGame" unique_id=656489746]
 layout_mode = 2
 mouse_default_cursor_shape = 2
-icon = ExtResource("2_ccts7")
+icon = ExtResource("3_rhrkc")
 flat = true
 
-[connection signal="pressed" from="CenterContainer/PlayButton" to="." method="_on_play_button_pressed"]
+[node name="CenterContainerContinueGame" type="CenterContainer" parent="." unique_id=75657545]
+layout_mode = 0
+offset_left = -2273.0
+offset_top = 173.0
+offset_right = 3545.1816
+offset_bottom = 798.0
+scale = Vector2(0.22, 0.22)
+pivot_offset = Vector2(2913.6362, 303.599)
+
+[node name="ContinueGameButton" type="Button" parent="CenterContainerContinueGame" unique_id=1677174570]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+icon = ExtResource("4_7w7dl")
+flat = true
+
+[connection signal="pressed" from="CenterContainerNewGame/NewGameButton" to="." method="_on_play_button_pressed"]

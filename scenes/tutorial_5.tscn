@@ -84,14 +84,15 @@ stretch_mode = 4
 [node name="CenterContainer" type="CenterContainer" parent="." unique_id=1726240571]
 layout_mode = 0
 offset_left = -1188.571
-offset_top = 520.0
+offset_top = 551.0
 offset_right = 2468.5715
-offset_bottom = 657.0
+offset_bottom = 688.0
 scale = Vector2(0.35, 0.35)
 pivot_offset = Vector2(1828.5712, 68.57153)
 
 [node name="NextButton" type="Button" parent="CenterContainer" unique_id=1693586597]
 layout_mode = 2
+mouse_default_cursor_shape = 2
 icon = ExtResource("6_u4e1h")
 
 [connection signal="pressed" from="CenterContainer/NextButton" to="." method="_on_next_button_pressed"]
