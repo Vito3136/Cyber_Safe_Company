@@ -1,0 +1,99 @@
+[gd_scene format=3 uid="uid://81f3yw3ydvvl"]
+
+[ext_resource type="Script" uid="uid://o0cbsgqodedg" path="res://scripts/tutorial_2.gd" id="1_442fl"]
+[ext_resource type="Texture2D" uid="uid://d00l2v622d57k" path="res://assets/contenitore_tutorial.png" id="1_k0cqu"]
+[ext_resource type="Texture2D" uid="uid://cdi236674bw5r" path="res://assets/next_button.png" id="2_442fl"]
+[ext_resource type="FontFile" uid="uid://du80thymbsnek" path="res://font/Machine Gunk.otf" id="3_823tk"]
+[ext_resource type="FontFile" uid="uid://bqg3bl8cfajea" path="res://font/NeoBulletin.ttf" id="4_c3i0d"]
+[ext_resource type="Texture2D" uid="uid://dasel8el7l0p" path="res://assets/balance_bar_image.png" id="6_c3i0d"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wekre"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_36gbb"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[node name="Tutorial2" type="Control" unique_id=189616902]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_442fl")
+
+[node name="Background" type="TextureRect" parent="." unique_id=868189682]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_k0cqu")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=210574791]
+layout_mode = 0
+offset_left = 45.0
+offset_top = 72.0
+offset_right = 1236.0
+offset_bottom = 456.0
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=103985687]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_823tk")
+theme_override_font_sizes/font_size = 50
+text = "The Balance Bar"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=1532827187]
+layout_mode = 2
+
+[node name="VSeparator" type="VSeparator" parent="VBoxContainer/HBoxContainer" unique_id=1402107501]
+layout_mode = 2
+theme_override_constants/separation = 18
+theme_override_styles/separator = SubResource("StyleBoxFlat_wekre")
+
+[node name="Label2" type="Label" parent="VBoxContainer/HBoxContainer" unique_id=2000867745]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("4_c3i0d")
+theme_override_font_sizes/font_size = 23
+text = "At the top of the screen, you will find one of the most important elements of the game: the Balance Bar. On either side of it, there are two counters:
+ - On the left, PRODUCTION — which keeps track of all the upgrades made on the production front.
+ - On the right, SECURITY — which records all the security upgrades.
+The bar moves to the left every time you invest in production, and to the right every time you upgrade security. When the two sides are in balance, the bar remains in the centre.
+Your goal is not just to grow — it is to grow in a balanced way.
+The truly successful CEO is the one who knows how to keep the bar close to the centre, demonstrating that security and productivity are not opposing goals — but two sides of the same coin."
+autowrap_mode = 2
+
+[node name="VSeparator2" type="VSeparator" parent="VBoxContainer/HBoxContainer" unique_id=812653221]
+layout_mode = 2
+theme_override_constants/separation = 18
+theme_override_styles/separator = SubResource("StyleBoxFlat_36gbb")
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1838025989]
+layout_mode = 0
+offset_left = -1188.571
+offset_top = 558.0
+offset_right = 2468.5715
+offset_bottom = 695.0
+scale = Vector2(0.35, 0.35)
+pivot_offset = Vector2(1828.5712, 68.57153)
+
+[node name="NextButton" type="Button" parent="CenterContainer" unique_id=960127659]
+layout_mode = 2
+icon = ExtResource("2_442fl")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=396291262]
+layout_mode = 0
+offset_left = 182.0
+offset_top = 472.0
+offset_right = 1102.0
+offset_bottom = 590.0
+texture = ExtResource("6_c3i0d")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="." unique_id=1863034714]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[connection signal="pressed" from="CenterContainer/NextButton" to="." method="_on_next_button_pressed"]

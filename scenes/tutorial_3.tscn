@@ -1,0 +1,144 @@
+[gd_scene format=3 uid="uid://cbkacg66xff4x"]
+
+[ext_resource type="Texture2D" uid="uid://d00l2v622d57k" path="res://assets/contenitore_tutorial.png" id="1_det4q"]
+[ext_resource type="Script" uid="uid://q1f5fx105x70" path="res://scripts/tutorial_3.gd" id="1_g8msc"]
+[ext_resource type="Texture2D" uid="uid://cdi236674bw5r" path="res://assets/next_button.png" id="2_g8msc"]
+[ext_resource type="FontFile" uid="uid://du80thymbsnek" path="res://font/Machine Gunk.otf" id="3_uvn1i"]
+[ext_resource type="FontFile" uid="uid://bqg3bl8cfajea" path="res://font/NeoBulletin.ttf" id="4_0v744"]
+[ext_resource type="Texture2D" uid="uid://bkvim3lqu4bhr" path="res://assets/siem_room_image.png" id="5_0v744"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_snirr"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gsfij"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[node name="Tutorial3" type="Control" unique_id=1533360683]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_g8msc")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=73207495]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_det4q")
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="." unique_id=1624324586]
+layout_mode = 0
+offset_left = 45.0
+offset_top = 72.0
+offset_right = 1236.0
+offset_bottom = 456.0
+
+[node name="Label" type="Label" parent="VBoxContainer2" unique_id=802461181]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_uvn1i")
+theme_override_font_sizes/font_size = 50
+text = "SIEM ROOM"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1503601717]
+layout_mode = 0
+offset_left = 45.0
+offset_top = 141.0
+offset_right = 820.0
+offset_bottom = 698.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=1229973095]
+layout_mode = 2
+
+[node name="VSeparator" type="VSeparator" parent="VBoxContainer/HBoxContainer" unique_id=1447583180]
+layout_mode = 2
+theme_override_constants/separation = 18
+theme_override_styles/separator = SubResource("StyleBoxFlat_snirr")
+
+[node name="Label2" type="Label" parent="VBoxContainer/HBoxContainer" unique_id=904387936]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("4_0v744")
+theme_override_font_sizes/font_size = 23
+text = "The beating heart of your company's IT security.
+The SIEM Room is the control room from which your team monitors everything that happens on the company network in real time: accesses, anomalies, threats and potential attacks are detected and managed from here.
+"
+autowrap_mode = 2
+
+[node name="VSeparator2" type="VSeparator" parent="VBoxContainer/HBoxContainer" unique_id=1729190282]
+layout_mode = 2
+theme_override_constants/separation = 18
+theme_override_styles/separator = SubResource("StyleBoxFlat_gsfij")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer" unique_id=585000608]
+layout_mode = 2
+
+[node name="VSeparator" type="VSeparator" parent="VBoxContainer/HBoxContainer2" unique_id=581882771]
+layout_mode = 2
+theme_override_constants/separation = 18
+theme_override_styles/separator = SubResource("StyleBoxFlat_snirr")
+
+[node name="Label2" type="Label" parent="VBoxContainer/HBoxContainer2" unique_id=488677468]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("4_0v744")
+theme_override_font_sizes/font_size = 25
+text = "The first mandatory step is to unlock the ‘SIEM Team Creation’ upgrade: only by setting up a dedicated security team can you start the entire corporate protection process. Without a team, there is no one to monitor the systems — and no upgrades will be possible.
+"
+autowrap_mode = 2
+
+[node name="VSeparator2" type="VSeparator" parent="VBoxContainer/HBoxContainer2" unique_id=1237480984]
+layout_mode = 2
+theme_override_constants/separation = 18
+theme_override_styles/separator = SubResource("StyleBoxFlat_gsfij")
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="VBoxContainer" unique_id=1955113536]
+layout_mode = 2
+
+[node name="VSeparator" type="VSeparator" parent="VBoxContainer/HBoxContainer3" unique_id=967221801]
+layout_mode = 2
+theme_override_constants/separation = 18
+theme_override_styles/separator = SubResource("StyleBoxFlat_snirr")
+
+[node name="Label2" type="Label" parent="VBoxContainer/HBoxContainer3" unique_id=1990734242]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("4_0v744")
+theme_override_font_sizes/font_size = 23
+text = "Once you have created your SIEM Team, you will be able to access all the specific upgrades for this room."
+autowrap_mode = 2
+
+[node name="VSeparator2" type="VSeparator" parent="VBoxContainer/HBoxContainer3" unique_id=457170338]
+layout_mode = 2
+theme_override_constants/separation = 18
+theme_override_styles/separator = SubResource("StyleBoxFlat_gsfij")
+
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=401526113]
+layout_mode = 0
+offset_left = 809.0
+offset_top = 245.0
+offset_right = 1210.0
+offset_bottom = 558.0
+texture = ExtResource("5_0v744")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1968358171]
+layout_mode = 0
+offset_left = -1188.571
+offset_top = 558.0
+offset_right = 2468.5715
+offset_bottom = 695.0
+scale = Vector2(0.35, 0.35)
+pivot_offset = Vector2(1828.5712, 68.57153)
+
+[node name="NextButton" type="Button" parent="CenterContainer" unique_id=1279812012]
+layout_mode = 2
+icon = ExtResource("2_g8msc")
+
+[connection signal="pressed" from="CenterContainer/NextButton" to="." method="_on_next_button_pressed"]

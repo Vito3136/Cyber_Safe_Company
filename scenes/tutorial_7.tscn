@@ -1,0 +1,97 @@
+[gd_scene format=3 uid="uid://dge3nio5g2l4h"]
+
+[ext_resource type="Script" uid="uid://by7g1jd3ry626" path="res://scripts/tutorial_7.gd" id="1_eonfy"]
+[ext_resource type="Texture2D" uid="uid://d00l2v622d57k" path="res://assets/contenitore_tutorial.png" id="1_gcwn8"]
+[ext_resource type="FontFile" uid="uid://du80thymbsnek" path="res://font/Machine Gunk.otf" id="2_eonfy"]
+[ext_resource type="FontFile" uid="uid://bqg3bl8cfajea" path="res://font/NeoBulletin.ttf" id="3_ncldk"]
+[ext_resource type="Texture2D" uid="uid://deacc22tahjnb" path="res://assets/r_e_s_room_image.png" id="4_awmbu"]
+[ext_resource type="Texture2D" uid="uid://cdi236674bw5r" path="res://assets/next_button.png" id="5_2ly4b"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_floho"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iwl2u"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[node name="Tutorial7" type="Control" unique_id=63974693]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_eonfy")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1095913424]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_gcwn8")
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="." unique_id=939320723]
+layout_mode = 0
+offset_left = 45.0
+offset_top = 113.0
+offset_right = 1236.0
+offset_bottom = 234.0
+
+[node name="Label" type="Label" parent="VBoxContainer2" unique_id=1104394258]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_eonfy")
+theme_override_font_sizes/font_size = 50
+text = "R&D ROOM"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=390052688]
+layout_mode = 0
+offset_left = 45.0
+offset_top = 245.0
+offset_right = 807.0
+offset_bottom = 531.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=911096130]
+layout_mode = 2
+
+[node name="VSeparator" type="VSeparator" parent="VBoxContainer/HBoxContainer" unique_id=2040496103]
+layout_mode = 2
+theme_override_constants/separation = 22
+theme_override_styles/separator = SubResource("StyleBoxFlat_floho")
+
+[node name="Label2" type="Label" parent="VBoxContainer/HBoxContainer" unique_id=1843838278]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("3_ncldk")
+theme_override_font_sizes/font_size = 23
+text = "From the R&D Room menu, you can unlock the four machines in the Machine Room and, once unlocked, invest in research to upgrade their levels, gradually increasing the speed and production efficiency of each one.
+Without research, there is no innovation, and without innovation, your company is destined to stand still while the market moves forward."
+autowrap_mode = 2
+
+[node name="VSeparator2" type="VSeparator" parent="VBoxContainer/HBoxContainer" unique_id=1967036319]
+layout_mode = 2
+theme_override_constants/separation = 18
+theme_override_styles/separator = SubResource("StyleBoxFlat_iwl2u")
+
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=112285879]
+layout_mode = 0
+offset_left = 807.0
+offset_top = 215.0
+offset_right = 1217.0
+offset_bottom = 518.0
+texture = ExtResource("4_awmbu")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=2093663049]
+layout_mode = 0
+offset_left = -1188.571
+offset_top = 522.00006
+offset_right = 2468.5715
+offset_bottom = 659.00006
+scale = Vector2(0.35, 0.35)
+pivot_offset = Vector2(1828.5712, 68.57153)
+
+[node name="NextButton" type="Button" parent="CenterContainer" unique_id=698967372]
+layout_mode = 2
+icon = ExtResource("5_2ly4b")
+
+[connection signal="pressed" from="CenterContainer/NextButton" to="." method="_on_next_button_pressed"]

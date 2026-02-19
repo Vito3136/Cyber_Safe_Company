@@ -9,15 +9,12 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass # Replace with function body.
+	pass
 
 
-func _on_play_button_pressed() -> void:
-	center_container.scale = Vector2(0.20, 0.20)
+func _on_next_button_pressed() -> void:
+	center_container.scale = Vector2(0.28, 0.28)
 	await get_tree().create_timer(0.05).timeout
-	center_container.scale = Vector2(0.22, 0.22)
+	center_container.scale = Vector2(0.35, 0.35)
 	await get_tree().create_timer(0.05).timeout
-	if(Global.tutorial_iniziale_effettuato):
-		get_tree().change_scene_to_file("res://scenes/azienda_totale.tscn")
-	else:
-		get_tree().change_scene_to_file("res://scenes/tutorial_1.tscn")
+	get_tree().change_scene_to_file("res://scenes/azienda_totale.tscn")

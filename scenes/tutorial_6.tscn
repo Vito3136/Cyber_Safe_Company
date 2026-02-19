@@ -1,0 +1,98 @@
+[gd_scene format=3 uid="uid://dojbb81jh2lau"]
+
+[ext_resource type="Texture2D" uid="uid://d00l2v622d57k" path="res://assets/contenitore_tutorial.png" id="1_gl1ux"]
+[ext_resource type="Script" uid="uid://drdtma5vnjskc" path="res://scripts/tutorial_6.gd" id="1_lp35g"]
+[ext_resource type="FontFile" uid="uid://du80thymbsnek" path="res://font/Machine Gunk.otf" id="2_lp35g"]
+[ext_resource type="FontFile" uid="uid://bqg3bl8cfajea" path="res://font/NeoBulletin.ttf" id="3_2acb3"]
+[ext_resource type="Texture2D" uid="uid://djwg06xnf16it" path="res://assets/offices_server_room_images.png" id="4_0ix4g"]
+[ext_resource type="Texture2D" uid="uid://cdi236674bw5r" path="res://assets/next_button.png" id="5_ggwpy"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4ru5m"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pr0fe"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[node name="Tutorial6" type="Control" unique_id=819776099]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_lp35g")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1916134743]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_gl1ux")
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="." unique_id=1606679971]
+layout_mode = 0
+offset_left = 45.0
+offset_top = 90.0
+offset_right = 1236.0
+offset_bottom = 211.0
+
+[node name="Label" type="Label" parent="VBoxContainer2" unique_id=394983208]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_lp35g")
+theme_override_font_sizes/font_size = 50
+text = "OFFICES AND SERVER ROOM"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1714410996]
+layout_mode = 0
+offset_left = 45.0
+offset_top = 247.0
+offset_right = 846.0
+offset_bottom = 533.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=23421391]
+layout_mode = 2
+
+[node name="VSeparator" type="VSeparator" parent="VBoxContainer/HBoxContainer" unique_id=102310951]
+layout_mode = 2
+theme_override_constants/separation = 22
+theme_override_styles/separator = SubResource("StyleBoxFlat_4ru5m")
+
+[node name="Label2" type="Label" parent="VBoxContainer/HBoxContainer" unique_id=273169180]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("3_2acb3")
+theme_override_font_sizes/font_size = 23
+text = "Offices are the organisational nerve centre of your company. From the offices menu, you can unlock a series of security upgrades dedicated to protecting human resources and business processes.
+
+The Server Room houses your company's entire digital infrastructure. From this room's menu, you can unlock security upgrades dedicated to protecting the infrastructure."
+autowrap_mode = 2
+
+[node name="VSeparator2" type="VSeparator" parent="VBoxContainer/HBoxContainer" unique_id=26163021]
+layout_mode = 2
+theme_override_constants/separation = 18
+theme_override_styles/separator = SubResource("StyleBoxFlat_pr0fe")
+
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=596746337]
+layout_mode = 0
+offset_left = 861.0
+offset_top = 166.0
+offset_right = 1217.0
+offset_bottom = 617.0
+texture = ExtResource("4_0ix4g")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=666222686]
+layout_mode = 0
+offset_left = -1188.571
+offset_top = 546.00006
+offset_right = 2468.5715
+offset_bottom = 683.00006
+scale = Vector2(0.35, 0.35)
+pivot_offset = Vector2(1828.5712, 68.57153)
+
+[node name="NextButton" type="Button" parent="CenterContainer" unique_id=1208783972]
+layout_mode = 2
+icon = ExtResource("5_ggwpy")
+
+[connection signal="pressed" from="CenterContainer/NextButton" to="." method="_on_next_button_pressed"]

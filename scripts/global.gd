@@ -1,5 +1,9 @@
 extends Node
 
+# Tutorial
+var tutorial_iniziale_effettuato: bool = false
+var tutorial_totale_effettuato: bool = false
+
 # Barra bilanciamento
 # 0 = Centro
 # -5 = 5 tacche verso Produzione
@@ -76,33 +80,29 @@ var spedizioni_avviate: bool = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	load_game()
+	timer_spedizione = Timer.new()
+	timer_spedizione.wait_time = timer_spedizione_per_livello[livello_magazzino]
+	timer_spedizione.autostart = true
+	timer_spedizione.one_shot = false # Si ripete all'infinito
+	# Colleghiamo il segnale di timeout alla nostra funzione
+	timer_spedizione.timeout.connect(_on_timer_spedizione_timeout)
+	# Aggiungiamo il timer al nodo Global
+	add_child(timer_spedizione)
+		
+	timer_animazione_spedizione = Timer.new()
+	timer_animazione_spedizione.wait_time = timer_animazione_spedizione_per_livello[livello_magazzino]
+	timer_animazione_spedizione.autostart = true
+	# Colleghiamo il segnale di timeout alla nostra funzione
+	timer_animazione_spedizione.timeout.connect(_on_timer_animazione_spedizione_timeeout)
+	# Aggiungiamo il timer al nodo Global
+	add_child(timer_animazione_spedizione)
 
-func avvia_spedizioni():
-	if(!spedizioni_avviate):
-		spedizioni_avviate = true
-		timer_spedizione = Timer.new()
-		timer_spedizione.wait_time = timer_spedizione_per_livello[livello_magazzino]
-		timer_spedizione.autostart = true
-		timer_spedizione.one_shot = false # Si ripete all'infinito
-		# Colleghiamo il segnale di timeout alla nostra funzione
-		timer_spedizione.timeout.connect(_on_timer_spedizione_timeout)
-		# Aggiungiamo il timer al nodo Global
-		add_child(timer_spedizione)
-		
-		timer_animazione_spedizione = Timer.new()
-		timer_animazione_spedizione.wait_time = timer_animazione_spedizione_per_livello[livello_magazzino]
-		timer_animazione_spedizione.autostart = true
-		# Colleghiamo il segnale di timeout alla nostra funzione
-		timer_animazione_spedizione.timeout.connect(_on_timer_animazione_spedizione_timeeout)
-		# Aggiungiamo il timer al nodo Global
-		add_child(timer_animazione_spedizione)
-		
-		var autosave_timer = Timer.new()
-		autosave_timer.wait_time = 30.0
-		autosave_timer.autostart = true
-		autosave_timer.one_shot = false
-		autosave_timer.timeout.connect(_on_autosave_timeout)
-		add_child(autosave_timer)
+	var autosave_timer = Timer.new()
+	autosave_timer.wait_time = 30.0
+	autosave_timer.autostart = true
+	autosave_timer.one_shot = false
+	autosave_timer.timeout.connect(_on_autosave_timeout)
+	add_child(autosave_timer)
 
 func _on_timer_spedizione_timeout():
 	timer_animazione_spedizione.start()

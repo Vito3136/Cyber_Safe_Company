@@ -1,0 +1,97 @@
+[gd_scene format=3 uid="uid://wobpa76qypfp"]
+
+[ext_resource type="Script" uid="uid://bbeh6kxdxi1jb" path="res://scripts/tutorial_5.gd" id="1_euh42"]
+[ext_resource type="Texture2D" uid="uid://d00l2v622d57k" path="res://assets/contenitore_tutorial.png" id="2_ecw3f"]
+[ext_resource type="FontFile" uid="uid://du80thymbsnek" path="res://font/Machine Gunk.otf" id="3_mmoli"]
+[ext_resource type="FontFile" uid="uid://bqg3bl8cfajea" path="res://font/NeoBulletin.ttf" id="4_shs05"]
+[ext_resource type="Texture2D" uid="uid://bur2vh1ex15ge" path="res://assets/warehouse_image.png" id="5_euh42"]
+[ext_resource type="Texture2D" uid="uid://cdi236674bw5r" path="res://assets/next_button.png" id="6_u4e1h"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q54xp"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bas7r"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[node name="Tutorial5" type="Control" unique_id=708345446]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_euh42")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=2007596436]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_ecw3f")
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="." unique_id=408573831]
+layout_mode = 0
+offset_left = 45.0
+offset_top = 99.0
+offset_right = 1236.0
+offset_bottom = 220.0
+
+[node name="Label" type="Label" parent="VBoxContainer2" unique_id=2026455978]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_mmoli")
+theme_override_font_sizes/font_size = 50
+text = "WAREHOUSE"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=2121273160]
+layout_mode = 0
+offset_left = 45.0
+offset_top = 231.0
+offset_right = 731.0
+offset_bottom = 517.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=912393949]
+layout_mode = 2
+
+[node name="VSeparator" type="VSeparator" parent="VBoxContainer/HBoxContainer" unique_id=599448904]
+layout_mode = 2
+theme_override_constants/separation = 18
+theme_override_styles/separator = SubResource("StyleBoxFlat_q54xp")
+
+[node name="Label2" type="Label" parent="VBoxContainer/HBoxContainer" unique_id=1773274353]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("4_shs05")
+theme_override_font_sizes/font_size = 23
+text = "All goods transferred from the Machine Room are sent to the Warehouse. From here, your smart devices are automatically sold over time, generating the coins needed to finance any other company upgrades.
+Through the menu in this room, you can unlock upgrades to increase the frequency of sales, reducing the time between transactions and maximising revenue flow."
+autowrap_mode = 2
+
+[node name="VSeparator2" type="VSeparator" parent="VBoxContainer/HBoxContainer" unique_id=1414457188]
+layout_mode = 2
+theme_override_constants/separation = 18
+theme_override_styles/separator = SubResource("StyleBoxFlat_bas7r")
+
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=2135073511]
+layout_mode = 0
+offset_left = 731.0
+offset_top = 199.0
+offset_right = 1210.0
+offset_bottom = 563.0
+texture = ExtResource("5_euh42")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1726240571]
+layout_mode = 0
+offset_left = -1188.571
+offset_top = 520.0
+offset_right = 2468.5715
+offset_bottom = 657.0
+scale = Vector2(0.35, 0.35)
+pivot_offset = Vector2(1828.5712, 68.57153)
+
+[node name="NextButton" type="Button" parent="CenterContainer" unique_id=1693586597]
+layout_mode = 2
+icon = ExtResource("6_u4e1h")
+
+[connection signal="pressed" from="CenterContainer/NextButton" to="." method="_on_next_button_pressed"]

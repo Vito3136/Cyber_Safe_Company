@@ -5,6 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://b3farfqb3q2ic" path="res://scenes/general_ui.tscn" id="3_p68yv"]
 [ext_resource type="Texture2D" uid="uid://domp5y02302ig" path="res://assets/arrow_back.png" id="4_wnmqs"]
 [ext_resource type="FontFile" uid="uid://du80thymbsnek" path="res://font/Machine Gunk.otf" id="5_jstmx"]
+[ext_resource type="PackedScene" uid="uid://b5eso4i6404to" path="res://scenes/maschera_tutorial.tscn" id="6_cmwo7"]
+[ext_resource type="Texture2D" uid="uid://b8yodbnudd6dq" path="res://assets/index_finger_icon.png" id="7_w82mw"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cmwo7"]
 
@@ -29,6 +31,63 @@
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8gqxk"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_n8h8t"]
+
+[sub_resource type="Animation" id="Animation_kfxbu"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(780, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(372, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_g8wek"]
+resource_name = "pointing"
+loop_mode = 1
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(2, 0, 0),
+"points": PackedFloat32Array(780, -0.25, 0, 0.25, 0, 780, -0.16666667, 0, 0, 0, 780, -0.16666667, 0, 0, 0),
+"times": PackedFloat32Array(0, 0.5, 1)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(2, 0, 0),
+"points": PackedFloat32Array(404, -0.25, 0, 0.25, 0, 347.99997, -0.16666667, 9.333339, 0, 0, 404, -0.16666667, -9.333339, 0, 0),
+"times": PackedFloat32Array(0, 0.5, 1)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fvkph"]
+_data = {
+&"RESET": SubResource("Animation_kfxbu"),
+&"pointing": SubResource("Animation_g8wek")
+}
 
 [node name="AziendaTotale" type="Node" unique_id=1517618168]
 script = ExtResource("1_7xsbt")
@@ -195,6 +254,18 @@ theme_override_font_sizes/font_size = 37
 text = "SERVER ROOM"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="MascheraTutorial" parent="." unique_id=152794849 instance=ExtResource("6_cmwo7")]
+visible = false
+
+[node name="IndexFinger" type="Sprite2D" parent="." unique_id=1758830447]
+visible = false
+position = Vector2(780, 372)
+scale = Vector2(0.13, 0.13)
+texture = ExtResource("7_w82mw")
+
+[node name="AnimationIndex" type="AnimationPlayer" parent="IndexFinger" unique_id=148356869]
+libraries/ = SubResource("AnimationLibrary_fvkph")
 
 [connection signal="pressed" from="BackLeftButton" to="." method="_on_back_left_button_pressed"]
 [connection signal="button_down" from="GoSalaMacchinari" to="." method="_on_go_sala_macchinari_button_down"]

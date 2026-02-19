@@ -21,6 +21,7 @@
 [ext_resource type="Texture2D" uid="uid://c3nxvv2a00dcr" path="res://assets/scatolo_pieno_telecamere.png" id="13_dwnkl"]
 [ext_resource type="Texture2D" uid="uid://ctjmef7omm4vn" path="res://assets/scatolo_pieno_serrature.png" id="16_7aw4a"]
 [ext_resource type="Texture2D" uid="uid://domp5y02302ig" path="res://assets/arrow_back.png" id="20_sk2ha"]
+[ext_resource type="FontFile" uid="uid://du80thymbsnek" path="res://font/Machine Gunk.otf" id="22_dtpjo"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_4d3rf"]
 font_size = 120
@@ -2251,6 +2252,62 @@ texture_normal = ExtResource("20_sk2ha")
 ignore_texture_size = true
 stretch_mode = 5
 metadata/_edit_use_anchors_ = true
+
+[node name="PreseLabel" type="Label" parent="." unique_id=1242706835]
+offset_left = 151.0
+offset_top = 98.0
+offset_right = 252.0
+offset_bottom = 132.0
+theme_override_colors/font_color = Color(0.45882353, 0.28627452, 0.03529412, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("22_dtpjo")
+theme_override_font_sizes/font_size = 32
+text = "s"
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="LampadineLabel" type="Label" parent="." unique_id=570139585]
+visible = false
+offset_left = 151.0
+offset_top = 168.0
+offset_right = 252.0
+offset_bottom = 202.0
+theme_override_colors/font_color = Color(0.45882353, 0.28627452, 0.03529412, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("22_dtpjo")
+theme_override_font_sizes/font_size = 32
+text = "s"
+vertical_alignment = 1
+
+[node name="TelecamereLabel" type="Label" parent="." unique_id=52610280]
+visible = false
+offset_left = 151.0
+offset_top = 238.0
+offset_right = 252.0
+offset_bottom = 272.0
+theme_override_colors/font_color = Color(0.45882353, 0.28627452, 0.03529412, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("22_dtpjo")
+theme_override_font_sizes/font_size = 32
+text = "s"
+vertical_alignment = 1
+
+[node name="SerratureLabel" type="Label" parent="." unique_id=1101010642]
+visible = false
+offset_left = 151.0
+offset_top = 308.0
+offset_right = 252.0
+offset_bottom = 342.0
+theme_override_colors/font_color = Color(0.45882353, 0.28627452, 0.03529412, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("22_dtpjo")
+theme_override_font_sizes/font_size = 32
+text = "s"
+vertical_alignment = 1
 
 [connection signal="timeout" from="MacchinarioPrese/Timer" to="MacchinarioPrese" method="_on_timer_timeout"]
 [connection signal="input_event" from="MacchinarioPrese/Area2D" to="MacchinarioPrese" method="_on_area_2d_input_event"]

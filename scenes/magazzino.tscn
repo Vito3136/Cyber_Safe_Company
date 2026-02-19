@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://b3farfqb3q2ic" path="res://scenes/general_ui.tscn" id="11_4jjrj"]
 [ext_resource type="Texture2D" uid="uid://bgi0ptcd8vnbt" path="res://assets/upgrade_button.png" id="12_83x6b"]
 [ext_resource type="PackedScene" uid="uid://b3hfnurybgsxh" path="res://scenes/warehouse_upgrade_popup.tscn" id="13_twpj7"]
+[ext_resource type="FontFile" uid="uid://du80thymbsnek" path="res://font/Machine Gunk.otf" id="14_m1o7u"]
 
 [sub_resource type="Animation" id="Animation_6ef2c"]
 length = 0.001
@@ -265,6 +266,20 @@ expand_icon = true
 
 [node name="UpgradePopup" parent="." unique_id=989768510 instance=ExtResource("13_twpj7")]
 visible = false
+
+[node name="TimerLabel" type="Label" parent="." unique_id=908847177]
+offset_left = 895.0
+offset_top = 164.0
+offset_right = 1268.0
+offset_bottom = 197.0
+theme_override_colors/font_color = Color(0.45882353, 0.28627452, 0.03529412, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("14_m1o7u")
+theme_override_font_sizes/font_size = 30
+text = "Next shipment in:"
+horizontal_alignment = 2
+vertical_alignment = 1
 
 [connection signal="pressed" from="BackLeftButton" to="." method="_on_back_left_button_pressed"]
 [connection signal="pressed" from="UpgradeButton" to="." method="_on_upgrade_button_pressed"]

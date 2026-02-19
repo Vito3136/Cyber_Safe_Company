@@ -1,0 +1,98 @@
+[gd_scene format=3 uid="uid://b77bu85y0lmat"]
+
+[ext_resource type="Script" uid="uid://deg12h6picxar" path="res://scripts/tutorial_4.gd" id="1_5bhbr"]
+[ext_resource type="Texture2D" uid="uid://d00l2v622d57k" path="res://assets/contenitore_tutorial.png" id="2_bhloa"]
+[ext_resource type="FontFile" uid="uid://du80thymbsnek" path="res://font/Machine Gunk.otf" id="3_3jvue"]
+[ext_resource type="FontFile" uid="uid://bqg3bl8cfajea" path="res://font/NeoBulletin.ttf" id="4_ofwjf"]
+[ext_resource type="Texture2D" uid="uid://cscinrceqjvqg" path="res://assets/machine_room_image.png" id="5_k0mk0"]
+[ext_resource type="Texture2D" uid="uid://cdi236674bw5r" path="res://assets/next_button.png" id="6_h20vw"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lqfx1"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p3kaw"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[node name="Tutorial4" type="Control" unique_id=1003192849]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5bhbr")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=337480078]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_bhloa")
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="." unique_id=2058433784]
+layout_mode = 0
+offset_left = 45.0
+offset_top = 92.0
+offset_right = 1236.0
+offset_bottom = 213.0
+
+[node name="Label" type="Label" parent="VBoxContainer2" unique_id=1606141233]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_3jvue")
+theme_override_font_sizes/font_size = 50
+text = "MACHINE ROOM"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=2019090921]
+layout_mode = 0
+offset_left = 45.0
+offset_top = 180.0
+offset_right = 820.0
+offset_bottom = 577.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=1200169146]
+layout_mode = 2
+
+[node name="VSeparator" type="VSeparator" parent="VBoxContainer/HBoxContainer" unique_id=1797688681]
+layout_mode = 2
+theme_override_constants/separation = 18
+theme_override_styles/separator = SubResource("StyleBoxFlat_lqfx1")
+
+[node name="Label2" type="Label" parent="VBoxContainer/HBoxContainer" unique_id=483964666]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("4_ofwjf")
+theme_override_font_sizes/font_size = 23
+text = "In the Machine Room, you will find the four machines that produce your smart devices: smart sockets, connected light bulbs, surveillance cameras, and digital locks. Each machine is initially locked and must be unlocked and upgraded during the game to increase production speed and volume.
+
+Each machine produces its items over time and accumulates them in a storage box located next to it. When the box is full, or when you deem it appropriate, you can click on the box to immediately transfer the produced goods to the warehouse, where they will be ready for sale."
+autowrap_mode = 2
+
+[node name="VSeparator2" type="VSeparator" parent="VBoxContainer/HBoxContainer" unique_id=1979984242]
+layout_mode = 2
+theme_override_constants/separation = 18
+theme_override_styles/separator = SubResource("StyleBoxFlat_p3kaw")
+
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=66891399]
+layout_mode = 0
+offset_left = 809.0
+offset_top = 245.0
+offset_right = 1210.0
+offset_bottom = 558.0
+texture = ExtResource("5_k0mk0")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1290578359]
+layout_mode = 0
+offset_left = -1188.571
+offset_top = 536.0
+offset_right = 2468.5715
+offset_bottom = 673.0
+scale = Vector2(0.35, 0.35)
+pivot_offset = Vector2(1828.5712, 68.57153)
+
+[node name="NextButton" type="Button" parent="CenterContainer" unique_id=999914649]
+layout_mode = 2
+icon = ExtResource("6_h20vw")
+
+[connection signal="pressed" from="CenterContainer/NextButton" to="." method="_on_next_button_pressed"]
