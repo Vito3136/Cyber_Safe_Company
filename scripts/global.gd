@@ -14,7 +14,7 @@ var totale_upgrade_produzione: int = 0
 var totale_upgrade_sicurezza: int = 0
 signal update_barra_bilanciamento()
 
-var monete: int = 0
+var monete: int = 1000
 signal update_monete(totale_monete)
 
 var capienza_massima_per_livello: Array[int] = [10, 10, 12, 14]
