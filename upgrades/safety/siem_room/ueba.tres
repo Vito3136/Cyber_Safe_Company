@@ -6,6 +6,7 @@
 script = ExtResource("1_eu2mq")
 titolo = "User Behavior Analytics (UEBA)"
 descrizione = "An AI-powered system that builds a behavioral baseline for every employee. From a security standpoint, compromised accounts are extremely hard to detect because the attacker uses legitimate credentials. UEBA identifies deviations from normal patterns — unusual login times, unexpected geolocations, abnormal data access — and flags them automatically, catching threats that traditional tools would completely miss."
+costo = 10000
 upgrade_id = "ueba"
 required_id = "siem_team"
 metadata/_custom_type_script = "uid://p1gngg5c4evg"

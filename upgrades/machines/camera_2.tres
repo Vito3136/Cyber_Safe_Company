@@ -8,6 +8,7 @@ titolo = "Camera machine - Level 3"
 descrizione = "• Cycle time: 4s
 • Storage buffer: 12 units
 • Sale price: $15/unit"
+costo = 3200
 upgrade_id = "camera_2"
 required_id = "camera_1"
 metadata/_custom_type_script = "uid://p1gngg5c4evg"

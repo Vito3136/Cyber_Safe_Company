@@ -9,5 +9,6 @@ descrizione = "• Lightbulb manufacturing line activated
 • Cycle time: 5s
 • Storage buffer: 10 units
 • Sale price: $11/unit"
+costo = 1500
 upgrade_id = "bulb_0"
 metadata/_custom_type_script = "uid://p1gngg5c4evg"

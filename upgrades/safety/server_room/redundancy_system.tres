@@ -6,6 +6,7 @@
 script = ExtResource("1_hdmo1")
 titolo = "Redundancy Systems (RAID/Cluster)"
 descrizione = "If one server crashes or gets hit by malware, a mirrored system takes over instantly. From a security standpoint, this addresses the availability pillar of the CIA triad — ensuring your systems remain operational even during an attack. Ransomware that targets a single server won't bring down your entire infrastructure."
+costo = 3200
 upgrade_id = "redundancy_system"
 required_id = "siem_team"
 metadata/_custom_type_script = "uid://p1gngg5c4evg"

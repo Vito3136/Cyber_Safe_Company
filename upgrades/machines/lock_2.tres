@@ -8,6 +8,7 @@ titolo = "Lock machine - Level 3"
 descrizione = "• Cycle time: 4s
 • Storage buffer: 12 units
 • Sale price: $20/unit"
+costo = 5500
 upgrade_id = "lock_2"
 required_id = "lock_1"
 metadata/_custom_type_script = "uid://p1gngg5c4evg"

@@ -6,6 +6,7 @@
 script = ExtResource("1_mtsdj")
 titolo = "Closed-Circuit Television (CCTV)"
 descrizione = "Full-coverage cameras across the entire company, recording activity 24/7. From a security standpoint, physical surveillance acts both as a deterrent and as forensic evidence. It prevents unauthorized individuals from accessing sensitive areas and helps identify insider threats or social engineering attempts in person."
+costo = 1500
 upgrade_id = "cctv"
 required_id = "siem_team"
 metadata/_custom_type_script = "uid://p1gngg5c4evg"

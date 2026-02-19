@@ -6,6 +6,7 @@
 script = ExtResource("1_f8ad8")
 titolo = "Data at Rest Encryption"
 descrizione = "Encrypts all data stored on your servers using strong cryptographic algorithms. From a security standpoint, even if an attacker successfully exfiltrates your data, they'll obtain nothing but unreadable ciphertext without the decryption key. This directly mitigates the reputational and legal damage caused by data breaches."
+costo = 2800
 upgrade_id = "encryption"
 required_id = "siem_team"
 metadata/_custom_type_script = "uid://p1gngg5c4evg"

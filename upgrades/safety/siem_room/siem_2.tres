@@ -6,6 +6,7 @@
 script = ExtResource("1_mj472")
 titolo = "SIEM - Level 2"
 descrizione = "Enhances your SIEM with smarter correlation rules and automated alerting. From a security standpoint, raw logs are meaningless without context — Level 2 connects the dots between seemingly unrelated events to surface patterns that indicate an attack in progress, dramatically reducing false negatives."
+costo = 6500
 upgrade_id = "siem_2"
 required_id = "siem_1"
 metadata/_custom_type_script = "uid://p1gngg5c4evg"
