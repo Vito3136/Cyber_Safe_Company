@@ -3,10 +3,12 @@
 [ext_resource type="Script" uid="uid://btvthivktgpse" path="res://scripts/general_ui.gd" id="1_65jkc"]
 [ext_resource type="Texture2D" uid="uid://dxofyri3j43x5" path="res://assets/moneta.png" id="2_2efmg"]
 [ext_resource type="Texture2D" uid="uid://qxkenajsm8p" path="res://assets/contenitore_contatore_monete.png" id="2_w1h78"]
+[ext_resource type="FontFile" uid="uid://bqg3bl8cfajea" path="res://font/NeoBulletin.ttf" id="4_pvuj6"]
 [ext_resource type="FontFile" uid="uid://du80thymbsnek" path="res://font/Machine Gunk.otf" id="7_q1d48"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_2efmg"]
-font_size = 120
+font = ExtResource("4_pvuj6")
+font_size = 140
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5ccio"]
 bg_color = Color(0.19607843, 0.19607843, 0.19607843, 0.99607843)
@@ -44,9 +46,9 @@ texture = ExtResource("2_2efmg")
 anchors_preset = -1
 anchor_right = 0.19301848
 offset_left = -223.52954
-offset_top = -88.23529
+offset_top = -76.47064
 offset_right = 188.47046
-offset_bottom = 76.76471
+offset_bottom = 88.52936
 text = "0"
 label_settings = SubResource("LabelSettings_2efmg")
 metadata/_edit_use_anchors_ = true

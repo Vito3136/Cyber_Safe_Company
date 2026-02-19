@@ -5,8 +5,9 @@
 [ext_resource type="PackedScene" uid="uid://b3farfqb3q2ic" path="res://scenes/general_ui.tscn" id="3_p68yv"]
 [ext_resource type="Texture2D" uid="uid://domp5y02302ig" path="res://assets/arrow_back.png" id="4_wnmqs"]
 [ext_resource type="FontFile" uid="uid://du80thymbsnek" path="res://font/Machine Gunk.otf" id="5_jstmx"]
-[ext_resource type="PackedScene" uid="uid://b5eso4i6404to" path="res://scenes/maschera_tutorial.tscn" id="6_cmwo7"]
+[ext_resource type="PackedScene" uid="uid://bo03ans0cc5dp" path="res://scenes/maschera_tutorial.tscn" id="6_cmwo7"]
 [ext_resource type="Texture2D" uid="uid://b8yodbnudd6dq" path="res://assets/index_finger_icon.png" id="7_w82mw"]
+[ext_resource type="PackedScene" uid="uid://b75jvdnsnpms3" path="res://scenes/popup_intro_1.tscn" id="8_kfxbu"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cmwo7"]
 
@@ -266,6 +267,9 @@ texture = ExtResource("7_w82mw")
 
 [node name="AnimationIndex" type="AnimationPlayer" parent="IndexFinger" unique_id=148356869]
 libraries/ = SubResource("AnimationLibrary_fvkph")
+
+[node name="PopupPanel" parent="." unique_id=899660233 instance=ExtResource("8_kfxbu")]
+visible = false
 
 [connection signal="pressed" from="BackLeftButton" to="." method="_on_back_left_button_pressed"]
 [connection signal="button_down" from="GoSalaMacchinari" to="." method="_on_go_sala_macchinari_button_down"]

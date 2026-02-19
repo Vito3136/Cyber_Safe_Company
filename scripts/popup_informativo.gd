@@ -18,7 +18,7 @@ var upgrade_ids_correlati = [
 	"mfa",
 	"ueba"
 ]
-var intervalli = [30.0, 100.0, 600.0]
+var intervalli = [300000.0, 2400000.0, 4500000.0]
 
 func _ready():
 	if popup:

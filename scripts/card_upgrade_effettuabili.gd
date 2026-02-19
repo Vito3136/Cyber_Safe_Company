@@ -26,10 +26,9 @@ func _ready():
 	add_theme_stylebox_override("panel", style_box)
 	
 	await get_tree().process_frame
-	# Imposta il pivot esattamente a metà della dimensione attuale
+	
 	option_button.pivot_offset = option_button.size / 2
-	# 1. Nascondi il pannello dei dettagli all'avvio.
-	# Questo garantisce che la card appaia compressa (Stato Iniziale).
+	
 	description_panel.hide()
 	is_expanded = false
 	
@@ -59,30 +58,22 @@ func update_appearance():
 	if not sb: return
 
 	if is_unlocked:
-		sb.bg_color = COLOR_ACTIVE
-		buy_button.disabled = false
+		buy_button.text = "BUY (" + str(card_data_attiva.costo) + ")"
+		
+		if sb.bg_color != COLOR_ACTIVE:
+			var tween = create_tween()
+			tween.tween_property(sb, "bg_color", COLOR_ACTIVE, 0.25).set_trans(Tween.TRANS_CUBIC)
 		
 		if Global.monete >= card_data_attiva.costo:
 			buy_button.disabled = false
-			buy_button.text = "BUY (" + str(card_data_attiva.costo) + ")"
 		else:
-			buy_button.disabled = true # Lo vedi ma non puoi cliccare
-			buy_button.text = "Insufficient money"
+			buy_button.disabled = true
 	else:
+		buy_button.text = str(card_data_attiva.costo)
 		sb.bg_color = COLOR_LOCKED
 		buy_button.disabled = true
-		
-func unlock_card():
-	is_unlocked = true
-	var sb = get_theme_stylebox("panel") as StyleBoxFlat
-	var tween = create_tween()
-	# Sfuma dal blu all'arancione in 0.25 secondi
-	tween.tween_property(sb, "bg_color", COLOR_ACTIVE, 0.25).set_trans(Tween.TRANS_CUBIC)
-	buy_button.disabled = false
 
 func _on_option_button_pressed() -> void:
-	# Inverti lo stato
-		
 	option_button.scale = Vector2(0.8, 0.8)
 	await get_tree().create_timer(0.05).timeout
 	option_button.scale = Vector2(1, 1)

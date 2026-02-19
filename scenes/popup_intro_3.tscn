@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://16wmm6aaiua1"]
+
+[ext_resource type="Script" uid="uid://bp3fkx0pd68xo" path="res://scripts/popup_intro_3.gd" id="1_w34ct"]
+[ext_resource type="FontFile" uid="uid://bqg3bl8cfajea" path="res://font/NeoBulletin.ttf" id="2_ik1gd"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_py1rp"]
+bg_color = Color(0.4300292, 0.47175866, 0.30408365, 1)
+corner_radius_top_left = 40
+corner_radius_top_right = 40
+corner_radius_bottom_right = 40
+corner_radius_bottom_left = 40
+
+[node name="PopupPanel" type="PopupPanel" unique_id=899660233]
+oversampling_override = 1.0
+size = Vector2i(700, 179)
+visible = true
+theme_override_styles/panel = SubResource("StyleBoxFlat_py1rp")
+script = ExtResource("1_w34ct")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=905384398]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=157819491]
+layout_mode = 2
+
+[node name="ContentLabel" type="Label" parent="MarginContainer/VBoxContainer" unique_id=375315649]
+custom_minimum_size = Vector2(300, 1)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("2_ik1gd")
+theme_override_font_sizes/font_size = 24
+text = "Click BUY to unlock the Plug Machine and start production."
+horizontal_alignment = 3
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Control" type="Control" parent="MarginContainer/VBoxContainer" unique_id=1874431576]
+layout_mode = 2
+size_flags_vertical = 3

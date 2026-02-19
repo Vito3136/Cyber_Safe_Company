@@ -17,14 +17,9 @@ func _on_upgrade_button_pressed() -> void:
 	await get_tree().create_timer(0.05).timeout
 	upgrade_button.scale = Vector2(1, 1)
 	await get_tree().create_timer(0.05).timeout
-	# Ottieni il riferimento al nodo PopupPanel
-	# $UpgradePopup usa il percorso breve del nodo figlio.
+	
 	var popup = upgrade_popup.open_popup()
-
-	# Controlla se il popup esiste ed è istanziato
 	if popup:
-		# Questo metodo mostra il popup e lo centra sullo schermo.
-		# Usa i margini che hai impostato per occupare i 3/4 dello schermo.
 		popup.popup_centered()
 
 func _on_back_left_button_pressed() -> void:

@@ -8,6 +8,8 @@ extends Node2D
 @onready var maschera_tutorial = $MascheraTutorial
 @onready var index_finger = $IndexFinger
 @onready var animation_index = $IndexFinger/AnimationIndex
+@onready var popup_tutorial_1 = $PopupPanel
+@onready var popup_tutorial_2 = $PopupPanel2
 var mat
 
 const MASCHERA_SCENE = preload("res://scenes/maschera_tutorial.tscn")
@@ -23,6 +25,7 @@ func _ready() -> void:
 		var global_pos_upgrade_btn = upgrade_button.global_position
 		var size_upgrade_btn = upgrade_button.size
 		continue_tutorial(global_pos_upgrade_btn, size_upgrade_btn)
+		popup_tutorial_1.popup_centered()
 	else:
 		maschera_tutorial.visible = false
 		index_finger.visible = false
@@ -40,15 +43,14 @@ func _on_upgrade_button_pressed() -> void:
 	await get_tree().create_timer(0.05).timeout
 	upgrade_button.scale = Vector2(1, 1)
 	await get_tree().create_timer(0.05).timeout
-	# Ottieni il riferimento al nodo PopupPanel
-	# $UpgradePopup usa il percorso breve del nodo figlio.
+	
 	var popup = upgrade_popup.open_popup()
-
-	# Controlla se il popup esiste ed è istanziato
 	if popup:
-		# Questo metodo mostra il popup e lo centra sullo schermo.
-		# Usa i margini che hai impostato per occupare i 3/4 dello schermo.
 		popup.popup_centered()
+	
+	if !Global.tutorial_totale_effettuato:
+		await get_tree().create_timer(0.1).timeout
+		popup_tutorial_2.popup_centered()
 
 func _on_back_left_button_pressed() -> void:
 	back_left_button.scale = Vector2(0.8, 0.8)

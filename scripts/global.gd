@@ -79,7 +79,6 @@ var spedizioni_avviate: bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	load_game()
 	timer_spedizione = Timer.new()
 	timer_spedizione.wait_time = timer_spedizione_per_livello[livello_magazzino]
 	timer_spedizione.autostart = true
@@ -429,6 +428,8 @@ const SAVE_PATH = "user://savegame.data"
 
 func save_game():
 	var save_data = {
+		"tutorial_iniziale_effettuato": tutorial_iniziale_effettuato,
+		"tutorial_totale_effettuato": tutorial_totale_effettuato,
 		"bilanciamento": bilanciamento,
 		"totale_upgrade_produzione": totale_upgrade_produzione,
 		"totale_upgrade_sicurezza": totale_upgrade_sicurezza,
@@ -494,6 +495,8 @@ func load_game():
 	var save_data = JSON.parse_string(file.get_as_text())
 	file.close()
 	
+	tutorial_iniziale_effettuato = save_data["tutorial_iniziale_effettuato"]
+	tutorial_totale_effettuato = save_data["tutorial_totale_effettuato"]
 	bilanciamento = save_data["bilanciamento"]
 	totale_upgrade_produzione = save_data["totale_upgrade_produzione"]
 	totale_upgrade_sicurezza = save_data["totale_upgrade_sicurezza"]

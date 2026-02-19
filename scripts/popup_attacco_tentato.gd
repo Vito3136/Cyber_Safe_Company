@@ -17,7 +17,7 @@ var upgrade_ids_correlati = [
 	"mfa",
 	"ueba"
 ]
-var intervalli = [45.0, 60.0, 600.0]
+var intervalli = [1200000.0, 3300000.0, 5400000.0]
 
 func _ready():
 	

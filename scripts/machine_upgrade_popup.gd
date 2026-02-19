@@ -90,6 +90,9 @@ func popola_lista(container: VBoxContainer, lista_dati: Array[CardData], isEffet
 			if nuova_card.has_signal("requested_purchase"):
 				if not nuova_card.requested_purchase.is_connected(_on_bought_upgrade):
 					nuova_card.requested_purchase.connect(_on_bought_upgrade)
+			if nuova_card.has_signal("animation_stop_requested"):
+				if not nuova_card.animation_stop_requested.is_connected(_on_card_animation_stop):
+					nuova_card.animation_stop_requested.connect(_on_card_animation_stop)
 			
 		container.add_child(nuova_card)
 		
@@ -121,7 +124,7 @@ func _on_bought_upgrade(data: CardData):
 				"lock_0":
 					Global.sblocca_macchinario_serrature()
 			
-			await get_tree().create_timer(1.0).timeout
+			await get_tree().create_timer(0.7).timeout
 			get_tree().change_scene_to_file("res://scenes/sala_macchinari.tscn")
 		else:
 			if(data.upgrade_id.contains("plug")):
@@ -141,3 +144,8 @@ func get_purchased_ids() -> Array:
 		if data:
 			ids.append(data.upgrade_id)
 	return ids
+
+func _on_card_animation_stop():
+	var sala = get_parent()
+	if sala and sala.has_node("IndexFinger"):
+		sala.get_node("IndexFinger").hide()

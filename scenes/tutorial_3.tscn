@@ -1,7 +1,7 @@
-[gd_scene format=3 uid="uid://cbkacg66xff4x"]
+[gd_scene format=3 uid="uid://dicpeisoqbhhn"]
 
 [ext_resource type="Texture2D" uid="uid://d00l2v622d57k" path="res://assets/contenitore_tutorial.png" id="1_det4q"]
-[ext_resource type="Script" uid="uid://q1f5fx105x70" path="res://scripts/tutorial_3.gd" id="1_g8msc"]
+[ext_resource type="Script" path="res://scripts/tutorial_3.gd" id="1_g8msc"]
 [ext_resource type="Texture2D" uid="uid://cdi236674bw5r" path="res://assets/next_button.png" id="2_g8msc"]
 [ext_resource type="FontFile" uid="uid://du80thymbsnek" path="res://font/Machine Gunk.otf" id="3_uvn1i"]
 [ext_resource type="FontFile" uid="uid://bqg3bl8cfajea" path="res://font/NeoBulletin.ttf" id="4_0v744"]
@@ -88,7 +88,7 @@ theme_override_colors/font_outline_color = Color(1, 0, 0, 1)
 theme_override_constants/outline_size = 2
 theme_override_fonts/font = ExtResource("4_0v744")
 theme_override_font_sizes/font_size = 25
-text = "The first mandatory step is to unlock the ‘SIEM Team Creation’ upgrade: only by setting up a dedicated security team can you start the entire corporate protection process. Without a team, there is no one to monitor the systems — and no upgrades will be possible.
+text = "The first MANDATORY step is to unlock the ‘SIEM Team Creation’ upgrade: only by setting up a dedicated security team can you start the entire corporate protection process. Without a team, there is no one to monitor the systems — and no upgrades will be possible.
 "
 autowrap_mode = 2
 

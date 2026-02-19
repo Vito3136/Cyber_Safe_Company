@@ -12,6 +12,7 @@ extends Node
 @onready var maschera_tutorial = $MascheraTutorial
 @onready var index_finger = $IndexFinger
 @onready var animation_index = $IndexFinger/AnimationIndex
+@onready var popup_tutorial = $PopupPanel
 var mat
 
 # Called when the node enters the scene tree for the first time.
@@ -26,6 +27,9 @@ func _ready() -> void:
 		index_finger.visible = true
 		animation_index.play("pointing")
 		start_tutorial()
+		var target_position = Vector2(640, 520)
+		popup_tutorial.position = target_position - Vector2(popup_tutorial.size) / 2
+		popup_tutorial.popup()
 	else:
 		maschera_tutorial.visible = false
 		index_finger.visible = false

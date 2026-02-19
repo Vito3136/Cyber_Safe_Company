@@ -13,7 +13,7 @@ var is_expanded: bool = false
 @onready var description_label: Label = $VBoxContainer/DescriptionPanel/MarginContainer/DescriptionLabel
 @onready var option_button: Button = $VBoxContainer/MarginContainer/HBoxContainer/OptionButton
 
-func setup(data: CardData): # Deve essere scritto proprio così
+func setup(data: CardData):
 	if data:
 		title_label.text = data.titolo
 		description_label.text = data.descrizione
@@ -21,10 +21,9 @@ func setup(data: CardData): # Deve essere scritto proprio così
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	await get_tree().process_frame
-	# Imposta il pivot esattamente a metà della dimensione attuale
+	
 	option_button.pivot_offset = option_button.size / 2
-	# 1. Nascondi il pannello dei dettagli all'avvio.
-	# Questo garantisce che la card appaia compressa (Stato Iniziale).
+	
 	description_panel.hide()
 	is_expanded = false
 

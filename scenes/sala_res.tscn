@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://bhkg8ke0eb4h4"]
+[gd_scene format=3 uid="uid://dctfm8dibts06"]
 
 [ext_resource type="Script" uid="uid://bfxrxleqdcu2x" path="res://scripts/sala_res.gd" id="1_3ts2u"]
 [ext_resource type="Texture2D" uid="uid://qla1m4grk0md" path="res://assets/sala_r_e_s.png" id="1_eu1bd"]
@@ -25,6 +25,8 @@
 [ext_resource type="Resource" uid="uid://budthxtokxkio" path="res://upgrades/machines/lock_3.tres" id="22_uao70"]
 [ext_resource type="PackedScene" uid="uid://b5eso4i6404to" path="res://scenes/maschera_tutorial.tscn" id="24_laarw"]
 [ext_resource type="Texture2D" uid="uid://b8yodbnudd6dq" path="res://assets/index_finger_icon.png" id="25_8edeh"]
+[ext_resource type="PackedScene" uid="uid://b1wix8h044yhv" path="res://scenes/popup_intro_2.tscn" id="26_8edeh"]
+[ext_resource type="PackedScene" uid="uid://16wmm6aaiua1" path="res://scenes/popup_intro_3.tscn" id="27_iajt1"]
 
 [sub_resource type="Animation" id="Animation_kfxbu"]
 length = 0.001
@@ -229,6 +231,11 @@ texture = ExtResource("25_8edeh")
 
 [node name="AnimationIndex" type="AnimationPlayer" parent="IndexFinger" unique_id=590247447]
 libraries/ = SubResource("AnimationLibrary_uy810")
+
+[node name="PopupPanel" parent="." unique_id=899660233 instance=ExtResource("26_8edeh")]
+visible = false
+
+[node name="PopupPanel2" parent="." unique_id=1759521283 instance=ExtResource("27_iajt1")]
 
 [connection signal="pressed" from="UpgradeButton" to="." method="_on_upgrade_button_pressed"]
 [connection signal="pressed" from="BackLeftButton" to="." method="_on_back_left_button_pressed"]

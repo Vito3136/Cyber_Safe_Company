@@ -8,16 +8,16 @@ extends CanvasLayer
 
 var apparizione_attuale : int = 0
 var testi = [
-	"A hacker successfully infiltrated your network through a disguised malicious packet that your basic firewall failed to detect. Sensitive data was compromised and recovery operations have cost your company -15% of your current funds. A Next-Gen Hardware Firewall would have stopped this before it even got close.",
-	"An attacker gained access to your systems using a stolen employee password. With no second verification layer in place, the breach went undetected until it was too late. The damage control has drained -10% of your current funds. MFA would have blocked the intrusion instantly.",
-	"A compromised employee account was used to exfiltrate confidential data from inside your network. Because no behavioral monitoring was in place, the anomaly went completely unnoticed. The financial fallout has cost your company -20% of your current funds. UEBA would have flagged this in seconds."
+	"A hacker successfully infiltrated your network through a disguised malicious packet that your basic firewall failed to detect. Sensitive data was compromised and recovery operations have cost your company -20% of your current funds. A Next-Gen Hardware Firewall would have stopped this before it even got close.",
+	"An attacker gained access to your systems using a stolen employee password. With no second verification layer in place, the breach went undetected until it was too late. The damage control has drained -40% of your current funds. MFA would have blocked the intrusion instantly.",
+	"A compromised employee account was used to exfiltrate confidential data from inside your network. Because no behavioral monitoring was in place, the anomaly went completely unnoticed. The financial fallout has cost your company -60% of your current funds. UEBA would have flagged this in seconds."
 ]
 var upgrade_ids_correlati = [
 	"firewall",
 	"mfa",
 	"ueba"
 ]
-var intervalli = [45.0, 60.0, 600.0]
+var intervalli = [1200000.0, 3300000.0, 5400000.0]
 
 func _ready():
 	
@@ -111,9 +111,9 @@ func applica_penale_economica(indice_attacco):
 	var percentuale_da_togliere : float = 0.0
 	
 	match indice_attacco:
-		0: percentuale_da_togliere = 0.15 # -15% (Firewall)
-		1: percentuale_da_togliere = 0.10 # -10% (MFA)
-		2: percentuale_da_togliere = 0.20 # -20% (UEBA)
+		0: percentuale_da_togliere = 0.20 # -20% (Firewall)
+		1: percentuale_da_togliere = 0.40 # -40% (MFA)
+		2: percentuale_da_togliere = 0.60 # -60% (UEBA)
 	
 	var perdita = int(Global.monete * percentuale_da_togliere)
 	Global.monete -= perdita
