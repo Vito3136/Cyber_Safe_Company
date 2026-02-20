@@ -1,0 +1,94 @@
+[gd_scene format=3 uid="uid://bpps5jkxim8hu"]
+
+[ext_resource type="Script" uid="uid://cy0qf6jwii3b4" path="res://scripts/tutorial_8.gd" id="1_14mbw"]
+[ext_resource type="Texture2D" uid="uid://d00l2v622d57k" path="res://assets/contenitore_tutorial.png" id="2_h65yi"]
+[ext_resource type="FontFile" uid="uid://du80thymbsnek" path="res://font/Machine Gunk.otf" id="3_oc3rp"]
+[ext_resource type="FontFile" uid="uid://bqg3bl8cfajea" path="res://font/NeoBulletin.ttf" id="4_41yos"]
+[ext_resource type="Texture2D" uid="uid://cdi236674bw5r" path="res://assets/next_button.png" id="5_y07fc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ovy1w"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ctaab"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[node name="Tutorial8" type="Control" unique_id=1551880302]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_14mbw")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1907396331]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_h65yi")
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="." unique_id=1104320852]
+layout_mode = 0
+offset_left = 45.0
+offset_top = 113.0
+offset_right = 1236.0
+offset_bottom = 234.0
+
+[node name="Label" type="Label" parent="VBoxContainer2" unique_id=1884885846]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.75686276, 0, 1)
+theme_override_fonts/font = ExtResource("3_oc3rp")
+theme_override_font_sizes/font_size = 50
+text = "ATTENTION!"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=372301157]
+layout_mode = 0
+offset_left = 45.0
+offset_top = 205.0
+offset_right = 1236.0
+offset_bottom = 562.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=1541994904]
+layout_mode = 2
+
+[node name="VSeparator" type="VSeparator" parent="VBoxContainer/HBoxContainer" unique_id=1618863280]
+layout_mode = 2
+theme_override_constants/separation = 22
+theme_override_styles/separator = SubResource("StyleBoxFlat_ovy1w")
+
+[node name="Label2" type="Label" parent="VBoxContainer/HBoxContainer" unique_id=205618762]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 0.75686276, 0, 1)
+theme_override_fonts/font = ExtResource("4_41yos")
+theme_override_font_sizes/font_size = 23
+text = "During the game, at random moments, your company may be targeted by cyber attacks. No connected company is immune, and Cyber Safe Company is no exception.
+
+Before an attack occurs, the system will send you specific advice suggesting which security upgrade to perform.
+
+If you follow the advice and complete the suggested upgrade in time, the attack will be repelled when it attempts to hit your company.
+If, on the other hand, you underestimate the warning and do not perform the upgrade, the attack will be successful: the attackers will manage to penetrate your systems and steal your coins, damaging your investment capacity."
+horizontal_alignment = 3
+autowrap_mode = 2
+
+[node name="VSeparator2" type="VSeparator" parent="VBoxContainer/HBoxContainer" unique_id=1064197557]
+layout_mode = 2
+theme_override_constants/separation = 18
+theme_override_styles/separator = SubResource("StyleBoxFlat_ctaab")
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1492252409]
+layout_mode = 0
+offset_left = -1188.571
+offset_top = 551.0
+offset_right = 2468.5715
+offset_bottom = 688.0
+scale = Vector2(0.35, 0.35)
+pivot_offset = Vector2(1828.5712, 68.57153)
+
+[node name="NextButton" type="Button" parent="CenterContainer" unique_id=1437566820]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+icon = ExtResource("5_y07fc")
+
+[connection signal="pressed" from="CenterContainer/NextButton" to="." method="_on_next_button_pressed"]

@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://cxgjpypbhudvg" path="res://scripts/popup_attacco_tentato.gd" id="1_64rji"]
 [ext_resource type="FontFile" uid="uid://du80thymbsnek" path="res://font/Machine Gunk.otf" id="2_v2hvw"]
 [ext_resource type="FontFile" uid="uid://bqg3bl8cfajea" path="res://font/NeoBulletin.ttf" id="3_eryem"]
+[ext_resource type="AudioStream" uid="uid://du2fo8kxqm5tu" path="res://sounds/attacco_tentato_sound.mp3" id="4_vmwu3"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v2hvw"]
 bg_color = Color(0, 0.47058824, 0, 1)
@@ -116,6 +117,9 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_vmwu3")
 theme_override_styles/hover = SubResource("StyleBoxFlat_nar3s")
 theme_override_styles/focus = SubResource("StyleBoxFlat_b2fts")
 text = "OK"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="PopupPanel" unique_id=1936929695]
+stream = ExtResource("4_vmwu3")
 
 [node name="Timer" type="Timer" parent="." unique_id=462345785]
 

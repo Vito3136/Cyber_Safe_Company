@@ -15,6 +15,7 @@ func _process(delta: float) -> void:
 	pass # Replace with function body.
 
 func _on_continue_game_button_pressed() -> void:
+	GlobalAudioStreamPlayer.play()
 	center_container_continue_game.scale = Vector2(0.20, 0.20)
 	await get_tree().create_timer(0.05).timeout
 	center_container_continue_game.scale = Vector2(0.22, 0.22)
@@ -29,6 +30,7 @@ func _on_continue_game_button_pressed() -> void:
 
 
 func _on_new_game_button_pressed() -> void:
+	GlobalAudioStreamPlayer.play()
 	center_container_new_game.scale = Vector2(0.20, 0.20)
 	await get_tree().create_timer(0.05).timeout
 	center_container_new_game.scale = Vector2(0.22, 0.22)

@@ -6,6 +6,7 @@ extends CanvasLayer
 @onready var colorRect = $ColorRect
 @onready var ok_button = $PopupPanel/MarginContainer/VBoxContainer/HBoxContainer/OkButton
 @onready var upgrade_button = $PopupPanel/MarginContainer/VBoxContainer/HBoxContainer/UpgradeButton
+@onready var audio_stream_player = $PopupPanel/AudioStreamPlayer
 
 var apparizione_attuale : int = 0
 var testi = [
@@ -18,7 +19,7 @@ var upgrade_ids_correlati = [
 	"mfa",
 	"ueba"
 ]
-var intervalli = [300000.0, 2400000.0, 4500000.0]
+var intervalli = [300.0, 2400.0, 4500.0]
 
 func _ready():
 	if popup:
@@ -76,6 +77,7 @@ func _on_timer_timeout():
 	
 	label_testo.text = testi[apparizione_attuale]
 	colorRect.show()
+	audio_stream_player.play()
 	popup.popup_centered()
 	apparizione_attuale += 1
 	

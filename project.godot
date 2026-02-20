@@ -24,6 +24,7 @@ Global="*res://scripts/global.gd"
 PopupAttaccoRiuscito="*uid://cqw5tir8esnrx"
 PopupAttaccoTentato="*uid://6a8xvexmevq4"
 PopupInformativo="*uid://28bfpatmevl2"
+GlobalAudioStreamPlayer="*uid://c26g4saolkavl"
 
 [display]
 
@@ -43,3 +44,4 @@ pointing/emulate_touch_from_mouse=true
 [rendering]
 
 renderer/rendering_method="mobile"
+textures/vram_compression/import_etc2_astc=true

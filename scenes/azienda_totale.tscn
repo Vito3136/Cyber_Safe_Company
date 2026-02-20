@@ -3,9 +3,11 @@
 [ext_resource type="Script" uid="uid://bgc5gj00r15bv" path="res://scripts/azienda_totale.gd" id="1_7xsbt"]
 [ext_resource type="Texture2D" uid="uid://bdyhqnn6ll6nd" path="res://assets/sfondo_azienda.png" id="1_aehsc"]
 [ext_resource type="PackedScene" uid="uid://b3farfqb3q2ic" path="res://scenes/general_ui.tscn" id="3_p68yv"]
-[ext_resource type="Texture2D" uid="uid://domp5y02302ig" path="res://assets/arrow_back.png" id="4_wnmqs"]
+[ext_resource type="Texture2D" uid="uid://dcbki6qeyemb6" path="res://assets/punto_interrogativo_image.png" id="4_kfxbu"]
+[ext_resource type="Texture2D" uid="uid://bcau43r8ulplk" path="res://assets/volume_up_image.png" id="5_fvkph"]
 [ext_resource type="FontFile" uid="uid://du80thymbsnek" path="res://font/Machine Gunk.otf" id="5_jstmx"]
-[ext_resource type="PackedScene" uid="uid://bo03ans0cc5dp" path="res://scenes/maschera_tutorial.tscn" id="6_cmwo7"]
+[ext_resource type="PackedScene" uid="uid://b5eso4i6404to" path="res://scenes/maschera_tutorial.tscn" id="6_cmwo7"]
+[ext_resource type="Texture2D" uid="uid://bgqk01xggmg1r" path="res://assets/volume_down_image.png" id="6_wqbxy"]
 [ext_resource type="Texture2D" uid="uid://b8yodbnudd6dq" path="res://assets/index_finger_icon.png" id="7_w82mw"]
 [ext_resource type="PackedScene" uid="uid://b75jvdnsnpms3" path="res://scenes/popup_intro_1.tscn" id="8_kfxbu"]
 
@@ -104,15 +106,29 @@ expand_mode = 1
 
 [node name="GeneralUI" parent="." unique_id=1577614775 instance=ExtResource("3_p68yv")]
 
-[node name="BackLeftButton" type="TextureButton" parent="." unique_id=1372333929]
-offset_left = 20.0
-offset_top = -5.0
-offset_right = 110.0
-offset_bottom = 85.0
-pivot_offset = Vector2(45, 45)
+[node name="TutorialButton" type="TextureButton" parent="." unique_id=1372333929]
+offset_left = 37.0
+offset_top = 9.0
+offset_right = 99.0
+offset_bottom = 77.0
+pivot_offset = Vector2(31, 34)
 size_flags_horizontal = 4
 mouse_default_cursor_shape = 2
-texture_normal = ExtResource("4_wnmqs")
+texture_normal = ExtResource("4_kfxbu")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="SoundButton" type="TextureButton" parent="." unique_id=1242673773]
+offset_left = 118.0
+offset_top = 9.0
+offset_right = 180.0
+offset_bottom = 77.0
+pivot_offset = Vector2(31, 34)
+size_flags_horizontal = 4
+mouse_default_cursor_shape = 2
+toggle_mode = true
+texture_normal = ExtResource("5_fvkph")
+texture_pressed = ExtResource("6_wqbxy")
 ignore_texture_size = true
 stretch_mode = 5
 
@@ -271,7 +287,8 @@ libraries/ = SubResource("AnimationLibrary_fvkph")
 [node name="PopupPanel" parent="." unique_id=899660233 instance=ExtResource("8_kfxbu")]
 visible = false
 
-[connection signal="pressed" from="BackLeftButton" to="." method="_on_back_left_button_pressed"]
+[connection signal="pressed" from="TutorialButton" to="." method="_on_tutorial_button_pressed"]
+[connection signal="toggled" from="SoundButton" to="." method="_on_sound_button_toggled"]
 [connection signal="button_down" from="GoSalaMacchinari" to="." method="_on_go_sala_macchinari_button_down"]
 [connection signal="button_up" from="GoSalaMacchinari" to="." method="_on_go_sala_macchinari_button_up"]
 [connection signal="pressed" from="GoSalaMacchinari" to="." method="_on_go_sala_macchinari_pressed"]

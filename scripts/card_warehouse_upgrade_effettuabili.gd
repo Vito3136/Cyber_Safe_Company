@@ -21,6 +21,8 @@ const COLOR_LOCKED = Color("ffb00069")
 @onready var buy_button: Button = $VBoxContainer/CenterContainer/BuyButton
 @onready var option_button: Button = $VBoxContainer/MarginContainer/HBoxContainer/OptionButton
 
+@onready var audio_stream_player = $VBoxContainer/CenterContainer/BuyButton/AudioStreamPlayer
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	var style_box = get_theme_stylebox("panel").duplicate()
@@ -49,7 +51,9 @@ func setup(data: CardData):
 func _on_buy_button_pressed():
 	if not is_unlocked: return
 	
-	await get_tree().create_timer(0.5).timeout
+	audio_stream_player.play()
+	
+	await get_tree().create_timer(0.8).timeout
 	# Inviamo il segnale al Popup dicendo: "Sposta questo upgrade!"
 	requested_purchase.emit(card_data_attiva)
 	Global.save_game()

@@ -8,7 +8,7 @@ titolo = "Plug machine - Level 4"
 descrizione = "• Cycle time: 3s
 • Storage buffer: 14 units
 • Sale price: $8/unit"
-costo = 2
+costo = 3500
 upgrade_id = "plug_3"
 required_id = "plug_2"
 metadata/_custom_type_script = "uid://p1gngg5c4evg"

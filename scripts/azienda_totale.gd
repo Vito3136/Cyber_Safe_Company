@@ -6,7 +6,8 @@ extends Node
 @onready var go_sala_res = $GoSalaRES
 @onready var go_sala_siem_soc = $GoSalaSiemSoc
 @onready var go_sala_server = $GoSalaServer
-@onready var back_left_button = $BackLeftButton
+@onready var tutorial_button = $TutorialButton
+@onready var sound_button = $SoundButton
 
 @onready var color_rect_maschera = $MascheraTutorial/ColorRect
 @onready var maschera_tutorial = $MascheraTutorial
@@ -110,14 +111,6 @@ func _on_go_sala_siem_soc_button_down() -> void:
 func _on_go_sala_siem_soc_button_up() -> void:
 	go_sala_siem_soc.modulate = Color(1, 1, 1)
 
-
-func _on_back_left_button_pressed() -> void:
-	back_left_button.scale = Vector2(0.8, 0.8)
-	await get_tree().create_timer(0.05).timeout
-	back_left_button.scale = Vector2(1, 1)
-	await get_tree().create_timer(0.05).timeout
-	get_tree().change_scene_to_file("res://scenes/menu_principale.tscn")
-
 func start_tutorial():
 	var screen_size = get_viewport().get_visible_rect().size
 	var pos_centro = (go_sala_res.global_position + go_sala_res.size / 2.0) / screen_size
@@ -173,3 +166,15 @@ func find_button_at_position(node: Node, pos: Vector2) -> Button:
 			return found
 			
 	return null
+
+
+func _on_tutorial_button_pressed() -> void:
+	tutorial_button.scale = Vector2(0.8, 0.8)
+	await get_tree().create_timer(0.05).timeout
+	tutorial_button.scale = Vector2(1, 1)
+	await get_tree().create_timer(0.05).timeout
+	get_tree().change_scene_to_file("res://scenes/tutorial_1.tscn")
+
+
+func _on_sound_button_toggled(toggled_on: bool) -> void:
+	AudioServer.set_bus_mute(AudioServer.get_bus_index("Master"), toggled_on)

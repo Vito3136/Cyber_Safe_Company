@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://dfa3gnmyi1c0p" path="res://scripts/popup_attacco_riuscito.gd" id="1_ehceq"]
 [ext_resource type="FontFile" uid="uid://du80thymbsnek" path="res://font/Machine Gunk.otf" id="2_8f7xb"]
 [ext_resource type="FontFile" uid="uid://bqg3bl8cfajea" path="res://font/NeoBulletin.ttf" id="3_3ft3f"]
+[ext_resource type="AudioStream" uid="uid://dwx06jyymyjwk" path="res://sounds/alarm_sound.mp3" id="4_toep5"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8f7xb"]
 bg_color = Color(0.6790401, 0, 0, 1)
@@ -113,6 +114,9 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_toep5")
 theme_override_styles/hover = SubResource("StyleBoxFlat_4carc")
 theme_override_styles/focus = SubResource("StyleBoxFlat_f7tc7")
 text = "OK"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="PopupPanel" unique_id=162113743]
+stream = ExtResource("4_toep5")
 
 [node name="Timer" type="Timer" parent="." unique_id=1658836627]
 

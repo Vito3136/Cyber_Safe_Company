@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://tg6gb64pxajm" path="res://scripts/popup_informativo.gd" id="1_rm17y"]
 [ext_resource type="FontFile" uid="uid://du80thymbsnek" path="res://font/Machine Gunk.otf" id="2_gp2yj"]
 [ext_resource type="FontFile" uid="uid://bqg3bl8cfajea" path="res://font/NeoBulletin.ttf" id="3_86txl"]
+[ext_resource type="AudioStream" uid="uid://b22wvtwfodfrq" path="res://sounds/bell_notification.mp3" id="4_55aea"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_55aea"]
 bg_color = Color(0.72947735, 0.5811208, 0.026842134, 1)
@@ -158,6 +159,9 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_ckg70")
 theme_override_styles/hover = SubResource("StyleBoxFlat_vxhr6")
 theme_override_styles/focus = SubResource("StyleBoxFlat_ell7i")
 text = "UPGRADE"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="PopupPanel" unique_id=1452087291]
+stream = ExtResource("4_55aea")
 
 [node name="Timer" type="Timer" parent="." unique_id=1279139794]
 

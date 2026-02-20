@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://l7nmd6efls0q" path="res://assets/shopping-cart.png" id="3_20cpf"]
 [ext_resource type="FontFile" uid="uid://bqg3bl8cfajea" path="res://font/NeoBulletin.ttf" id="3_c1j2y"]
 [ext_resource type="FontFile" uid="uid://du80thymbsnek" path="res://font/Machine Gunk.otf" id="4_20cpf"]
+[ext_resource type="AudioStream" uid="uid://c1k0vgfmh1gts" path="res://sounds/purchase_sound.mp3" id="6_hqhi0"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lg2ls"]
 bg_color = Color(1, 0.6901961, 0, 0.8235294)
@@ -156,6 +157,9 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_licx3")
 theme_override_styles/focus = SubResource("StyleBoxFlat_iu833")
 text = "BUY"
 icon = ExtResource("3_20cpf")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="VBoxContainer/CenterContainer/BuyButton" unique_id=1932584459]
+stream = ExtResource("6_hqhi0")
 
 [node name="Control" type="Control" parent="VBoxContainer" unique_id=581168845]
 custom_minimum_size = Vector2(0, 2)

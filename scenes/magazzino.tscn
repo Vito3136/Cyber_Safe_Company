@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://00cmxhtdt01q" path="res://assets/camion.png" id="2_1mpyn"]
 [ext_resource type="Texture2D" uid="uid://l07gxs4xpfsq" path="res://assets/parete_serranda.png" id="3_4pr28"]
 [ext_resource type="Texture2D" uid="uid://dlp8x3gj5fumw" path="res://assets/contenitore_contatore.png" id="4_4jjrj"]
+[ext_resource type="AudioStream" uid="uid://dj1spsndwo4qa" path="res://sounds/car_engine_noise.mp3" id="4_afat4"]
 [ext_resource type="Texture2D" uid="uid://7r1tlhrhml45" path="res://assets/presa.png" id="5_83x6b"]
 [ext_resource type="Texture2D" uid="uid://do2o6glaeiljs" path="res://assets/lampadina.png" id="6_twpj7"]
 [ext_resource type="Texture2D" uid="uid://yayoh2nh287r" path="res://assets/telecamera.png" id="7_m1o7u"]
@@ -142,6 +143,9 @@ texture = ExtResource("2_1mpyn")
 [node name="AnimationSpedizioneCamion" type="AnimationPlayer" parent="Camion" unique_id=149933658]
 libraries/ = SubResource("AnimationLibrary_b3jdw")
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Camion" unique_id=1384401233]
+stream = ExtResource("4_afat4")
+
 [node name="PareteSerranda" type="TextureRect" parent="." unique_id=523157090]
 anchors_preset = 15
 anchor_right = 1.0
@@ -277,7 +281,7 @@ theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 8
 theme_override_fonts/font = ExtResource("14_m1o7u")
 theme_override_font_sizes/font_size = 30
-text = "Next shipment in:"
+text = "Next sale in:"
 horizontal_alignment = 2
 vertical_alignment = 1
 
