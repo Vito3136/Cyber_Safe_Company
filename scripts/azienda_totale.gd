@@ -8,7 +8,6 @@ extends Node
 @onready var go_sala_server = $GoSalaServer
 @onready var tutorial_button = $TutorialButton
 @onready var sound_button = $SoundButton
-
 @onready var color_rect_maschera = $MascheraTutorial/ColorRect
 @onready var maschera_tutorial = $MascheraTutorial
 @onready var index_finger = $IndexFinger
@@ -18,6 +17,10 @@ var mat
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	# 1. Recupera lo stato attuale del volume dal server audio
+	var is_muted = AudioServer.is_bus_mute(AudioServer.get_bus_index("Master"))
+	sound_button.button_pressed = is_muted
+	
 	if(!Global.tutorial_iniziale_effettuato):
 		Global.tutorial_iniziale_effettuato = true
 	
@@ -34,6 +37,8 @@ func _ready() -> void:
 	else:
 		maschera_tutorial.visible = false
 		index_finger.visible = false
+	
+	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

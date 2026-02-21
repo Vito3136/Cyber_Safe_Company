@@ -16,6 +16,7 @@
 [ext_resource type="Script" uid="uid://cwuyrf71w4yuh" path="res://scripts/macchinario_telecamere.gd" id="9_g5jtv"]
 [ext_resource type="Texture2D" uid="uid://be6x7tkwv5k3q" path="res://assets/scatolo_pieno_lampadine.png" id="9_wybjb"]
 [ext_resource type="Texture2D" uid="uid://yayoh2nh287r" path="res://assets/telecamera.png" id="9_yq1a3"]
+[ext_resource type="AudioStream" uid="uid://tmkitmylgofl" path="res://sounds/svuotamento_scatole.mp3" id="10_wa7om"]
 [ext_resource type="Script" uid="uid://bvkec6jotbwfa" path="res://scripts/macchinario_serrature.gd" id="11_pp45o"]
 [ext_resource type="Texture2D" uid="uid://dcjrcrqvhu702" path="res://assets/serratura.png" id="12_7d4gf"]
 [ext_resource type="Texture2D" uid="uid://c3nxvv2a00dcr" path="res://assets/scatolo_pieno_telecamere.png" id="13_dwnkl"]
@@ -2021,6 +2022,9 @@ position = Vector2(2.4795532e-05, 8.6307526e-05)
 scale = Vector2(0.9999996, 0.9999996)
 shape = SubResource("RectangleShape2D_7aw4a")
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="MacchinarioPrese/Area2D" unique_id=1199730673]
+stream = ExtResource("10_wa7om")
+
 [node name="ScatoloPrese" type="Sprite2D" parent="." unique_id=1149858059]
 position = Vector2(490, 543)
 scale = Vector2(0.2, 0.2)
@@ -2086,6 +2090,9 @@ position = Vector2(429.4117, 370.58823)
 position = Vector2(7.1525574e-06, 2.8729439e-05)
 scale = Vector2(0.99999976, 0.99999976)
 shape = SubResource("RectangleShape2D_dtpjo")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="MacchinarioLampadine/Area2D" unique_id=1456385277]
+stream = ExtResource("10_wa7om")
 
 [node name="Timer" type="Timer" parent="MacchinarioLampadine" unique_id=1859364275]
 wait_time = 5.0
@@ -2158,6 +2165,9 @@ position = Vector2(0.00035095215, -8.392334e-05)
 scale = Vector2(0.99999946, 0.99999946)
 shape = SubResource("RectangleShape2D_wa7om")
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="MacchinarioTelecamere/Area2D" unique_id=1228841214]
+stream = ExtResource("10_wa7om")
+
 [node name="Timer" type="Timer" parent="MacchinarioTelecamere" unique_id=1280506534]
 wait_time = 5.0
 
@@ -2227,6 +2237,9 @@ position = Vector2(-423.52954, 376.47055)
 position = Vector2(3.6001205e-05, 4.196167e-05)
 scale = Vector2(0.9999998, 0.9999998)
 shape = SubResource("RectangleShape2D_rjl8k")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="MacchinarioSerrature/Area2D" unique_id=1357673025]
+stream = ExtResource("10_wa7om")
 
 [node name="Timer" type="Timer" parent="MacchinarioSerrature" unique_id=1996195063]
 wait_time = 5.0

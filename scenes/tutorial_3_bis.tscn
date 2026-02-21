@@ -1,0 +1,98 @@
+[gd_scene format=3 uid="uid://dksp3tin8mkf"]
+
+[ext_resource type="Script" uid="uid://dr5ow5i0dylbd" path="res://scripts/tutorial_3_bis.gd" id="1_wkaap"]
+[ext_resource type="Texture2D" uid="uid://d00l2v622d57k" path="res://assets/contenitore_tutorial.png" id="2_26ehr"]
+[ext_resource type="FontFile" uid="uid://du80thymbsnek" path="res://font/Machine Gunk.otf" id="3_pc3ni"]
+[ext_resource type="FontFile" uid="uid://bqg3bl8cfajea" path="res://font/NeoBulletin.ttf" id="4_ydcum"]
+[ext_resource type="Texture2D" uid="uid://o8yfe1v7pi06" path="res://assets/upgrade_explanation_image.png" id="5_nk7os"]
+[ext_resource type="Texture2D" uid="uid://cdi236674bw5r" path="res://assets/next_button.png" id="6_2jaeb"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1ux21"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_17ra7"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[node name="Tutorial3Bis" type="Control" unique_id=2032344431]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wkaap")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=430194654]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_26ehr")
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="." unique_id=1428168504]
+layout_mode = 0
+offset_left = 45.0
+offset_top = 113.0
+offset_right = 1236.0
+offset_bottom = 234.0
+
+[node name="Label" type="Label" parent="VBoxContainer2" unique_id=289870235]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_pc3ni")
+theme_override_font_sizes/font_size = 50
+text = "The Upgrade Menu"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=349803922]
+layout_mode = 0
+offset_left = 45.0
+offset_top = 266.0
+offset_right = 732.0
+offset_bottom = 552.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=269718808]
+layout_mode = 2
+
+[node name="VSeparator" type="VSeparator" parent="VBoxContainer/HBoxContainer" unique_id=2126426285]
+layout_mode = 2
+theme_override_constants/separation = 22
+theme_override_styles/separator = SubResource("StyleBoxFlat_1ux21")
+
+[node name="Label2" type="Label" parent="VBoxContainer/HBoxContainer" unique_id=683542671]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("4_ydcum")
+theme_override_font_sizes/font_size = 23
+text = "Each room in your company has a dedicated menu with all available upgrades. Next to the title of each upgrade, you will find an “i” icon — clicking on it will expand the menu item to show you a detailed description of that upgrade: what it does, what benefits it brings, and why it is important for the growth or security of your company."
+horizontal_alignment = 3
+autowrap_mode = 2
+
+[node name="VSeparator2" type="VSeparator" parent="VBoxContainer/HBoxContainer" unique_id=1657564923]
+layout_mode = 2
+theme_override_constants/separation = 18
+theme_override_styles/separator = SubResource("StyleBoxFlat_17ra7")
+
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=1030902613]
+layout_mode = 0
+offset_left = 743.0
+offset_top = 228.0
+offset_right = 1217.0
+offset_bottom = 577.0
+texture = ExtResource("5_nk7os")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=160005804]
+layout_mode = 0
+offset_left = -1188.571
+offset_top = 551.0
+offset_right = 2468.5715
+offset_bottom = 688.0
+scale = Vector2(0.35, 0.35)
+pivot_offset = Vector2(1828.5712, 68.57153)
+
+[node name="NextButton" type="Button" parent="CenterContainer" unique_id=1012965315]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+icon = ExtResource("6_2jaeb")
+
+[connection signal="pressed" from="CenterContainer/NextButton" to="." method="_on_next_button_pressed"]

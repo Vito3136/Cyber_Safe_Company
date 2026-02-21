@@ -17,4 +17,4 @@ func _on_next_button_pressed() -> void:
 	await get_tree().create_timer(0.05).timeout
 	center_container.scale = Vector2(0.35, 0.35)
 	await get_tree().create_timer(0.05).timeout
-	get_tree().change_scene_to_file("res://scenes/tutorial_3_bis.tscn")
+	get_tree().change_scene_to_file("res://scenes/tutorial_4.tscn")

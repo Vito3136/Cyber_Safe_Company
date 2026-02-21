@@ -12,6 +12,393 @@
 [ext_resource type="Resource" uid="uid://conptf0hjbl1b" path="res://upgrades/safety/server_room/encryption.tres" id="9_634sx"]
 [ext_resource type="Resource" uid="uid://d3ntpksr7rchu" path="res://upgrades/safety/server_room/firewall.tres" id="10_0pw5s"]
 [ext_resource type="Resource" uid="uid://hy7dmrk4koaq" path="res://upgrades/safety/server_room/redundancy_system.tres" id="12_4dobk"]
+[ext_resource type="VideoStream" uid="uid://b0leb4lp36ehc" path="res://video/rotazione_ventole.ogv" id="13_ive8d"]
+
+[sub_resource type="Animation" id="Animation_m77dc"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_ive8d"]
+resource_name = "blink"
+length = 2.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Polygon2D:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.033333335, 0.5, 1.0333333, 2.0333333, 2.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [true, true, false, true, true]
+}
+
+[sub_resource type="Animation" id="Animation_4dobk"]
+resource_name = "blink_10"
+length = 2.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Polygon2D10:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.46666667, 0.99999994, 2, 2.4666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [true, true, false, true, true]
+}
+
+[sub_resource type="Animation" id="Animation_1munv"]
+resource_name = "blink_11"
+length = 2.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Polygon2D11:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.46666667, 0.99999994, 2, 2.4666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [true, true, false, true, true]
+}
+
+[sub_resource type="Animation" id="Animation_uaqi5"]
+resource_name = "blink_12"
+length = 2.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Polygon2D12:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.46666667, 0.99999994, 2, 2.4666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [true, true, false, true, true]
+}
+
+[sub_resource type="Animation" id="Animation_krbrc"]
+resource_name = "blink_13"
+length = 2.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Polygon2D13:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.46666667, 0.99999994, 2, 2.4666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [true, true, false, true, true]
+}
+
+[sub_resource type="Animation" id="Animation_3no37"]
+resource_name = "blink_14"
+length = 2.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Polygon2D14:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.46666667, 0.99999994, 2, 2.4666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [true, true, false, true, true]
+}
+
+[sub_resource type="Animation" id="Animation_6k2qk"]
+resource_name = "blink_15"
+length = 2.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Polygon2D15:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.46666667, 0.99999994, 2, 2.4666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [true, true, false, true, true]
+}
+
+[sub_resource type="Animation" id="Animation_ml5di"]
+resource_name = "blink_16"
+length = 2.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Polygon2D16:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.46666667, 0.99999994, 2, 2.4666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [true, true, false, true, true]
+}
+
+[sub_resource type="Animation" id="Animation_cv34a"]
+resource_name = "blink_17"
+length = 2.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Polygon2D17:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.46666667, 0.99999994, 2, 2.4666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [true, true, false, true, true]
+}
+
+[sub_resource type="Animation" id="Animation_uakci"]
+resource_name = "blink_18"
+length = 2.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Polygon2D18:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.46666667, 0.99999994, 2, 2.4666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [true, true, false, true, true]
+}
+
+[sub_resource type="Animation" id="Animation_2ct6f"]
+resource_name = "blink_19"
+length = 2.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Polygon2D19:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.46666667, 0.99999994, 2, 2.4666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [true, true, false, true, true]
+}
+
+[sub_resource type="Animation" id="Animation_sdrn0"]
+resource_name = "blink_2"
+length = 2.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Polygon2D2:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.46666667, 0.99999994, 2, 2.4666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [true, true, false, true, true]
+}
+
+[sub_resource type="Animation" id="Animation_0qeuy"]
+resource_name = "blink_20"
+length = 2.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Polygon2D20:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.46666667, 0.99999994, 2, 2.4666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [true, true, false, true, true]
+}
+
+[sub_resource type="Animation" id="Animation_8oewj"]
+resource_name = "blink_21"
+length = 2.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Polygon2D21:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.46666667, 0.99999994, 2, 2.4666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [true, true, false, true, true]
+}
+
+[sub_resource type="Animation" id="Animation_grooc"]
+resource_name = "blink_3"
+length = 2.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Polygon2D3:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.46666667, 0.99999994, 2, 2.4666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [true, true, false, true, true]
+}
+
+[sub_resource type="Animation" id="Animation_634sx"]
+resource_name = "blink_4"
+length = 2.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Polygon2D4:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.46666667, 0.99999994, 2, 2.4666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [true, true, false, true, true]
+}
+
+[sub_resource type="Animation" id="Animation_0pw5s"]
+resource_name = "blink_5"
+length = 2.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Polygon2D5:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.46666667, 0.99999994, 2, 2.4666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [true, true, false, true, true]
+}
+
+[sub_resource type="Animation" id="Animation_d1vmu"]
+resource_name = "blink_6"
+length = 2.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Polygon2D6:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.46666667, 0.99999994, 2, 2.4666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [true, true, false, true, true]
+}
+
+[sub_resource type="Animation" id="Animation_jmcbh"]
+resource_name = "blink_7"
+length = 2.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Polygon2D7:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.46666667, 0.99999994, 2, 2.4666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [true, true, false, true, true]
+}
+
+[sub_resource type="Animation" id="Animation_7ol78"]
+resource_name = "blink_8"
+length = 2.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Polygon2D8:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.46666667, 0.99999994, 2, 2.4666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [true, true, false, true, true]
+}
+
+[sub_resource type="Animation" id="Animation_m646p"]
+resource_name = "blink_9"
+length = 2.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Polygon2D9:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.46666667, 0.99999994, 2, 2.4666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [true, true, false, true, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_sdrn0"]
+_data = {
+&"RESET": SubResource("Animation_m77dc"),
+&"blink": SubResource("Animation_ive8d"),
+&"blink_10": SubResource("Animation_4dobk"),
+&"blink_11": SubResource("Animation_1munv"),
+&"blink_12": SubResource("Animation_uaqi5"),
+&"blink_13": SubResource("Animation_krbrc"),
+&"blink_14": SubResource("Animation_3no37"),
+&"blink_15": SubResource("Animation_6k2qk"),
+&"blink_16": SubResource("Animation_ml5di"),
+&"blink_17": SubResource("Animation_cv34a"),
+&"blink_18": SubResource("Animation_uakci"),
+&"blink_19": SubResource("Animation_2ct6f"),
+&"blink_2": SubResource("Animation_sdrn0"),
+&"blink_20": SubResource("Animation_0qeuy"),
+&"blink_21": SubResource("Animation_8oewj"),
+&"blink_3": SubResource("Animation_grooc"),
+&"blink_4": SubResource("Animation_634sx"),
+&"blink_5": SubResource("Animation_0pw5s"),
+&"blink_6": SubResource("Animation_d1vmu"),
+&"blink_7": SubResource("Animation_jmcbh"),
+&"blink_8": SubResource("Animation_7ol78"),
+&"blink_9": SubResource("Animation_m646p")
+}
 
 [node name="SalaServer" type="Node2D" unique_id=1869017270]
 script = ExtResource("1_p0703")
@@ -64,6 +451,230 @@ mouse_default_cursor_shape = 2
 texture_normal = ExtResource("4_5c5pg")
 ignore_texture_size = true
 stretch_mode = 5
+
+[node name="Polygon2D" type="Polygon2D" parent="." unique_id=996274093]
+position = Vector2(135, 379)
+color = Color(0.29666263, 0.84125805, 0, 1)
+polygon = PackedVector2Array(0, 1, 4, -1, 4, 3, 0, 5)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Polygon2D" unique_id=654397160]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_sdrn0")
+
+[node name="Polygon2D2" type="Polygon2D" parent="." unique_id=1501233902]
+position = Vector2(287, 318)
+color = Color(0.29666263, 0.84125805, 0, 1)
+polygon = PackedVector2Array(0, 1, 4, -1, 4, 3, 0, 5)
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="Polygon2D2" unique_id=1372748386]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_sdrn0")
+
+[node name="Polygon2D3" type="Polygon2D" parent="." unique_id=1753810517]
+position = Vector2(207, 409)
+scale = Vector2(0.75, 1.3333334)
+color = Color(0.80399895, 0.7141671, 0, 1)
+polygon = PackedVector2Array(0, 1, 4, -1, 4, 3, 0, 5, 0, 2)
+
+[node name="AnimationPlayer3" type="AnimationPlayer" parent="Polygon2D3" unique_id=357125694]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_sdrn0")
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="." unique_id=996278346]
+offset_left = 3.9999988
+offset_top = 324.0
+offset_right = 1084.0
+offset_bottom = 2244.0
+scale = Vector2(0.068, 0.068)
+stream = ExtResource("13_ive8d")
+autoplay = true
+loop = true
+
+[node name="Polygon2D4" type="Polygon2D" parent="." unique_id=1481852430]
+position = Vector2(828, 365)
+scale = Vector2(1.9999924, 1.2413794)
+color = Color(0.87038726, 2.8878452e-07, 1.2513996e-06, 1)
+offset = Vector2(-2, -4.833313)
+polygon = PackedVector2Array(0, 1, 4, 4.5, 4, 8.25, 0, 4.833313, 0, 2)
+
+[node name="AnimationPlayer4" type="AnimationPlayer" parent="Polygon2D4" unique_id=1966202457]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_sdrn0")
+
+[node name="Polygon2D5" type="Polygon2D" parent="." unique_id=1801761158]
+position = Vector2(899, 407)
+scale = Vector2(1.9999924, 1.2413794)
+color = Color(0.87038726, 2.8878452e-07, 1.2513996e-06, 1)
+offset = Vector2(-2, -4.833313)
+polygon = PackedVector2Array(0, 1, 4, 4.5, 4, 8.25, 0, 4.833313, 0, 2)
+
+[node name="AnimationPlayer5" type="AnimationPlayer" parent="Polygon2D5" unique_id=1082749113]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_sdrn0")
+
+[node name="Polygon2D6" type="Polygon2D" parent="." unique_id=1723788766]
+position = Vector2(962, 444)
+scale = Vector2(1.9999924, 1.2413794)
+color = Color(0.87038726, 2.8878452e-07, 1.2513996e-06, 1)
+offset = Vector2(-2, -4.833313)
+polygon = PackedVector2Array(0, 1, 4, 4.5, 4, 8.25, 0, 4.833313, 0, 2)
+
+[node name="AnimationPlayer6" type="AnimationPlayer" parent="Polygon2D6" unique_id=2065260812]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_sdrn0")
+
+[node name="Polygon2D7" type="Polygon2D" parent="." unique_id=1466929584]
+position = Vector2(1050, 498)
+scale = Vector2(1.9999924, 1.2413794)
+color = Color(0.87038726, 2.8878452e-07, 1.2513996e-06, 1)
+offset = Vector2(-2, -4.833313)
+polygon = PackedVector2Array(0, 1, 4, 4.5, 4, 8.25, 0, 4.833313, 0, 2)
+
+[node name="AnimationPlayer7" type="AnimationPlayer" parent="Polygon2D7" unique_id=54655744]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_sdrn0")
+
+[node name="Polygon2D8" type="Polygon2D" parent="." unique_id=330920819]
+position = Vector2(757, 649)
+scale = Vector2(1.9999924, 1.2413794)
+color = Color(0.87038726, 2.8878452e-07, 1.2513996e-06, 1)
+offset = Vector2(-2, -4.833313)
+polygon = PackedVector2Array(0, 1, 4, 4.5, 4, 8.25, 0, 4.833313, 0, 2)
+
+[node name="AnimationPlayer8" type="AnimationPlayer" parent="Polygon2D8" unique_id=568016409]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_sdrn0")
+
+[node name="Polygon2D9" type="Polygon2D" parent="." unique_id=477090559]
+position = Vector2(668, 594)
+scale = Vector2(1.9999924, 1.2413794)
+color = Color(0.87038726, 2.8878452e-07, 1.2513996e-06, 1)
+offset = Vector2(-2, -4.833313)
+polygon = PackedVector2Array(0, 1, 4, 4.5, 4, 8.25, 0, 4.833313, 0, 2)
+
+[node name="AnimationPlayer9" type="AnimationPlayer" parent="Polygon2D9" unique_id=1241162017]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_sdrn0")
+
+[node name="Polygon2D10" type="Polygon2D" parent="." unique_id=820052609]
+position = Vector2(603, 556)
+scale = Vector2(1.9999924, 1.2413794)
+color = Color(0.87038726, 2.8878452e-07, 1.2513996e-06, 1)
+offset = Vector2(-2, -4.833313)
+polygon = PackedVector2Array(0, 1, 4, 4.5, 4, 8.25, 0, 4.833313, 0, 2)
+
+[node name="AnimationPlayer10" type="AnimationPlayer" parent="Polygon2D10" unique_id=568200608]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_sdrn0")
+
+[node name="Polygon2D11" type="Polygon2D" parent="." unique_id=36160163]
+position = Vector2(317, 476)
+color = Color(0.29666263, 0.84125805, 0, 1)
+polygon = PackedVector2Array(0, 1, 4, -1, 4, 3, 0, 5)
+
+[node name="AnimationPlayer11" type="AnimationPlayer" parent="Polygon2D11" unique_id=407494889]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_sdrn0")
+
+[node name="Polygon2D12" type="Polygon2D" parent="." unique_id=1595878268]
+position = Vector2(413, 436)
+color = Color(0.29666263, 0.84125805, 0, 1)
+polygon = PackedVector2Array(0, 1, 4, -1, 4, 3, 0, 5)
+
+[node name="AnimationPlayer12" type="AnimationPlayer" parent="Polygon2D12" unique_id=1014201956]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_sdrn0")
+
+[node name="Polygon2D13" type="Polygon2D" parent="." unique_id=513337597]
+position = Vector2(445, 442)
+color = Color(0.29666263, 0.84125805, 0, 1)
+polygon = PackedVector2Array(0, 1, 4, -1, 4, 3, 0, 5)
+
+[node name="AnimationPlayer13" type="AnimationPlayer" parent="Polygon2D13" unique_id=1223551416]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_sdrn0")
+
+[node name="Polygon2D14" type="Polygon2D" parent="." unique_id=43351575]
+position = Vector2(507, 345)
+color = Color(0.29666263, 0.84125805, 0, 1)
+polygon = PackedVector2Array(0, 1, 4, -1, 4, 3, 0, 5)
+
+[node name="AnimationPlayer14" type="AnimationPlayer" parent="Polygon2D14" unique_id=1864250474]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_sdrn0")
+
+[node name="Polygon2D15" type="Polygon2D" parent="." unique_id=1001132777]
+position = Vector2(394, 263)
+color = Color(0.29803923, 0.62352943, 1, 1)
+polygon = PackedVector2Array(0, 1, 4, -1, 4, 3, 0, 5)
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="Polygon2D15" unique_id=1133896152]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_sdrn0")
+
+[node name="Polygon2D16" type="Polygon2D" parent="." unique_id=741565984]
+position = Vector2(454, 200)
+color = Color(0.29803923, 0.62352943, 1, 1)
+polygon = PackedVector2Array(0, 1, 4, -1, 4, 3, 0, 5)
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="Polygon2D16" unique_id=444579519]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_sdrn0")
+
+[node name="Polygon2D17" type="Polygon2D" parent="." unique_id=351678033]
+position = Vector2(964, 302)
+scale = Vector2(1, 1.1111064)
+color = Color(0.86348945, 0.68052894, 0, 1)
+offset = Vector2(-1, -4.5)
+polygon = PackedVector2Array(0, 2.399994, 3, 3.600006, 3, 6, 0, 4.8000183, 0, 3.600006)
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="Polygon2D17" unique_id=2092561346]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_sdrn0")
+
+[node name="Polygon2D18" type="Polygon2D" parent="." unique_id=57383251]
+position = Vector2(1023, 336)
+scale = Vector2(1, 1.1111064)
+color = Color(0.86348945, 0.68052894, 0, 1)
+offset = Vector2(-1, -4.4999695)
+polygon = PackedVector2Array(0, 2.399994, 3, 3.600006, 3, 6, 0, 4.8000183, 0, 3.600006)
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="Polygon2D18" unique_id=2115387431]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_sdrn0")
+
+[node name="Polygon2D19" type="Polygon2D" parent="." unique_id=249378369]
+position = Vector2(1082, 370)
+scale = Vector2(1, 1.1111064)
+color = Color(0.86348945, 0.68052894, 0, 1)
+offset = Vector2(-1, -3.5999756)
+polygon = PackedVector2Array(0, 2.399994, 3, 3.600006, 3, 6, 0, 4.8000183, 0, 3.600006)
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="Polygon2D19" unique_id=592506947]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_sdrn0")
+
+[node name="Polygon2D20" type="Polygon2D" parent="." unique_id=2063631309]
+position = Vector2(1141, 404)
+scale = Vector2(1, 1.1111064)
+color = Color(0.86348945, 0.68052894, 0, 1)
+offset = Vector2(-1, -3.5999756)
+polygon = PackedVector2Array(0, 2.399994, 3, 3.600006, 3, 6, 0, 4.8000183, 0, 3.600006)
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="Polygon2D20" unique_id=104186783]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_sdrn0")
+
+[node name="Polygon2D21" type="Polygon2D" parent="." unique_id=2110794876]
+position = Vector2(1202, 440.00003)
+scale = Vector2(1, 1.1111064)
+color = Color(0.86348945, 0.68052894, 0, 1)
+offset = Vector2(-1, -3.5999756)
+polygon = PackedVector2Array(0, 2.399994, 3, 3.600006, 3, 6, 0, 4.8000183, 0, 3.600006)
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="Polygon2D21" unique_id=2007311237]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_sdrn0")
 
 [connection signal="pressed" from="UpgradeButton" to="." method="_on_upgrade_button_pressed"]
 [connection signal="pressed" from="BackLeftButton" to="." method="_on_back_left_button_pressed"]

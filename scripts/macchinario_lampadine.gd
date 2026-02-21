@@ -32,6 +32,7 @@ func _ready() -> void:
 	start_produzione()
 	aggiorna_interfaccia(Global.lampadine_in_sala_macchinari, Global.capienza_massima_per_livello[Global.livello_lampadine])
 	Global.produzione_lampadine_aggiornata.connect(_aggiorna_produzione)
+	Global.lampadine_svuotate.connect(_emetti_suono)
 
 func start_produzione():
 	await get_tree().process_frame
@@ -71,3 +72,6 @@ func aggiorna_interfaccia(quant, tot):
 func _on_area_2d_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 		Global.raccogli_tutto_lampadine()
+
+func _emetti_suono():
+	$Area2D/AudioStreamPlayer.play()

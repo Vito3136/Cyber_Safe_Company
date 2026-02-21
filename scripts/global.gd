@@ -14,7 +14,8 @@ var totale_upgrade_produzione: int = 0
 var totale_upgrade_sicurezza: int = 0
 signal update_barra_bilanciamento()
 
-var monete: int = 1000
+signal suono_vendita_prodotti()
+var monete: int = 300
 signal update_monete(totale_monete)
 
 var capienza_massima_per_livello: Array[int] = [10, 10, 12, 14]
@@ -32,6 +33,7 @@ var produzione_prese_avviata: bool = false
 var prese_in_sala_macchinari: int = 0  # Quelle prodotte ma non raccolte
 var prese_in_magazzino: int = 0 # Quelle raccolte e stoccate
 var prese_is_full: bool = false
+signal prese_svuotate()
 
 # Variabili lampadine
 var costo_lampadina_singola: int = 11
@@ -43,6 +45,7 @@ var timer_produzione_lampadine: Timer
 var lampadine_is_full: bool = false
 var lampadine_is_locked = true
 var lucchetto_lampadine_scomparso = false
+signal lampadine_svuotate()
 
 # Variabili telecamere
 var costo_telecamera_singola: int = 15
@@ -54,6 +57,7 @@ var timer_produzione_telecamere: Timer
 var telecamere_is_full: bool = false
 var telecamere_is_locked = true
 var lucchetto_telecamere_scomparso = false
+signal telecamere_svuotate()
 
 # Variabili serrature
 var costo_serratura_singola: int = 20
@@ -65,6 +69,7 @@ var timer_produzione_serrature: Timer
 var serrature_is_full: bool = false
 var serrature_is_locked = true
 var lucchetto_serrature_scomparso = false
+signal serrature_svuotate()
 
 signal produzione_prese_aggiornata(quantita_in_sala_macchinari, quantita_massima_prese)
 signal produzione_lampadine_aggiornata(quantita_in_sala_macchinari, quantita_massima_lampadine)
@@ -106,6 +111,7 @@ func _ready() -> void:
 func _on_timer_spedizione_timeout():
 	timer_animazione_spedizione.start()
 	update_monete.emit(monete)
+	suono_vendita_prodotti.emit()
 	print("40 secondi finiti - ora aggiornamento Monete: " + str(monete))
 
 func _on_timer_animazione_spedizione_timeeout():
@@ -300,6 +306,7 @@ func _on_timer_produzione_serrature_timeout():
 # Funzione chiamata quando l'utente tappa nella Sala Macchinari
 func raccogli_tutto_prese():
 	if prese_in_sala_macchinari > 0:
+		prese_svuotate.emit()
 		
 		if(prese_is_full):
 			prese_is_full = false
@@ -316,6 +323,7 @@ func raccogli_tutto_prese():
 # Funzione chiamata quando l'utente tappa nella Sala Macchinari
 func raccogli_tutto_lampadine():
 	if lampadine_in_sala_macchinari > 0:
+		lampadine_svuotate.emit()
 		
 		if(lampadine_is_full):
 			lampadine_is_full = false
@@ -332,6 +340,7 @@ func raccogli_tutto_lampadine():
 # Funzione chiamata quando l'utente tappa nella Sala Macchinari
 func raccogli_tutto_telecamere():
 	if telecamere_in_sala_macchinari > 0:
+		telecamere_svuotate.emit()
 		
 		if(telecamere_is_full):
 			telecamere_is_full = false
@@ -348,6 +357,7 @@ func raccogli_tutto_telecamere():
 # Funzione chiamata quando l'utente tappa nella Sala Macchinari
 func raccogli_tutto_serrature():
 	if serrature_in_sala_macchinari > 0:
+		serrature_svuotate.emit()
 		
 		if(serrature_is_full):
 			serrature_is_full = false

@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://bgi0ptcd8vnbt" path="res://assets/upgrade_button.png" id="12_83x6b"]
 [ext_resource type="PackedScene" uid="uid://b3hfnurybgsxh" path="res://scenes/warehouse_upgrade_popup.tscn" id="13_twpj7"]
 [ext_resource type="FontFile" uid="uid://du80thymbsnek" path="res://font/Machine Gunk.otf" id="14_m1o7u"]
+[ext_resource type="AudioStream" uid="uid://dqbdij0fnjvlc" path="res://sounds/drop_coin.mp3" id="16_2cbxb"]
 
 [sub_resource type="Animation" id="Animation_6ef2c"]
 length = 0.001
@@ -284,6 +285,9 @@ theme_override_font_sizes/font_size = 30
 text = "Next sale in:"
 horizontal_alignment = 2
 vertical_alignment = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=2082642167]
+stream = ExtResource("16_2cbxb")
 
 [connection signal="pressed" from="BackLeftButton" to="." method="_on_back_left_button_pressed"]
 [connection signal="pressed" from="UpgradeButton" to="." method="_on_upgrade_button_pressed"]
