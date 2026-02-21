@@ -14,7 +14,7 @@ var totale_upgrade_produzione: int = 0
 var totale_upgrade_sicurezza: int = 0
 signal update_barra_bilanciamento()
 
-signal suono_vendita_prodotti()
+var emetti_suono: bool = false
 var monete: int = 300
 signal update_monete(totale_monete)
 
@@ -111,7 +111,12 @@ func _ready() -> void:
 func _on_timer_spedizione_timeout():
 	timer_animazione_spedizione.start()
 	update_monete.emit(monete)
-	suono_vendita_prodotti.emit()
+	if(emetti_suono):
+		var asp = AudioStreamPlayer.new()
+		asp.stream = load("res://sounds/drop_coin.mp3")
+		add_child(asp)
+		asp.play()
+		asp.finished.connect(asp.queue_free)
 	print("40 secondi finiti - ora aggiornamento Monete: " + str(monete))
 
 func _on_timer_animazione_spedizione_timeeout():
@@ -124,6 +129,10 @@ func vendi_tutto():
 	lampadine_in_magazzino = 0
 	telecamere_in_magazzino = 0
 	serrature_in_magazzino = 0
+	if(totale > 0):
+		emetti_suono = true
+	else:
+		emetti_suono = false
 	monete += totale
 	print("35 secondi finiti - Monete calcolate: " + str(monete))
 

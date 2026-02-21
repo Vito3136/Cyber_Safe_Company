@@ -18,7 +18,6 @@ func _ready() -> void:
 	aggiorna_animazione_camion()
 	aggiorna_contatori()
 	Global.parti_spedizione.connect(_start_animazione)
-	Global.suono_vendita_prodotti.connect(_emetti_suono)
 
 func _start_animazione():
 	audio_stream_player.play()
@@ -64,6 +63,3 @@ func _on_back_left_button_pressed() -> void:
 	back_left_button.scale = Vector2(1, 1)
 	await get_tree().create_timer(0.05).timeout
 	get_tree().change_scene_to_file("res://scenes/azienda_totale.tscn")
-
-func _emetti_suono():
-	$AudioStreamPlayer.play()
