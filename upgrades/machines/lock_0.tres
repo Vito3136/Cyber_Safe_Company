@@ -9,6 +9,6 @@ descrizione = "• Lock manufacturing line activated
 • Cycle time: 5s
 • Storage buffer: 10 units
 • Sale price: $20/unit"
-costo = 9000
+costo = 5000
 upgrade_id = "lock_0"
 metadata/_custom_type_script = "uid://p1gngg5c4evg"

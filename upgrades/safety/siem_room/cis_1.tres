@@ -6,7 +6,7 @@
 script = ExtResource("1_rq323")
 titolo = "CIS Controls - Level 1"
 descrizione = "Implements the foundational security benchmarks defined by the Center for Internet Security. From a security standpoint, these controls cover the most critical and commonly exploited attack vectors, such as inventory management and access control, giving your organization a solid, standardized security baseline."
-costo = 2800
+costo = 1500
 upgrade_id = "cis_1"
 required_id = "siem_team"
 metadata/_custom_type_script = "uid://p1gngg5c4evg"

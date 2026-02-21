@@ -6,7 +6,7 @@
 script = ExtResource("1_dxqd2")
 titolo = "Warehouse - Level 3"
 descrizione = "• Selling interval reduced to 30 seconds"
-costo = 7000
+costo = 3500
 upgrade_id = "warehouse_2"
 required_id = "warehouse_1"
 metadata/_custom_type_script = "uid://p1gngg5c4evg"

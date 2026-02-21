@@ -9,16 +9,26 @@ extends CanvasLayer
 
 var apparizione_attuale: int = 0
 var testi = [
+	"Suspicious activity was detected moving through your network. Your SIEM system correlated the logs, identified the threat pattern, and raised the alarm in time for it to be neutralized. Without full visibility, this one would have gone completely unnoticed.",
+	"A malicious link was clicked by one of your employees. Your EDR software detected the threat instantly, isolated the infected machine, and prevented the virus from spreading to the rest of your network. Crisis averted — your systems are clean.",
+	"An unauthorized individual attempted to access your server room. Your biometric scanner rejected the entry attempt immediately — no keycard to steal, no PIN to guess. Physical access denied.",
 	"An external intrusion attempt was detected and blocked. Your Next-Gen Hardware Firewall analyzed the incoming traffic, identified the malicious payload hidden inside, and shut it down before it could reach your servers. Your investment just paid off.",
+	"Malware targeted your primary server and took it offline. Your redundancy system switched operations to the backup cluster instantly, with no interruption to your business. The threat was contained and the primary server restored without any data loss.",
 	"Someone tried to access your systems using stolen employee credentials. Thanks to Multi-Factor Authentication, the login was denied — the attacker had the password, but couldn't get past the second verification step. Your accounts are safe.",
+	"A hostile IP attempted to infiltrate your infrastructure. Your SOAR module identified the threat, updated the firewall rules, and blocked the connection — all within seconds, and without any human intervention required. Automated defense at its finest.",
 	"Unusual activity was detected on one of your employee accounts — login from an unexpected location at an unusual hour. Your UEBA system flagged the anomaly instantly and blocked the session before any data could be accessed. Without it, this one would have slipped through unnoticed."
 ]
 var upgrade_ids_correlati = [
+	"siem_1",
+	"edr",
+	"biometric",
 	"firewall",
+	"redundancy_system",
 	"mfa",
+	"soar",
 	"ueba"
 ]
-var intervalli = [1200.0, 3300000.0, 5400000.0]
+var intervalli = [720.0, 1380.0, 1800.0, 1500.0, 1200.0, 600.0]
 
 func _ready():
 	

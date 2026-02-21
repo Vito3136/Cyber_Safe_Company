@@ -139,7 +139,6 @@ theme_override_constants/outline_size = 1
 theme_override_fonts/font = ExtResource("2_2nl2w")
 theme_override_font_sizes/font_size = 18
 text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco"
-horizontal_alignment = 3
 vertical_alignment = 1
 autowrap_mode = 2
 

@@ -29,10 +29,10 @@ expand_mode = 1
 [node name="GeneralUI" parent="." unique_id=1577614775 instance=ExtResource("3_4slbg")]
 
 [node name="UpgradeButton" type="Button" parent="." unique_id=850298522]
-offset_left = 1128.0
+offset_left = 1093.0
 offset_top = 91.0
-offset_right = 1283.0
-offset_bottom = 146.0
+offset_right = 1286.0
+offset_bottom = 154.0
 pivot_offset = Vector2(77.5, 27.5)
 mouse_default_cursor_shape = 2
 icon = ExtResource("4_8ko00")

@@ -6,7 +6,7 @@
 script = ExtResource("1_indsb")
 titolo = "CIS Controls - Level 3"
 descrizione = "The highest tier of CIS compliance, targeting the most advanced and persistent threats. From a security standpoint, Level 3 is designed to defend against nation-state actors and highly organized criminal groups, implementing the most rigorous controls around incident response, penetration testing, and red team readiness."
-costo = 10000
+costo = 5500
 upgrade_id = "cis_3"
 required_id = "cis_2"
 metadata/_custom_type_script = "uid://p1gngg5c4evg"

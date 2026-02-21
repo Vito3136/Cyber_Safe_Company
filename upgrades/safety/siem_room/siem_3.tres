@@ -6,7 +6,7 @@
 script = ExtResource("1_m6qn3")
 titolo = "SIEM - Level 3"
 descrizione = "Full-scale security intelligence with real-time threat hunting and predictive analytics. From a security standpoint, Level 3 shifts your posture from reactive to proactive — instead of waiting for alerts, your team actively hunts for hidden threats already inside the network, catching attackers before they can cause serious damage."
-costo = 11000
+costo = 6000
 upgrade_id = "siem_3"
 required_id = "siem_2"
 metadata/_custom_type_script = "uid://p1gngg5c4evg"
