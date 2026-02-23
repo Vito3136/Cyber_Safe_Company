@@ -5,14 +5,15 @@ var tutorial_iniziale_effettuato: bool = false
 var tutorial_totale_effettuato: bool = false
 
 # Barra bilanciamento
-# 0 = Centro
-# -5 = 5 tacche verso Produzione
-# +3 = 3 tacche verso Sicurezza
 var bilanciamento: int = 0
 var max_tacchette: int = 18
 var totale_upgrade_produzione: int = 0
 var totale_upgrade_sicurezza: int = 0
+var contatore_verde: int = 0
+var contatore_giallo: int = 0
+var contatore_rosso: int = 0
 signal update_barra_bilanciamento()
+signal end_game()
 
 var emetti_suono: bool = false
 var monete: int = 300
@@ -447,6 +448,9 @@ const SAVE_PATH = "user://savegame.data"
 
 func save_game():
 	var save_data = {
+		"contatore_verde": contatore_verde,
+		"contatore_giallo": contatore_giallo,
+		"contatore_rosso": contatore_rosso,
 		"tutorial_iniziale_effettuato": tutorial_iniziale_effettuato,
 		"tutorial_totale_effettuato": tutorial_totale_effettuato,
 		"bilanciamento": bilanciamento,
@@ -514,6 +518,9 @@ func load_game():
 	var save_data = JSON.parse_string(file.get_as_text())
 	file.close()
 	
+	contatore_verde = save_data["contatore_verde"]
+	contatore_giallo = save_data["contatore_giallo"]
+	contatore_rosso = save_data["contatore_rosso"]
 	tutorial_iniziale_effettuato = save_data["tutorial_iniziale_effettuato"]
 	tutorial_totale_effettuato = save_data["tutorial_totale_effettuato"]
 	bilanciamento = save_data["bilanciamento"]

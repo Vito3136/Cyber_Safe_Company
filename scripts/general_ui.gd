@@ -6,7 +6,7 @@ extends Control
 @onready var label_contatore_monete = $ContenitoreMonete/LabelContatoreMonete
 @onready var security_label = $SecurityLabel
 @onready var production_label = $ProductionLabel
-
+var counter_accessi = 0
 
 func _ready():
 	# Impostiamo i massimi delle barre grafiche
@@ -31,10 +31,14 @@ func _aggiorna_grafica_barra():
 	var valore_bilanciamento_abs = abs(valore_bilanciamento)
 	
 	if valore_bilanciamento == 0:
+		if counter_accessi != 0:
+			if Global.totale_upgrade_produzione > 0 || Global.totale_upgrade_sicurezza > 0:
+				Global.contatore_verde += 1
+		else:
+			counter_accessi = 1
 		# Siamo al centro esatto
 		bar_prod.value = 0
 		bar_sic.value = 0
-	
 	elif valore_bilanciamento < 0:
 		# Siamo sbilanciati verso PRODUZIONE (numeri negativi)
 		# abs() trasforma -3 in 3, perché la progress bar vuole numeri positivi
@@ -42,21 +46,47 @@ func _aggiorna_grafica_barra():
 		bar_sic.value = 0
 		if(valore_bilanciamento_abs <= 3):
 			style_prod.bg_color = Color("00ff00ff")
-		elif(valore_bilanciamento_abs > 3 && valore_bilanciamento_abs <= 6):
+			if counter_accessi != 0:
+				Global.contatore_verde += 1
+			else:
+				counter_accessi = 1
+		elif(valore_bilanciamento_abs > 3 && valore_bilanciamento_abs <= 9):
 			style_prod.bg_color = Color("ffe036ff")
+			if counter_accessi != 0:
+				Global.contatore_giallo += 1
+			else:
+				counter_accessi = 1
 		else:
 			style_prod.bg_color = Color("ff0000ff")
-	
+			if counter_accessi != 0:
+				Global.contatore_rosso += 1
+			else:
+				counter_accessi = 1
 	else:
 		# Siamo sbilanciati verso SICUREZZA (numeri positivi)
 		bar_prod.value = 0
 		bar_sic.value = valore_bilanciamento_abs
 		if(valore_bilanciamento_abs <= 3):
 			style_sic.bg_color = Color("00ff00ff")
-		elif(valore_bilanciamento_abs > 3 && valore_bilanciamento_abs <= 6):
+			if counter_accessi != 0:
+				Global.contatore_verde += 1
+			else:
+				counter_accessi = 1
+		elif(valore_bilanciamento_abs > 3 && valore_bilanciamento_abs <= 9):
 			style_sic.bg_color = Color("ffe036ff")
+			if counter_accessi != 0:
+				Global.contatore_giallo += 1
+			else:
+				counter_accessi = 1
 		else:
 			style_sic.bg_color = Color("ff0000ff")
+			if counter_accessi != 0:
+				Global.contatore_rosso += 1
+			else:
+				counter_accessi = 1
 	
 	production_label.text = "PRODUCTION   (" + str(Global.totale_upgrade_produzione) + ")" 
 	security_label.text = "(" + str(Global.totale_upgrade_sicurezza) + ")   SECURITY"
+	
+	if Global.totale_upgrade_produzione == 18 && Global.totale_upgrade_sicurezza == 18:
+		Global.end_game.emit()
