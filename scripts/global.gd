@@ -3,6 +3,7 @@ extends Node
 # Tutorial
 var tutorial_iniziale_effettuato: bool = false
 var tutorial_totale_effettuato: bool = false
+signal tutorial_finito()
 
 # Barra bilanciamento
 var bilanciamento: int = 0

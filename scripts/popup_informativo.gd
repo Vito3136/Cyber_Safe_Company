@@ -46,8 +46,13 @@ func _ready():
 	# Colleghiamo il segnale del timer
 	timer.timeout.connect(_on_timer_timeout)
 	
-	if apparizione_attuale < intervalli.size():
+	if apparizione_attuale < intervalli.size() and Global.tutorial_totale_effettuato:
 		avvia_prossimo_timer()
+	else:
+		Global.tutorial_finito.connect(_on_tutorial_finito_dal_segnale)
+
+func _on_tutorial_finito_dal_segnale():
+	avvia_prossimo_timer()
 
 func avvia_prossimo_timer():
 	if apparizione_attuale < intervalli.size():
