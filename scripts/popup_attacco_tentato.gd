@@ -28,7 +28,7 @@ var upgrade_ids_correlati = [
 	"soar",
 	"ueba"
 ]
-var intervalli = [720.0, 1380.0, 1800.0, 1500.0, 1200.0, 600.0]
+var intervalli = [630.0, 900.0, 900.0, 900.0, 900.0, 900.0, 900.0, 900.0]
 
 func _ready():
 	
